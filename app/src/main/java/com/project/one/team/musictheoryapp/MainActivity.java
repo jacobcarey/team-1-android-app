@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 TextView txtView = (TextView) findViewById(R.id.testTextViewId);
                 txtView.setText("Would you look at that!");
+//                Test...
+                System.out.println("Has this been pushed to repo?");
             }
         });
 
