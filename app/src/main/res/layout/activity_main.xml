@@ -32,4 +32,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:id="@+id/testTextViewId" />
+
 </RelativeLayout>
