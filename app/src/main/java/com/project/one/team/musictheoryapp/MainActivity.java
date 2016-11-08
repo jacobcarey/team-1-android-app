@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView txtView = (TextView) findViewById(R.id.testTextViewId);
                 txtView.setText("Would you look at that!");
 //                Test...
-                System.out.println("don't press me !");
+                System.out.println("don't press me... !");
             }
         });
 
