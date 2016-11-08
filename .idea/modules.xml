@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MusicTheoryApp.iml" filepath="$PROJECT_DIR$/MusicTheoryApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/team-one-android-app.iml" filepath="$PROJECT_DIR$/team-one-android-app.iml" />
     </modules>
   </component>
 </project>
