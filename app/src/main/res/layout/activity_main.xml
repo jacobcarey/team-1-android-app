@@ -16,11 +16,10 @@
         android:text="Hello World!" />
 
     <Button
-        android:text="Click here..."
+        android:text="Click here for quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/testButtonId"
-        android:layout_below="@+id/textView"
+        android:id="@+id/quizButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="78dp" />
 
@@ -28,9 +27,18 @@
         android:text="I am a text view..."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/testButtonId"
+        android:layout_below="@+id/quizButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:id="@+id/testTextViewId" />
+
+    <Button
+        android:text="Settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testTextViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:id="@+id/mainSettingsButton" />
 
 </RelativeLayout>
