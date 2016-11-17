@@ -1,0 +1,23 @@
+[
+  {
+    "question": "Test question 1?",
+    "correctAnswer": "correct",
+    "wrongAnswer1": "incorrect",
+    "wrongAnswer2": "incorrect",
+    "wrongAnswer3": "incorrect"
+  },
+  {
+    "question": "Test question 2?",
+    "correctAnswer": "correct",
+    "wrongAnswer1": "incorrect",
+    "wrongAnswer2": "incorrect",
+    "wrongAnswer3": "incorrect"
+  },
+  {
+    "question": "Test question 3?",
+    "correctAnswer": "correct",
+    "wrongAnswer1": "incorrect",
+    "wrongAnswer2": "incorrect",
+    "wrongAnswer3": "incorrect"
+  }
+]

@@ -42,10 +42,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/questionText"
-            android:layout_alignRight="@+id/questionText"
-            android:layout_alignEnd="@+id/questionText"
             android:layout_marginTop="40dp"
-            android:id="@+id/answer1Text" />
+            android:id="@+id/answer1Text"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/border"
+            android:padding="5dp" />
 
         <TextView
             android:text="Answer 2"
@@ -55,27 +56,32 @@
             android:layout_alignLeft="@+id/answer1Text"
             android:layout_alignStart="@+id/answer1Text"
             android:layout_marginTop="10dp"
-            android:id="@+id/answer2Text" />
+            android:id="@+id/answer2Text"
+            android:background="@drawable/border"
+            android:padding="5dp" />
 
         <TextView
             android:text="Answer 3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/answer2Text"
-            android:layout_alignRight="@+id/answer2Text"
-            android:layout_alignEnd="@+id/answer2Text"
             android:layout_marginTop="10dp"
-            android:id="@+id/answer3Text" />
+            android:id="@+id/answer3Text"
+            android:layout_alignLeft="@+id/answer2Text"
+            android:layout_alignStart="@+id/answer2Text"
+            android:background="@drawable/border"
+            android:padding="5dp" />
 
         <TextView
             android:text="Answer 4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/answer3Text"
-            android:layout_alignRight="@+id/answer2Text"
-            android:layout_alignEnd="@+id/answer2Text"
             android:layout_marginTop="10dp"
-            android:id="@+id/answer4Text" />
+            android:id="@+id/answer4Text"
+            android:layout_alignLeft="@+id/answer3Text"
+            android:background="@drawable/border"
+            android:padding="5dp" />
     </RelativeLayout>
 
 </LinearLayout>
