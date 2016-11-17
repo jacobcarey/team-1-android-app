@@ -10,20 +10,23 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
+    public static final double NUMBER_OF_ANSWERS = 4;
     private JSONArray jsonArray;
     private TextView question;
-    private TextView answer1;
-    private TextView answer2;
-    private TextView answer3;
-    private TextView answer4;
     private int index = 0;
     private int numberOfQuestions;
+    private int correctAnswer;
+    private List<TextView> answerTextViews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +55,16 @@ public class QuizActivity extends AppCompatActivity {
 
         // Get all references to the text fields
         question = (TextView) findViewById(R.id.questionText);
-        answer1 = (TextView) findViewById(R.id.answer1Text);
-        answer2 = (TextView) findViewById(R.id.answer2Text);
-        answer3 = (TextView) findViewById(R.id.answer3Text);
-        answer4 = (TextView) findViewById(R.id.answer4Text);
+        TextView answer1 = (TextView) findViewById(R.id.answer1Text);
+        TextView answer2 = (TextView) findViewById(R.id.answer2Text);
+        TextView answer3 = (TextView) findViewById(R.id.answer3Text);
+        TextView answer4 = (TextView) findViewById(R.id.answer4Text);
+
+        answerTextViews = new ArrayList<TextView>();
+        answerTextViews.add(answer1);
+        answerTextViews.add(answer2);
+        answerTextViews.add(answer3);
+        answerTextViews.add(answer4);
 
         // Read in the json file in and parse it
         try {
@@ -76,22 +85,36 @@ public class QuizActivity extends AppCompatActivity {
 
     public void nextQuestion() {
         try {
+            List<String> answers = new ArrayList<String>();
+            answers.add("correctAnswer");
+            answers.add("wrongAnswer1");
+            answers.add("wrongAnswer2");
+            answers.add("wrongAnswer3");
+            Collections.shuffle(answers);
+            correctAnswer = answers.indexOf("correctAnswer");
+
             JSONObject jsonObject = jsonArray.getJSONObject(index);
             question.setText((CharSequence) jsonObject.get("question"));
-            answer1.setText((CharSequence) jsonObject.get("correctAnswer"));
-            answer2.setText((CharSequence) jsonObject.get("wrongAnswer1"));
-            answer3.setText((CharSequence) jsonObject.get("wrongAnswer2"));
-            answer4.setText((CharSequence) jsonObject.get("wrongAnswer3"));
-            // TODO: randomise the order of the answers
+            for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
+                answerTextViews.get(i).setText((CharSequence) jsonObject.get(answers.get(i)));
 
-            // make the correct answer give some feedback
-            answer1.setOnClickListener(new View.OnClickListener() {
+            View.OnClickListener correctAnswerClick = new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // TODO: check if the answer was the right one
                     nextQuestion();
                 }
-            });
+            };
+
+            View.OnClickListener incorrectAnswerClick = new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // TODO: give feedback of incorrect answer
+                }
+            };
+
+            for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
+                answerTextViews.get(i).setOnClickListener(incorrectAnswerClick);
+            answerTextViews.get(correctAnswer).setOnClickListener(correctAnswerClick);
 
             index += 1;
             // TODO: just loops for now
