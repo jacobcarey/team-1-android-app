@@ -10,11 +10,11 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,11 +22,26 @@ public class QuizActivity extends AppCompatActivity {
 
     public static final double NUMBER_OF_ANSWERS = 4;
     private JSONArray jsonArray;
-    private TextView question;
+    private TextView questionTextView;
     private int index = 0;
     private int numberOfQuestions;
     private int correctAnswer;
     private List<TextView> answerTextViews;
+    private List<String> answers;
+
+    public final View.OnClickListener CORRECT_ANSWER_CLICK = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            nextQuestion();
+        }
+    };
+
+    public final View.OnClickListener INCORRECT_ANSWER_CLICK = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // TODO: give feedback of incorrect answer
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +69,13 @@ public class QuizActivity extends AppCompatActivity {
         });
 
         // Get all references to the text fields
-        question = (TextView) findViewById(R.id.questionText);
-        TextView answer1 = (TextView) findViewById(R.id.answer1Text);
-        TextView answer2 = (TextView) findViewById(R.id.answer2Text);
-        TextView answer3 = (TextView) findViewById(R.id.answer3Text);
-        TextView answer4 = (TextView) findViewById(R.id.answer4Text);
-
+        questionTextView = (TextView) findViewById(R.id.questionText);
         answerTextViews = new ArrayList<TextView>();
-        answerTextViews.add(answer1);
-        answerTextViews.add(answer2);
-        answerTextViews.add(answer3);
-        answerTextViews.add(answer4);
+        answerTextViews.add((TextView) findViewById(R.id.answer1Text));
+        answerTextViews.add((TextView) findViewById(R.id.answer2Text));
+        answerTextViews.add((TextView) findViewById(R.id.answer3Text));
+        answerTextViews.add((TextView) findViewById(R.id.answer4Text));
+        answerTextViews = Collections.unmodifiableList(answerTextViews);
 
         // Read in the json file in and parse it
         try {
@@ -79,42 +90,31 @@ public class QuizActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        // Initialise the json key names
+        String[] temp = {"correctAnswer", "wrongAnswer1", "wrongAnswer2", "wrongAnswer3"};
+        answers = Arrays.asList(temp);
+
+        // Show the first question
         numberOfQuestions = jsonArray.length();
         nextQuestion();
     }
 
     public void nextQuestion() {
         try {
-            List<String> answers = new ArrayList<String>();
-            answers.add("correctAnswer");
-            answers.add("wrongAnswer1");
-            answers.add("wrongAnswer2");
-            answers.add("wrongAnswer3");
+            // Randomise the order of the json keys
             Collections.shuffle(answers);
             correctAnswer = answers.indexOf("correctAnswer");
 
+            // Get the next question, show it on screen
             JSONObject jsonObject = jsonArray.getJSONObject(index);
-            question.setText((CharSequence) jsonObject.get("question"));
+            questionTextView.setText((CharSequence) jsonObject.get("question"));
             for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
                 answerTextViews.get(i).setText((CharSequence) jsonObject.get(answers.get(i)));
 
-            View.OnClickListener correctAnswerClick = new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    nextQuestion();
-                }
-            };
-
-            View.OnClickListener incorrectAnswerClick = new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // TODO: give feedback of incorrect answer
-                }
-            };
-
+            // Set the click actions for the answers
             for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
-                answerTextViews.get(i).setOnClickListener(incorrectAnswerClick);
-            answerTextViews.get(correctAnswer).setOnClickListener(correctAnswerClick);
+                answerTextViews.get(i).setOnClickListener(INCORRECT_ANSWER_CLICK);
+            answerTextViews.get(correctAnswer).setOnClickListener(CORRECT_ANSWER_CLICK);
 
             index += 1;
             // TODO: just loops for now
