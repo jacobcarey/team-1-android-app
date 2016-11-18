@@ -9,6 +9,7 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
+    android:title="Basic Topics"
     tools:context="com.project.one.team.musictheoryapp.MainActivity">
 
     <ScrollView
