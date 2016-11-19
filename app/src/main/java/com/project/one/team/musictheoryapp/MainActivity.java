@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,6 +21,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), QuizActivity.class);
+                startActivity(i);
+            }
+        });
+
+        // TODO: for now just uses the testTextView to go to the BasicSelect
+        TextView testTextView = (TextView) findViewById(R.id.testTextViewId);
+        testTextView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), BasicSelectActivity.class);
                 startActivity(i);
             }
         });
