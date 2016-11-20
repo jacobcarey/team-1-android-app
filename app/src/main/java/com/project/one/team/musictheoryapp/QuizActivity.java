@@ -20,7 +20,7 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
-    public static final double NUMBER_OF_ANSWERS = 4;
+    public static final int NUMBER_OF_ANSWERS = 4;
     private JSONArray jsonArray;
     private TextView questionTextView;
     private int index = 0;
