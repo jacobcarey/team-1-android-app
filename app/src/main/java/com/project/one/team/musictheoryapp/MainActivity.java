@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Enable the settings button on the main activity
-        ((Button) findViewById(R.id.mainSettingsButton)).setOnClickListener(new View.OnClickListener() {
+        Button settingsButton = (Button) findViewById(R.id.mainSettingsButton);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -47,5 +48,4 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 }

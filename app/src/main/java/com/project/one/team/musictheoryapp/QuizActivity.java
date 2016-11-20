@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +40,7 @@ public class QuizActivity extends AppCompatActivity {
     public final View.OnClickListener INCORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            // TODO: give feedback of incorrect answer
+            Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
         }
     };
 
