@@ -1,23 +1,23 @@
 [
   {
-    "question": "Test question 1?",
-    "correctAnswer": "correct",
-    "wrongAnswer1": "incorrect",
-    "wrongAnswer2": "incorrect",
-    "wrongAnswer3": "incorrect"
+    "How many notes are there in an octave?": "Test question 1?",
+    "12": "correct",
+    "10": "incorrect",
+    "8": "incorrect",
+    "6": "incorrect"
   },
   {
-    "question": "Test question 2?",
-    "correctAnswer": "correct",
-    "wrongAnswer1": "incorrect",
-    "wrongAnswer2": "incorrect",
-    "wrongAnswer3": "incorrect"
+    "Which notes do not have sharps?": "Test question 2?",
+    "B & E": "correct",
+    "A & D": "incorrect",
+    "A & C": "incorrect",
+    "F & G": "incorrect"
   },
   {
-    "question": "Test question 3?",
-    "correctAnswer": "correct",
-    "wrongAnswer1": "incorrect",
-    "wrongAnswer2": "incorrect",
-    "wrongAnswer3": "incorrect"
+    "How many half steps are there from C to G?": "Test question 3?",
+    "8": "correct",
+    "7": "incorrect",
+    "9": "incorrect",
+    "6": "incorrect"
   }
 ]
