@@ -1,23 +1,23 @@
 [
   {
-    "How many notes are there in an octave?": "Test question 1?",
-    "12": "correct",
-    "10": "incorrect",
-    "8": "incorrect",
-    "6": "incorrect"
+    "question": "How many notes are there in an octave?",
+    "correctAnswer": "12",
+    "wrongAnswer1": "10",
+    "wrongAnswer2": "8",
+    "wrongAnswer3": "6"
   },
   {
-    "Which notes do not have sharps?": "Test question 2?",
-    "B & E": "correct",
-    "A & D": "incorrect",
-    "A & C": "incorrect",
-    "F & G": "incorrect"
+    "question": "Which notes do not have sharps?",
+    "correctAnswer": "B & E",
+    "wrongAnswer1": "A & D",
+    "wrongAnswer2": "A & C",
+    "wrongAnswer3": "F & G"
   },
   {
-    "How many half steps are there from C to G?": "Test question 3?",
-    "8": "correct",
-    "7": "incorrect",
-    "9": "incorrect",
-    "6": "incorrect"
+    "question": "How many half steps are there from C to G?",
+    "correctAnswer": "8",
+    "wrongAnswer1": "7",
+    "wrongAnswer2": "9",
+    "wrongAnswer3": "6"
   }
 ]
