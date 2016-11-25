@@ -1,14 +1,16 @@
 [
   {
     "title": "Musical notes and how to find them",
-    "content": "There exist 12 different music notes that repeat over and over in varying pitches. These 12 notes are contained in something known as an \"octave\" within an octave here are the notes that exist."
+    "content": [
+      "There exist 12 different music notes that repeat over and over in varying pitches. These 12 notes are contained in something known as an \"octave\".",
+      "Within an octave here are the notes that exist:\n C\n C#\n D\n D#\n E\n F\n F#\n G\n G#\n A\n A#\n B"
+    ]
   },
   {
     "title": "",
-    "content": "C C# D D# E F F# G G# A A# B"
-  },
-  {
-    "title": "",
-    "content": "You may notice that some notes have a # attached to them. These are known as 'sharp' notes. There are also notes known as flats represented by a stylised lower case b, but just knowning sharps is okay for now. Just know that C# is what we call a \"half step\" up from C and D is a \"full step\" up from C. You may have noticed that B and E do not have sharps. Again, understanding this right now is currently not important but it is important to remember that they do not have sharps. To remember this, try and say to yourself \"Big Elephants don't have sharps\""
+    "content": [
+      "You may notice that some notes have a # attached to them. These are known as 'sharp' notes. There are also notes known as flats represented by a stylised lower case b, but just knowing sharps is okay for now. Just know that C# is what we call a \"half step\" up from C and D is a \"full step\" up from C.",
+      "You may have noticed that B and E do not have sharps. Again, understanding this right now is currently not important but it is important to remember that they do not have sharps. To remember this, try and say to yourself \"Big Elephants don't have sharps\""
+    ]
   }
 ]

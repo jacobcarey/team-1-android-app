@@ -94,11 +94,14 @@ public class ContentActivity extends FragmentActivity implements ContentFragment
 
         for (int i=0; i<jsonArray.length(); i++) {
             String title = jsonArray.getJSONObject(i).getString("title");
-            String content = jsonArray.getJSONObject(i).getString("content");
-
-            ContentFragment fragment = ContentFragment.newInstance(title, content);
-
+            JSONArray contentArray = jsonArray.getJSONObject(i).getJSONArray("content");
+            ContentFragment fragment = ContentFragment.newInstance(title, contentArray.getString(0));
             fList.add(fragment);
+
+            for (int j=1; j<contentArray.length(); j++) {
+                ContentFragment untitledFragment = ContentFragment.newInstance("", contentArray.getString(j));
+                fList.add(untitledFragment);
+            }
         }
 
         return fList;
