@@ -18,7 +18,8 @@
         <activity
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait" />
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".BasicSelectActivity"></activity>
         <activity android:name=".ContentActivity"></activity>
