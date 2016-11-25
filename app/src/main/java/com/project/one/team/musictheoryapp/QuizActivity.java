@@ -29,6 +29,7 @@ public class QuizActivity extends AppCompatActivity {
     private int correctAnswer;
     private List<TextView> answerTextViews;
     private List<String> answers;
+    private Toast wrongAnswerMsg;
 
     public final View.OnClickListener CORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
@@ -40,7 +41,7 @@ public class QuizActivity extends AppCompatActivity {
     public final View.OnClickListener INCORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
+            wrongAnswerMsg.show();
         }
     };
 
@@ -48,6 +49,8 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        wrongAnswerMsg = Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT);
 
         // Enable the back button on the quiz activity
         Button backButton = (Button) findViewById(R.id.backButton);
