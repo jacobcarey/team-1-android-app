@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class BasicSelectActivity extends AppCompatActivity {
 
@@ -40,8 +39,7 @@ public class BasicSelectActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                // TODO: goes to the Settings activity, should go to a new activity
-                Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+                Intent i = new Intent(getApplicationContext(), ContentActivity.class);
                 i.putExtra("topic", topic);
                 startActivity(i);
             }
