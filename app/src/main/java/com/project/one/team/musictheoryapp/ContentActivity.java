@@ -9,6 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
+import com.viewpagerindicator.LinePageIndicator;
+import com.viewpagerindicator.PageIndicator;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -79,6 +82,8 @@ public class ContentActivity extends FragmentActivity implements ContentFragment
                 final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
                 viewPager.setAdapter(pagerAdapter);
 
+                PageIndicator pageIndicator = (LinePageIndicator) findViewById(R.id.contentPageIndicator);
+                pageIndicator.setViewPager(viewPager);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             app:strokeWidth="4dp"
-            app:lineWidth="30dp" />
+            app:lineWidth="30dp"
+            app:selectedColor="?android:colorAccent" />
 
     </LinearLayout>
 
