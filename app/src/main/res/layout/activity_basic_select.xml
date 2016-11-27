@@ -44,7 +44,7 @@
 
                 <TextView
                     android:text="Introduction to Music Theory"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:id="@+id/introTxt"
                     android:textSize="22sp"
                     android:textAlignment="center"
