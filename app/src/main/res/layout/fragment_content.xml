@@ -4,52 +4,60 @@
     android:layout_height="match_parent"
     tools:context="com.project.one.team.musictheoryapp.ContentFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fragmentLayout">
+        android:layout_height="match_parent"
+        android:scrollbarStyle="insideInset"
+        android:fillViewport="true">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="152dp"
-            android:id="@+id/titleLayout"
-            android:weightSum="1">
+            android:layout_height="wrap_content"
+            android:id="@+id/fragmentLayout">
 
-            <TextView
-                android:text="Title"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/titleTextView"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:textColor="@android:color/black"
-                android:layout_weight="10" />
+                android:layout_height="152dp"
+                android:id="@+id/titleLayout"
+                android:weightSum="1">
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/contentLayout"
-            android:weightSum="1">
-
-            <TextView
-                    android:id="@+id/contentTextView"
+                <TextView
+                    android:text="Title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="@string/hello_blank_fragment"
-                    android:layout_margin="10dp"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/black" />
+                    android:id="@+id/titleTextView"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:textSize="22sp"
+                    android:textColor="@android:color/black"
+                    android:layout_weight="10" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/contentLayout"
+                android:weightSum="1">
+
+                <TextView
+                        android:id="@+id/contentTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/hello_blank_fragment"
+                        android:layout_margin="10dp"
+                        android:textSize="18sp"
+                        android:textColor="@android:color/black" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
