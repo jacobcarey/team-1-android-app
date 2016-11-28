@@ -99,12 +99,12 @@
                     android:id="@+id/smpnotelenTxt"
                     android:layout_weight="1"
                     android:textSize="22sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/darker_gray"
                     android:gravity="center"
                     android:layout_marginTop="12dp" />
 
                 <ImageButton
-                    app:srcCompat="@drawable/smpnotelenbtn"
+                    app:srcCompat="@drawable/smpnotelenbtn_grey"
                     android:id="@+id/smpnotelenBtn"
                     android:scaleType="fitXY"
                     android:layout_width="128dp"
@@ -127,13 +127,13 @@
                     android:id="@+id/advnotelenTxt"
                     android:layout_weight="1"
                     android:textSize="22sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/darker_gray"
                     android:gravity="center"
                     android:layout_marginTop="12dp" />
 
                 <ImageButton
                     android:layout_height="128dp"
-                    app:srcCompat="@drawable/advnotelenbtn"
+                    app:srcCompat="@drawable/advnotelenbtn_grey"
                     android:id="@+id/advnotelenBtn"
                     android:scaleType="fitXY"
                     android:background="@android:color/transparent"

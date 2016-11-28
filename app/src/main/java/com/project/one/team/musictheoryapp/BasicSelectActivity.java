@@ -24,14 +24,14 @@ public class BasicSelectActivity extends AppCompatActivity {
         mnotesBtn.setOnClickListener(getListener("mnotes"));
         TextView mnotesTxt = (TextView) findViewById(R.id.mnotesTxt);
         mnotesTxt.setOnClickListener(getListener("mnotes"));
-        ImageButton smpnotelenBtn = (ImageButton) findViewById(R.id.smpnotelenBtn);
-        smpnotelenBtn.setOnClickListener(getListener("smpnotelen"));
-        TextView smpnotelenTxt = (TextView) findViewById(R.id.smpnotelenTxt);
-        smpnotelenTxt.setOnClickListener(getListener("smpnotelen"));
-        ImageButton advnotelenBtn = (ImageButton) findViewById(R.id.advnotelenBtn);
-        advnotelenBtn.setOnClickListener(getListener("advnotelen"));
-        TextView advnotelenTxt = (TextView) findViewById(R.id.advnotelenTxt);
-        advnotelenTxt.setOnClickListener(getListener("advnotelen"));
+//        ImageButton smpnotelenBtn = (ImageButton) findViewById(R.id.smpnotelenBtn);
+//        smpnotelenBtn.setOnClickListener(getListener("smpnotelen"));
+//        TextView smpnotelenTxt = (TextView) findViewById(R.id.smpnotelenTxt);
+//        smpnotelenTxt.setOnClickListener(getListener("smpnotelen"));
+//        ImageButton advnotelenBtn = (ImageButton) findViewById(R.id.advnotelenBtn);
+//        advnotelenBtn.setOnClickListener(getListener("advnotelen"));
+//        TextView advnotelenTxt = (TextView) findViewById(R.id.advnotelenTxt);
+//        advnotelenTxt.setOnClickListener(getListener("advnotelen"));
     }
 
     private View.OnClickListener getListener(final String topic) {
