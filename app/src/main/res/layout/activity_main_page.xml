@@ -34,7 +34,7 @@
         <ImageButton
             android:layout_width="128dp"
             app:srcCompat="@drawable/logo"
-            android:id="@+id/main:Logo"
+            android:id="@+id/main_Logo"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:layout_height="128dp"
@@ -65,7 +65,8 @@
             android:minWidth="266dp"
             android:layout_below="@+id/intermediate"
             android:layout_alignLeft="@+id/intermediate"
-            android:layout_alignStart="@+id/intermediate" />
+            android:layout_alignStart="@+id/intermediate"
+            android:enabled="false" />
 
         <Button
             android:text="INTERMEDIATE"
@@ -75,7 +76,8 @@
             android:minWidth="266dp"
             android:layout_below="@+id/basic"
             android:layout_alignLeft="@+id/basic"
-            android:layout_alignStart="@+id/basic" />
+            android:layout_alignStart="@+id/basic"
+            android:enabled="false" />
     </RelativeLayout>
 
 </LinearLayout>

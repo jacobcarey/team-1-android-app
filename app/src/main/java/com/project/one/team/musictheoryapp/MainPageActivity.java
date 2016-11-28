@@ -47,8 +47,8 @@ public class MainPageActivity extends AppCompatActivity {
         basic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(MainPageActivity.this, Basic.class);
-//                startActivity(i);
+                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
+                startActivity(i);
             }
         });
 
