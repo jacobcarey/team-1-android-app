@@ -109,6 +109,9 @@ public class ContentActivity extends FragmentActivity implements ContentFragment
             }
         }
 
+        // Add the fragment that contains the link to the quiz for this topic section
+        fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra("topic")));
+
         return fList;
     }
 

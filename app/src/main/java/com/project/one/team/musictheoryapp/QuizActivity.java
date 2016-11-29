@@ -21,6 +21,8 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
+    public static final String ARGS_TOPIC = "topic";
+
     public static final int NUMBER_OF_ANSWERS = 4;
     private JSONArray jsonArray;
     private TextView questionTextView;
@@ -81,17 +83,22 @@ public class QuizActivity extends AppCompatActivity {
         answerTextViews.add((TextView) findViewById(R.id.answer4Text));
         answerTextViews = Collections.unmodifiableList(answerTextViews);
 
-        // Read in the json file in and parse it
-        try {
-            InputStream is = getAssets().open("quiz_data.json");
-            int size = is.available();
-            byte[] buff = new byte[size];
-            is.read(buff);
-            is.close();
-            String json = new String(buff, "UTF-8");
-            jsonArray = new JSONArray(json);
-        } catch (IOException | JSONException e) {
-            e.printStackTrace();
+        if (getIntent().hasExtra(ARGS_TOPIC)) {
+            String topic = getIntent().getStringExtra(ARGS_TOPIC);
+            // Read in the json file in and parse it
+            try {
+                InputStream is = getAssets().open(topic + "_quiz.json");
+                int size = is.available();
+                byte[] buff = new byte[size];
+                is.read(buff);
+                is.close();
+                String json = new String(buff, "UTF-8");
+                jsonArray = new JSONArray(json);
+            } catch (IOException | JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            //throw new Exception("Topic info needed");
         }
 
         // Initialise the json key names
