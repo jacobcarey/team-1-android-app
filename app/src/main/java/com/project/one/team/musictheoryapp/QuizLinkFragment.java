@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-
 public class QuizLinkFragment extends Fragment {
     private static final String ARG_TOPIC = "topic";
 

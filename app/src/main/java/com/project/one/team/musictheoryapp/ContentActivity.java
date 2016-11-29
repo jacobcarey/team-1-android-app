@@ -1,6 +1,5 @@
 package com.project.one.team.musictheoryapp;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -20,7 +19,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ContentActivity extends FragmentActivity implements ContentFragment.OnFragmentInteractionListener {
+public class ContentActivity extends FragmentActivity {
 
     private JSONArray jsonArray;
     private TextView titleTextView;
@@ -115,8 +114,4 @@ public class ContentActivity extends FragmentActivity implements ContentFragment
         return fList;
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-        // TODO: ?
-    }
 }
