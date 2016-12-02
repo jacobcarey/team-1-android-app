@@ -20,3 +20,8 @@ Later:
    - procedural
  - other quiz stuff
    - minigames
+ - account management
+ - achievements
+   - PUNS
+ - sheet music
+ - easter eggs
