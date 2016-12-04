@@ -1,5 +1,7 @@
 package com.project.one.team.musictheoryapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -94,11 +96,30 @@ public class QuizActivity extends AppCompatActivity {
                 is.close();
                 String json = new String(buff, "UTF-8");
                 jsonArray = new JSONArray(json);
+                numberOfQuestions = jsonArray.length();
             } catch (IOException | JSONException e) {
-                e.printStackTrace();
+                new AlertDialog.Builder(this)
+                        .setTitle("Error:")
+                        .setMessage(e.toString())
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                        .show();
             }
         } else {
-            //throw new Exception("Topic info needed");
+            new AlertDialog.Builder(this)
+                    .setTitle("Error:")
+                    .setMessage("Quiz activity started without a topic argument.")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
         }
 
         // Initialise the json key names
@@ -106,8 +127,7 @@ public class QuizActivity extends AppCompatActivity {
         answers = Arrays.asList(temp);
 
         // Show the first question
-        numberOfQuestions = jsonArray.length();
-        nextQuestion();
+        if (jsonArray != null) nextQuestion();
     }
 
     public void nextQuestion() {
@@ -131,7 +151,16 @@ public class QuizActivity extends AppCompatActivity {
             // TODO: just loops for now
             if (index == numberOfQuestions) index = 0;
         } catch (JSONException e) {
-            e.printStackTrace();
+            new AlertDialog.Builder(this)
+                    .setTitle("Error:")
+                    .setMessage(e.toString())
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    })
+                    .show();
         }
     }
 }
