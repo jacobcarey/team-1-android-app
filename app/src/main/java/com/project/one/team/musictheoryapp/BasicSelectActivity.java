@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 public class BasicSelectActivity extends AppCompatActivity {
 
+    public static final String EXTRA_TOPIC = "topic";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,7 @@ public class BasicSelectActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), ContentActivity.class);
-                i.putExtra("topic", topic);
+                i.putExtra(EXTRA_TOPIC, topic);
                 startActivity(i);
             }
         };

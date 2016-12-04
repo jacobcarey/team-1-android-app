@@ -23,8 +23,6 @@ public class ContentActivity extends FragmentActivity {
 
     private JSONArray jsonArray;
     private TextView titleTextView;
-    private List<TextView> contentTextViews;
-    private View selectedView;
     private PagerAdapter pagerAdapter;
 
     @Override
@@ -55,7 +53,6 @@ public class ContentActivity extends FragmentActivity {
         */
 
         titleTextView = (TextView) findViewById(R.id.titleTextView);
-        contentTextViews = new ArrayList<>();
 
         String contentFile;
         if (getIntent().hasExtra("topic")) {

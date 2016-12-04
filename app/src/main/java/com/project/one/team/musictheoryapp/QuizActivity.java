@@ -23,7 +23,7 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
-    public static final String ARGS_TOPIC = "topic";
+    public static final String EXTRA_TOPIC = "topic";
 
     public static final int NUMBER_OF_ANSWERS = 4;
     private JSONArray jsonArray;
@@ -78,15 +78,15 @@ public class QuizActivity extends AppCompatActivity {
 
         // Get all references to the text fields
         questionTextView = (TextView) findViewById(R.id.questionText);
-        answerTextViews = new ArrayList<TextView>();
-        answerTextViews.add((TextView) findViewById(R.id.answer1Text));
-        answerTextViews.add((TextView) findViewById(R.id.answer2Text));
-        answerTextViews.add((TextView) findViewById(R.id.answer3Text));
-        answerTextViews.add((TextView) findViewById(R.id.answer4Text));
-        answerTextViews = Collections.unmodifiableList(answerTextViews);
+        answerTextViews = Collections.unmodifiableList(Arrays.asList(
+                (TextView) findViewById(R.id.answer1Text),
+                (TextView) findViewById(R.id.answer2Text),
+                (TextView) findViewById(R.id.answer3Text),
+                (TextView) findViewById(R.id.answer4Text)
+        ));
 
-        if (getIntent().hasExtra(ARGS_TOPIC)) {
-            String topic = getIntent().getStringExtra(ARGS_TOPIC);
+        if (getIntent().hasExtra(EXTRA_TOPIC)) {
+            String topic = getIntent().getStringExtra(EXTRA_TOPIC);
             // Read in the json file in and parse it
             try {
                 InputStream is = getAssets().open(topic + "_quiz.json");

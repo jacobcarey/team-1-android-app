@@ -35,7 +35,7 @@ public class QuizLinkFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), QuizActivity.class);
-                i.putExtra(QuizActivity.ARGS_TOPIC, topic);
+                i.putExtra(QuizActivity.EXTRA_TOPIC, topic);
                 startActivity(i);
             }
         });
