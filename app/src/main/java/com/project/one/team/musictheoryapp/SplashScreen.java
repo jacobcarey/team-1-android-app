@@ -21,7 +21,7 @@ public class SplashScreen extends Activity {
             public void run(){
                 try
                 {
-                    sleep(3000);
+                    sleep(3000); //Duration of splash screen
                 }
                 catch (InterruptedException e)
                 {
@@ -37,6 +37,7 @@ public class SplashScreen extends Activity {
         timerThread.start();
     }
 
+    //Destroys activity so users can't access the splash screen by pressing the back button
     @Override
     protected void onPause()
     {

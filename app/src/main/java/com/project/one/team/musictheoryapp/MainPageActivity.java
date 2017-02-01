@@ -19,8 +19,9 @@ public class MainPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-        setTitle("Main Page");
 
+        //Hide the action/title bar
+        getSupportActionBar().hide();
 
 //        Settings
         ImageButton settingsCog = (ImageButton) findViewById(R.id.settingsCog);
