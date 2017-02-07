@@ -16,8 +16,9 @@
         android:layout_height="match_parent"
         android:scrollbarStyle="insideInset"
         android:fillViewport="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:orientation="vertical"
@@ -26,10 +27,11 @@
             android:id="@+id/selectLayout">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:weightSum="1"
                 android:id="@+id/introLayout"
-                android:layout_height="152dp">
+                android:layout_height="152dp"
+                android:background="@drawable/can_select_background">
 
                 <ImageButton
                     android:layout_width="128dp"
@@ -39,18 +41,20 @@
                     android:background="@android:color/transparent"
                     android:layout_height="128dp"
                     android:cropToPadding="false"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
                 <TextView
-                    android:text="Introduction to Music Theory"
-                    android:layout_width="match_parent"
+                    android:text="Introduction to \nMusic Theory"
+                    android:layout_width="255dp"
                     android:id="@+id/introTxt"
                     android:textSize="22sp"
                     android:textAlignment="center"
                     android:layout_height="128dp"
                     android:gravity="center"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
 
             </LinearLayout>
@@ -60,17 +64,20 @@
                 android:layout_width="match_parent"
                 android:weightSum="1"
                 android:layout_height="152dp"
-                android:id="@+id/mnotesLayout">
+                android:id="@+id/mnotesLayout"
+                android:background="@drawable/can_select_background"
+                android:clickable="true">
 
                 <ImageButton
                     android:layout_width="128dp"
                     android:layout_height="128dp"
-                    app:srcCompat="@drawable/mnotesbtn"
-                    android:id="@+id/mnotesbtn"
+                    app:srcCompat="@drawable/keyboardbtn"
+                    android:id="@+id/mnotesBtn"
                     android:layout_weight="0.00"
                     android:background="@android:color/transparent"
                     android:scaleType="fitXY"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
                 <TextView
                     android:text="Musical Notes"
@@ -80,7 +87,8 @@
                     android:textSize="22sp"
                     android:textColor="@android:color/black"
                     android:gravity="center"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
             </LinearLayout>
 
@@ -89,7 +97,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0.00"
-                android:id="@+id/smpnotelenLayout">
+                android:id="@+id/smpnotelenLayout"
+                android:background="@drawable/can_select_background"
+                android:clickable="true">
 
                 <TextView
                     android:text="Simple Note Lengths"
@@ -98,18 +108,20 @@
                     android:id="@+id/smpnotelenTxt"
                     android:layout_weight="1"
                     android:textSize="22sp"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@android:color/black"
                     android:gravity="center"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
                 <ImageButton
-                    app:srcCompat="@drawable/smpnotelenbtn_grey"
+                    app:srcCompat="@drawable/smpnotelenbtn"
                     android:id="@+id/smpnotelenBtn"
                     android:scaleType="fitXY"
                     android:layout_width="128dp"
                     android:layout_height="128dp"
                     android:background="@android:color/transparent"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
             </LinearLayout>
 
@@ -117,7 +129,9 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="152dp"
-                android:id="@+id/advnotelenLayout">
+                android:id="@+id/advnotelenLayout"
+                android:background="@drawable/can_select_background"
+                android:clickable="true">
 
                 <TextView
                     android:text="Advanced Note Lengths"
@@ -126,18 +140,20 @@
                     android:id="@+id/advnotelenTxt"
                     android:layout_weight="1"
                     android:textSize="22sp"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@android:color/black"
                     android:gravity="center"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
 
                 <ImageButton
                     android:layout_height="128dp"
-                    app:srcCompat="@drawable/advnotelenbtn_grey"
+                    app:srcCompat="@drawable/advnotelenbtn"
                     android:id="@+id/advnotelenBtn"
                     android:scaleType="fitXY"
                     android:background="@android:color/transparent"
                     android:layout_width="128dp"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:duplicateParentState="true" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
