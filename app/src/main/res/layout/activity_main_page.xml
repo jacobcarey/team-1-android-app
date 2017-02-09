@@ -24,6 +24,17 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="19dp" />
+
+        <Button
+            android:text="PR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -57,7 +68,8 @@
             android:minWidth="266dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:hapticFeedbackEnabled="false" />
+            android:hapticFeedbackEnabled="false"
+            android:textStyle="normal|bold" />
 
         <Button
             android:text="ADVANCED"
@@ -68,7 +80,8 @@
             android:layout_below="@+id/intermediate"
             android:layout_alignLeft="@+id/intermediate"
             android:layout_alignStart="@+id/intermediate"
-            android:enabled="false" />
+            android:enabled="false"
+            android:textStyle="normal|bold" />
 
         <Button
             android:text="INTERMEDIATE"
@@ -79,7 +92,8 @@
             android:enabled="false"
             android:layout_below="@+id/basic"
             android:layout_alignLeft="@+id/basic"
-            android:layout_alignStart="@+id/basic" />
+            android:layout_alignStart="@+id/basic"
+            android:textStyle="normal|bold" />
     </RelativeLayout>
 
 </LinearLayout>

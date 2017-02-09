@@ -33,6 +33,18 @@ public class MainPageActivity extends AppCompatActivity {
             }
         });
 
+//        Piano Roll button. To be changed!
+        Button pianoRoll = (Button) findViewById(R.id.basic);
+        pianoRoll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainPageActivity.this, PianoRollActivity.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_right,
+                        R.anim.slide_left_out);
+            }
+        });
+
 //        Credits, when logo is pressed.
         ImageButton logo = (ImageButton) findViewById(R.id.main_Logo);
         logo.setOnClickListener(new View.OnClickListener() {
