@@ -61,4 +61,10 @@ public class BasicSelectActivity extends AppCompatActivity {
             }
         };
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_right_out);
+    }
 }

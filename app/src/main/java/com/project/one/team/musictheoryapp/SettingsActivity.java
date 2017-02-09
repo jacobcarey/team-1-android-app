@@ -19,4 +19,10 @@ public class SettingsActivity extends AppCompatActivity {
             testTextView.setText("No extra provided...");
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_right, R.anim.slide_left_out);
+    }
 }
