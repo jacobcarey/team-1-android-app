@@ -1,20 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="TextView"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2"
-        tools:text="Here go the settings" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3"
-        tools:text="Here go the credits!" />
+        <TextView
+            android:text="Other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="312dp"
+            tools:layout_editor_absoluteX="96dp"
+            android:id="@+id/textView3" />
+
+        <TextView
+            android:text="Colour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="232dp"
+            tools:layout_editor_absoluteX="96dp"
+            android:id="@+id/textView11" />
+
+        <TextView
+            android:text="Bold Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="149dp"
+            tools:layout_editor_absoluteX="96dp"
+            android:id="@+id/textView10" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="133dp"
+            tools:layout_editor_absoluteX="195dp"
+            android:id="@+id/toggleButton2" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="301dp"
+            tools:layout_editor_absoluteX="195dp"
+            android:id="@+id/toggleButton3" />
+
+        <ToggleButton
+            android:text="ToggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteY="216dp"
+            tools:layout_editor_absoluteX="195dp"
+            android:id="@+id/toggleButton4" />
+    </android.support.constraint.ConstraintLayout>
 </LinearLayout>
