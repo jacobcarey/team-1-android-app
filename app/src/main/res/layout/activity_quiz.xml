@@ -1,128 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:text="Back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/backButton" />
-
-        <Button
-            android:text="Settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/quizSettingsButton"
-            android:layout_row="0"
-            android:layout_column="18" />
-
-    </GridLayout>
+    android:layout_height="match_parent"
+    android:background="@drawable/quiz_background"
+    >
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Question"
-            android:layout_width="wrap_content"
+            android:text="Marks: 0"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:id="@+id/questionText"
-            android:textSize="22sp"
-            android:textColor="@android:color/black" />
+            android:id="@+id/marks"
+            android:gravity="right"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            />
 
         <TextView
-            android:text="Answer 1"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="80dp"
-            android:id="@+id/answer1Text"
-            android:background="@drawable/border"
-            android:layout_below="@+id/questionText"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_height="50dp"
+            android:text="Question 1 of 3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/processText"
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:clickable="false" />
+            android:layout_below="@+id/marks"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:text="Answer 2"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/answer1Text"
-            android:layout_alignLeft="@+id/answer1Text"
-            android:layout_alignStart="@+id/answer1Text"
-            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
             android:id="@+id/answer2Text"
             android:background="@drawable/border"
-            android:padding="5dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_height="50dp"
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginRight="10dp" />
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@+id/answer1Text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            />
 
         <TextView
             android:text="Answer 3"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/answer2Text"
-            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
             android:id="@+id/answer3Text"
-            android:layout_alignLeft="@+id/answer2Text"
-            android:layout_alignStart="@+id/answer2Text"
             android:background="@drawable/border"
-            android:padding="5dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_height="50dp"
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginRight="10dp" />
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@+id/answer2Text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:text="Answer 4"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/answer3Text"
-            android:layout_marginTop="10dp"
+            android:layout_width="100dp"
             android:id="@+id/answer4Text"
-            android:layout_alignLeft="@+id/answer3Text"
             android:background="@drawable/border"
-            android:padding="5dp"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_height="50dp"
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginRight="10dp" />
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@+id/answer3Text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="Answer 1"
+            android:layout_width="100dp"
+            android:id="@+id/answer1Text"
+            android:background="@drawable/border"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="54dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/questionText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <ProgressBar
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:id="@+id/progressBar"
+            android:progress="0"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/progressBar"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:progress="90" />
+            android:layout_below="@+id/processText" />
 
+        <TextView
+            android:text="Question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/questionText"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/progressBar"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:text="Return To Main Menu"
+            android:layout_width="100dp"
+            android:id="@+id/returnText"
+            android:background="@drawable/border"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@+id/answer2Text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:text="Try It Again"
+            android:layout_width="100dp"
+            android:id="@+id/retryText"
+            android:background="@drawable/border"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_alignTop="@+id/answer1Text"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/star_img"
+            android:id="@+id/star2"
+            android:layout_below="@+id/questionText"
+            android:gravity="center"
+            android:layout_marginLeft="110dp"
+            android:layout_above="@+id/answer3Text"
+            android:layout_marginBottom="30dp"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/star_img"
+            android:id="@+id/star1"
+            android:layout_below="@+id/questionText"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_above="@+id/answer3Text"
+            android:layout_marginBottom="40dp"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/star_img"
+            android:id="@+id/star3"
+            android:layout_below="@+id/questionText"
+            android:gravity="center"
+            android:layout_marginLeft="200dp"
+            android:layout_above="@+id/answer3Text"
+            android:layout_marginBottom="40dp"
+            android:visibility="invisible"
+            />
     </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp">
+    </GridLayout>
+
 
 </LinearLayout>
