@@ -10,14 +10,6 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
-        TextView testTextView = (TextView) findViewById(R.id.textView2);
-
-        if (getIntent().hasExtra("topic")) {
-            testTextView.setText(getIntent().getStringExtra("topic"));
-        } else {
-            testTextView.setText("No extra provided...");
-        }
     }
 
     @Override
