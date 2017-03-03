@@ -36,7 +36,7 @@ public class MainPageActivity extends AppCompatActivity {
         });
 
 //        Piano Roll button. To be changed!
-        Button pianoRoll = (Button) findViewById(R.id.basic);
+        ImageButton pianoRoll = (ImageButton) findViewById(R.id.pianoRollBtn);
         pianoRoll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,7 +65,7 @@ public class MainPageActivity extends AppCompatActivity {
         basic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
+                Intent i = new Intent(MainPageActivity.this, BasicSelectActivityV2.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_right,
                         R.anim.slide_left_out);
@@ -78,10 +78,10 @@ public class MainPageActivity extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent i = new Intent(MainPageActivity.this, IntermediateActivity.class);
-//                startActivity(i);
-//                overridePendingTransition(R.anim.slide_right,
-//                        R.anim.slide_left_out);
+                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_right,
+                        R.anim.slide_left_out);
             }
         });
 

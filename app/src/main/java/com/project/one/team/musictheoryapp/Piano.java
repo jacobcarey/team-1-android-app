@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.media.MediaPlayer;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,6 +30,8 @@ public class Piano extends View {
     int octaves = 2;
     int octaveWidth;
 
+    MediaPlayer mediaPlayer;
+
     ArrayList<PianoKey> whiteKeys = new ArrayList<>();
     ArrayList<PianoKey> blackKeys = new ArrayList<>();
 
@@ -51,14 +54,18 @@ public class Piano extends View {
         blackkey = Bitmap.createScaledBitmap(blackkey, BLACK_KEY_WIDTH, screenHeight/2, false);
 
         octaveWidth = 7 * WHITE_KEY_WIDTH;
-        octaves = (screenWidth / octaveWidth) + 1;
+        //octaves = (screenWidth / octaveWidth) + 1;
 
-        for(int o = 0; o < octaves; o++)
+        int startOctave = 3;
+        int endOctave = 5; //Magic numbers :^)
+        octaves = endOctave - startOctave;
+
+        for(int o = startOctave; o < endOctave; o++)
         {
             for(int i = 0; i < 7; i++)
             {
                 whiteKeys.add(new PianoKey(
-                        (i * WHITE_KEY_WIDTH) + (o * octaveWidth),                      //Posx
+                        (i * WHITE_KEY_WIDTH) + ((o - startOctave) * octaveWidth),      //Posx (a bit gory while I haven't got sounds for all octaves
                         0,                                                              //Posy
                         WHITE_KEY_WIDTH,                                                //Width
                         screenHeight,                                                   //Height
@@ -67,7 +74,7 @@ public class Piano extends View {
 
                 if (i == 0 || i == 3) continue;
                 blackKeys.add(new PianoKey(
-                        (i * WHITE_KEY_WIDTH) - (BLACK_KEY_WIDTH / 2) + (o * octaveWidth),
+                        (i * WHITE_KEY_WIDTH) - (BLACK_KEY_WIDTH / 2) + ((o - startOctave) * octaveWidth),
                         0,
                         BLACK_KEY_WIDTH,
                         screenHeight / 2,
@@ -97,31 +104,36 @@ public class Piano extends View {
         {
             case MotionEvent.ACTION_DOWN:
             {
-                int touchedKey = -1;
+                String touchedKeyName = "";
                 //Give priority to black keys
                 for(int i = 0; i < blackKeys.size(); i++)
                 {
                     if(blackKeys.get(i).pointIsOnKey(event.getX(), event.getY()))
                     {
-                        touchedKey = i;
+                        touchedKeyName = blackKeys.get(i).getKeyName();
                         blackKeys.get(i).setKeyPressed(true);
                         Toast.makeText(getContext(), "Key pressed: " + blackKeys.get(i).getKeyName(), Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
                 //If a black key hasn't been touched
-                if(touchedKey < 0)
+                if(touchedKeyName == "")
                 {
                     for(int i = 0; i < whiteKeys.size(); i++)
                     {
                         if(whiteKeys.get(i).pointIsOnKey(event.getX(), event.getY()))
                         {
-                            touchedKey = i;
+                            touchedKeyName = whiteKeys.get(i).getKeyName();
                             whiteKeys.get(i).setKeyPressed(true);
                             Toast.makeText(getContext(), "Key pressed: " + whiteKeys.get(i).getKeyName(), Toast.LENGTH_SHORT).show();
                             break;
                         }
                     }
+                }
+                if(touchedKeyName != "")
+                {
+                    mediaPlayer = MediaPlayer.create(getContext(), getResources().getIdentifier(touchedKeyName, "raw", getContext().getPackageName()));
+                    mediaPlayer.start();
                 }
             }
         }
@@ -136,19 +148,19 @@ public class Piano extends View {
                 switch (index)
                 {
                     case 0:
-                        return "C";
+                        return "c";
                     case 1:
-                        return "D";
+                        return "d";
                     case 2:
-                        return "E";
+                        return "e";
                     case 3:
-                        return "F";
+                        return "f";
                     case 4:
-                        return "G";
+                        return "g";
                     case 5:
-                        return "A";
+                        return "a";
                     case 6:
-                        return "B";
+                        return "b";
                     default:
                         return "Invalid index";
                 }
@@ -156,15 +168,15 @@ public class Piano extends View {
                 switch (index)
                 {
                     case 1:
-                        return "C#";
+                        return "cs";
                     case 2:
-                        return "D#";
+                        return "ds";
                     case 4:
-                        return "F#";
+                        return "fs";
                     case 5:
-                        return "G#";
+                        return "gs";
                     case 6:
-                        return "A#";
+                        return "as";
                     default:
                         return "Invalid index";
                 }
