@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@drawable/main_screen_bg_gradient">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,27 +15,36 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:srcCompat="@drawable/cog"
+            app:srcCompat="@drawable/piano_roll_btn"
+            android:id="@+id/pianoRollBtn"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/settingsCog"
+            android:layout_marginLeft="239dp"
+            android:layout_marginStart="239dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/settingsCog"
+            android:layout_toRightOf="@+id/settingsCog" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:srcCompat="@drawable/settings_cog"
             android:id="@+id/settingsCog"
             android:scaleType="centerCrop"
             android:background="@android:color/transparent"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="19dp" />
+            android:layout_marginTop="10dp" />
 
-        <Button
-            android:text="PR"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="11dp"
-            android:layout_marginEnd="11dp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -43,57 +53,62 @@
         android:layout_weight="0.40">
 
         <ImageButton
-            android:layout_width="150dp"
-            app:srcCompat="@drawable/logo"
+            android:layout_width="75dp"
+            app:srcCompat="@drawable/logo_symbol"
             android:id="@+id/main_Logo"
             android:scaleType="fitXY"
             android:background="@android:color/transparent"
             android:cropToPadding="false"
+            android:layout_height="150dp"
             android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_height="150dp" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="140dp"
+            android:layout_marginEnd="140dp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="224dp"
-        android:paddingTop="50dp">
+        android:paddingTop="70dp"
+        android:layout_weight="0.36">
 
         <Button
             android:text="BASIC"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
             android:id="@+id/basic"
-            android:minWidth="266dp"
-            android:layout_alignParentTop="true"
+            android:minWidth="220dp"
             android:layout_centerHorizontal="true"
             android:hapticFeedbackEnabled="false"
-            android:textStyle="normal|bold" />
+            android:fontFamily="sans-serif-medium"
+            android:background="@drawable/main_screen_button"
+            android:textSize="14sp"
+            android:layout_height="40dp" />
 
         <Button
             android:text="ADVANCED"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:id="@+id/advanced"
-            android:minWidth="266dp"
+            android:minWidth="220dp"
             android:layout_below="@+id/intermediate"
             android:layout_alignLeft="@+id/intermediate"
             android:layout_alignStart="@+id/intermediate"
-            android:enabled="false"
-            android:textStyle="normal|bold" />
+            android:background="@drawable/main_screen_button"
+            android:layout_marginTop="20dp" />
 
         <Button
             android:text="INTERMEDIATE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:id="@+id/intermediate"
-            android:minWidth="266dp"
-            android:enabled="false"
+            android:minWidth="220dp"
             android:layout_below="@+id/basic"
             android:layout_alignLeft="@+id/basic"
             android:layout_alignStart="@+id/basic"
-            android:textStyle="normal|bold" />
+            android:background="@drawable/main_screen_button"
+            android:layout_marginTop="20dp" />
     </RelativeLayout>
 
 </LinearLayout>
