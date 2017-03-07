@@ -19,9 +19,5 @@ public class PianoRollActivity extends Activity {
         super.onCreate(savedInstanceState);
         Piano piano = new Piano(this);
         setContentView(piano);
-//        LinearLayout l = new LinearLayout(this);
-//        l.setOrientation(LinearLayout.HORIZONTAL);
-//        l.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-//        l.addView(piano);
     }
 }

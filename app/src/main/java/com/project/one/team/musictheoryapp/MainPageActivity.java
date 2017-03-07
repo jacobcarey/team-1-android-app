@@ -1,6 +1,7 @@
 package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,6 +19,7 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
         getSupportActionBar().hide();
 
@@ -34,7 +36,7 @@ public class MainPageActivity extends AppCompatActivity {
         });
 
 //        Piano Roll button. To be changed!
-        Button pianoRoll = (Button) findViewById(R.id.basic);
+        ImageButton pianoRoll = (ImageButton) findViewById(R.id.pianoRollBtn);
         pianoRoll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +61,21 @@ public class MainPageActivity extends AppCompatActivity {
 
 //        Basic.
         Button basic = (Button) findViewById(R.id.basic);
+        basic.setTypeface(kozukaTF);
         basic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainPageActivity.this, BasicSelectActivityV2.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_right,
+                        R.anim.slide_left_out);
+            }
+        });
+
+//        Intermediate.
+        Button intermediate = (Button) findViewById(R.id.intermediate);
+        intermediate.setTypeface(kozukaTF);
+        intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
@@ -69,20 +85,9 @@ public class MainPageActivity extends AppCompatActivity {
             }
         });
 
-//        Intermediate.
-        Button intermediate = (Button) findViewById(R.id.intermediate);
-        intermediate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent i = new Intent(MainPageActivity.this, IntermediateActivity.class);
-//                startActivity(i);
-//                overridePendingTransition(R.anim.slide_right,
-//                        R.anim.slide_left_out);
-            }
-        });
-
 //        Advanced.
         Button advanced = (Button) findViewById(R.id.advanced);
+        advanced.setTypeface(kozukaTF);
         advanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
