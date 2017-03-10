@@ -66,14 +66,14 @@
             android:text="ToggleButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/toggleButton4"
+            android:id="@+id/nightModeToggle"
             android:layout_alignBaseline="@+id/textView11"
             android:layout_alignBottom="@+id/textView11"
             android:layout_alignLeft="@+id/toggleButton3"
             android:layout_alignStart="@+id/toggleButton3" />
 
         <TextView
-            android:text="Other"
+            android:text="Night Mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="37dp"

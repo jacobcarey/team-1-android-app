@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/can_select_gradient_down">
+    android:background="@color/colorPrimaryDark">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="@drawable/select_activity_header_bg"
+        android:background="@drawable/main_screen_bg_gradient"
         android:gravity="center"
         android:id="@+id/headerLL"
         android:layout_height="120dp">

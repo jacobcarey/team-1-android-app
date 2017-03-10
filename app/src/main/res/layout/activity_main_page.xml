@@ -84,7 +84,8 @@
             android:fontFamily="sans-serif-medium"
             android:background="@drawable/main_screen_button"
             android:textSize="14sp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:textColor="@color/colorTextPrimary" />
 
         <Button
             android:text="ADVANCED"
@@ -96,7 +97,8 @@
             android:layout_alignLeft="@+id/intermediate"
             android:layout_alignStart="@+id/intermediate"
             android:background="@drawable/main_screen_button"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorTextPrimary" />
 
         <Button
             android:text="INTERMEDIATE"
@@ -108,7 +110,22 @@
             android:layout_alignLeft="@+id/basic"
             android:layout_alignStart="@+id/basic"
             android:background="@drawable/main_screen_button"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorTextPrimary" />
+
     </RelativeLayout>
+
+    <ImageButton
+        app:srcCompat="@drawable/night_mode_crescent"
+        android:id="@+id/nightModeButton"
+        android:layout_weight="0.06"
+        android:layout_alignTop="@+id/advanced"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/night_mode_crescent"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_width="64px"
+        android:layout_height="64px" />
 
 </LinearLayout>

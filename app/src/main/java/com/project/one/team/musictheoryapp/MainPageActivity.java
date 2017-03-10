@@ -2,9 +2,13 @@ package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -14,6 +18,7 @@ import android.widget.ImageButton;
 
 public class MainPageActivity extends AppCompatActivity {
 
+    private boolean useNightMode = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +28,23 @@ public class MainPageActivity extends AppCompatActivity {
         //Hide the action/title bar
         getSupportActionBar().hide();
 
+//        Night Mode Button
+        final ImageButton nmButton = (ImageButton) findViewById(R.id.nightModeButton);
+        nmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    AppCompatDelegate.setDefaultNightMode(
+                            AppCompatDelegate.MODE_NIGHT_YES);
+                recreate();
+            }
+        });
+
 //        Settings
         ImageButton settingsCog = (ImageButton) findViewById(R.id.settingsCog);
         settingsCog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainPageActivity.this, SettingsActivity.class);
+                Intent i = new Intent(MainPageActivity.this, SettingsActivity.class); //Can use SettingsPreferenceActivity if we get it working
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_left,
                         R.anim.slide_right_out);
@@ -67,8 +83,8 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(MainPageActivity.this, BasicSelectActivityV2.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.slide_right,
-                        R.anim.slide_left_out);
+                overridePendingTransition(R.anim.slide_up,
+                        R.anim.slide_up_out);
             }
         });
 

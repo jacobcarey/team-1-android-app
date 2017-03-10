@@ -2,9 +2,11 @@ package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,13 +28,19 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_select_v2);
-        setTitle("Basic Topic Selection");
         getSupportActionBar().hide();
+
+        Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
+
+        TextView header = (TextView) findViewById(getResources().getIdentifier("headerText", "id", getPackageName()));
+        //header.setTypeface(kozukaTF);
 
         for(int i = 0; i < Topics.length; i++)
         {
             LinearLayout l = (LinearLayout) findViewById(getResources().getIdentifier(Topics[i] + "Layout", "id", getPackageName()));
             ImageButton b = (ImageButton) findViewById(getResources().getIdentifier(Topics[i] + "Btn", "id", getPackageName()));
+            TextView t = (TextView) findViewById(getResources().getIdentifier(Topics[i] + "Txt", "id", getPackageName()));
+            //t.setTypeface(kozukaTF);
             if(i <= TOPIC_REACHED)
             {
                 l.setOnClickListener(getListener(Topics[i]));
@@ -41,10 +49,17 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
             else
             {
                 //If the topic has not been reached (and therefore cannot be accessed)
-                //TextView t = (TextView) findViewById(getResources().getIdentifier(Topics[i] + "Txt", "id", getPackageName()));
                 //t.setTextColor(Color.parseColor(GREY_OUT_COLOUR));
             }
         }
+
+        final ImageView headerLogo = (ImageView) findViewById(R.id.headerLogo);
+        headerLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private View.OnClickListener getListener(final String topic) {
@@ -62,6 +77,6 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.slide_left, R.anim.slide_right_out);
+        overridePendingTransition(R.anim.slide_down, R.anim.slide_down_out);
     }
 }

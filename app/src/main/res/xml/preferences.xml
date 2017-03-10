@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="Enable Night Mode"
+        android:summary="Uses softer colours for easier use at night"
+        android:defaultValue="false" />
+</PreferenceScreen>

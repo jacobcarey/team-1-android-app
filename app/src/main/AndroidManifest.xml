@@ -38,6 +38,11 @@
         <activity android:name=".BasicSelectActivityV2"></activity>
         <activity android:name=".ContentActivity"></activity>
         <activity android:name=".CreditsActivity"></activity>
+
+        <activity android:name=".SettingsPreferenceActivity"
+                    android:label="Preferences">
+
+    </activity>
     </application>
 
 </manifest>

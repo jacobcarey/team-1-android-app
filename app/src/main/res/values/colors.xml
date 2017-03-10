@@ -4,4 +4,9 @@
     <color name="colorPrimaryLight">#00D8FF</color>
     <color name="colorPrimaryDark">#00b4d6</color>
     <color name="colorAccent">#FF0161</color>
+
+    <color name="colorTextPrimary">#000000</color>
+
+    <color name="colorMainScreenGradientStart">#00D7FF</color>
+    <color name="colorMainScreenGradientEnd">#009DBB</color>
 </resources>
