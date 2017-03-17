@@ -29,7 +29,9 @@ public class QuizActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
 
-    public static final int NUMBER_OF_ANSWERS = 4;
+    //public static final int NUMBER_OF_ANSWERS = 4;
+    private static final int MULTI_CHOICE_ANSWERS = 4;
+    private static final int TRUE_FALSE_ANSWERS = 2;
     private JSONArray jsonArray;
     private String topic;
     private TextView questionTextView;
@@ -144,6 +146,14 @@ public class QuizActivity extends AppCompatActivity {
         if (jsonArray != null) nextQuestion();
     }
 
+    /**
+     * Displays next question, or end result screen if no more questions.
+     *
+     * Modified to accept True/False type questions as well as 4-answer Multiple Choice type
+     * questions. Checking the length of the JSON object to determine this. (If length is 3, then assume
+     * True/False question as 1 question element + 2 answer elements.) Question types can be combined
+     * in JSON file.
+     */
     public void nextQuestion() {
         findViewById(R.id.answer1Text).setBackgroundColor(Color.LTGRAY);
         findViewById(R.id.answer2Text).setBackgroundColor(Color.LTGRAY);
@@ -207,28 +217,54 @@ public class QuizActivity extends AppCompatActivity {
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
                 }
             }else if(index < numberOfQuestions){
-                ((TextView)findViewById(R.id.processText)).setText("Question "+(index+1)+" of "+numberOfQuestions);
-                Collections.shuffle(answers);
-                correctAnswer = answers.indexOf("correctAnswer");
-
                 // Get the next question, show it on screen
                 JSONObject jsonObject = jsonArray.getJSONObject(index);
+                int numberOfAnswers = jsonObject.length(); // 5 for 4 answers + question, 3 for for 2 answers + question.
+
+                // Create temp array as a quiz may have both true/false and multi choice questions:
+                List<String> tempAnswers = new ArrayList<>(answers);
+
+                // If this is a true/false question, remove the last two answers.
+                if (numberOfAnswers == TRUE_FALSE_ANSWERS + 1) {
+                    tempAnswers.remove(3);
+                    tempAnswers.remove(2);
+                } else if (numberOfAnswers == MULTI_CHOICE_ANSWERS + 1) {
+                    Collections.shuffle(tempAnswers); // Only shuffle if it's multiple choice.
+                }
+
+                ((TextView)findViewById(R.id.processText)).setText("Question "+(index+1)+" of "+numberOfQuestions);
+                correctAnswer = tempAnswers.indexOf("correctAnswer");
+
                 questionTextView.setText((CharSequence) jsonObject.get("question"));
-                for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
-                    answerTextViews.get(i).setText((CharSequence) jsonObject.get(answers.get(i)));
+                //for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
+                for (int i = 0; i<numberOfAnswers - 1; i++)
+                    answerTextViews.get(i).setText((CharSequence) jsonObject.get(tempAnswers.get(i)));
 
                 // Set the click actions for the answers
-                for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
-                answerTextViews.get(i).setOnClickListener(INCORRECT_ANSWER_CLICK);
+                //for (int i = 0; i<NUMBER_OF_ANSWERS; i++)
+                for (int i = 0; i<numberOfAnswers - 1; i++)
+                    answerTextViews.get(i).setOnClickListener(INCORRECT_ANSWER_CLICK);
 
                 answerTextViews.get(correctAnswer).setOnClickListener(CORRECT_ANSWER_CLICK);
 
                 index += 1;
 
+                findViewById(R.id.answer1Text).setVisibility(View.VISIBLE);
+                findViewById(R.id.answer2Text).setVisibility(View.VISIBLE);
                 findViewById(R.id.answer1Text).setClickable(true);
                 findViewById(R.id.answer2Text).setClickable(true);
-                findViewById(R.id.answer3Text).setClickable(true);
-                findViewById(R.id.answer4Text).setClickable(true);
+
+                if (numberOfAnswers == MULTI_CHOICE_ANSWERS + 1) {
+                    findViewById(R.id.answer3Text).setVisibility(View.VISIBLE);
+                    findViewById(R.id.answer4Text).setVisibility(View.VISIBLE);
+                    findViewById(R.id.answer3Text).setClickable(true);
+                    findViewById(R.id.answer4Text).setClickable(true);
+                } else if (numberOfAnswers == TRUE_FALSE_ANSWERS + 1) {
+                    findViewById(R.id.answer3Text).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.answer4Text).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.answer3Text).setClickable(false);
+                    findViewById(R.id.answer4Text).setClickable(false);
+                }
             }
         } catch (JSONException e) {
             new AlertDialog.Builder(this)

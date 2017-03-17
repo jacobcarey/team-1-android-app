@@ -1,0 +1,19 @@
+[
+  {
+    "question": "Is this the intro?",
+    "correctAnswer": "Yes",
+    "wrongAnswer1": "No"
+  },
+  {
+    "question": "Are you sure?",
+    "correctAnswer": "Yes",
+    "wrongAnswer1": "No"
+  },
+  {
+    "question": "2+2?",
+    "correctAnswer": "4",
+    "wrongAnswer1": "5",
+    "wrongAnswer2": "3",
+    "wrongAnswer3": "22"
+  }
+]
