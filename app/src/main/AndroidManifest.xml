@@ -31,11 +31,19 @@
             android:name=".QuizActivity"
             android:label="@string/title_activity_quiz"
             android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:noHistory="true" /> <!-- Stops the user from going to a previous question. -->
+
+        <activity android:name=".BasicSelectActivityV2"
+            android:parentActivityName=".MainPageActivity" >
+            <!-- For API level 15: -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainPageActivity" />
+        </activity>
 
         <activity android:name=".SettingsActivity"></activity>
         <activity android:name=".BasicSelectActivity"></activity>
-        <activity android:name=".BasicSelectActivityV2"></activity>
         <activity android:name=".ContentActivity"></activity>
         <activity android:name=".CreditsActivity"></activity>
 
