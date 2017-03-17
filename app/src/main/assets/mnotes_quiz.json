@@ -1,23 +1,21 @@
 [
   {
-    "question": "How many notes are there in an octave?",
+    "question": "The shorter the wavelength the higher pitch the note.",
+    "correctAnswer": "True",
+    "wrongAnswer1": "False"
+  },
+  {
+    "question": "How many notes are there in an octave for the chromatic scale?",
     "correctAnswer": "12",
     "wrongAnswer1": "10",
     "wrongAnswer2": "8",
     "wrongAnswer3": "6"
   },
   {
-    "question": "Which notes do not have sharps?",
+    "question": "Which notes do not have sharps present in most scales?",
     "correctAnswer": "B & E",
     "wrongAnswer1": "A & D",
     "wrongAnswer2": "A & C",
     "wrongAnswer3": "F & G"
-  },
-  {
-    "question": "How many half steps are there from C to G?",
-    "correctAnswer": "8",
-    "wrongAnswer1": "7",
-    "wrongAnswer2": "9",
-    "wrongAnswer3": "6"
   }
 ]
