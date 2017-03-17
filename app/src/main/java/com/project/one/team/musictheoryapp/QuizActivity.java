@@ -178,7 +178,7 @@ public class QuizActivity extends AppCompatActivity {
                 returnButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(QuizActivity.this, BasicSelectActivity.class);
+                        Intent i = new Intent(QuizActivity.this, BasicSelectActivityV2.class);
                         startActivity(i);
                         overridePendingTransition(R.anim.slide_left,
                                 R.anim.slide_right_out);
