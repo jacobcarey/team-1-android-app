@@ -33,8 +33,14 @@ public class MainPageActivity extends AppCompatActivity {
         nmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
                     AppCompatDelegate.setDefaultNightMode(
                             AppCompatDelegate.MODE_NIGHT_YES);
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(
+                            AppCompatDelegate.MODE_NIGHT_NO);
+                }
+
                 recreate();
             }
         });
