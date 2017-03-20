@@ -2,13 +2,10 @@ package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 
@@ -18,9 +15,9 @@ import android.widget.ImageButton;
 
 public class MainPageActivity extends AppCompatActivity {
 
-    private boolean useNightMode = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCompatDelegate.getDefaultNightMode();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
@@ -29,18 +26,15 @@ public class MainPageActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 //        Night Mode Button
-        final ImageButton nmButton = (ImageButton) findViewById(R.id.nightModeButton);
+        ImageButton nmButton = (ImageButton) findViewById(R.id.nightModeButton);
         nmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-                    AppCompatDelegate.setDefaultNightMode(
-                            AppCompatDelegate.MODE_NIGHT_NO);
+                if (((Theoryously) getApplication()).getNightMode()) {
+                    ((Theoryously) getApplication()).setNightMode(false);
                 } else {
-                    AppCompatDelegate.setDefaultNightMode(
-                            AppCompatDelegate.MODE_NIGHT_YES);
+                    ((Theoryously) getApplication()).setNightMode(true);
                 }
-
                 recreate();
             }
         });
