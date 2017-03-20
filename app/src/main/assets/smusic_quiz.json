@@ -1,11 +1,43 @@
 [
   {
-    "question":"What do the 5 horizontal lines of the staff represent?",
+    "question":"What do the 5 horizontal lines of the stave represent?",
     "correctAnswer": "Change in pitch",
     "wrongAnswer1": "Change in tempo",
     "wrongAnswer2": "Change in time signature",
     "wrongAnswer3": "Change in note length"
-   },
+  },
+  {
+    "question": "What is the name of the symbol at the start of the stave?",
+    "correctAnswer": "Time Signature",
+    "wrongAnswer1": "Dynamic Symbol",
+    "wrongAnswer2": "Treble Clef",
+    "wrongAnswer3": "Tempo Indication"
+  },
+  {
+    "question": "A bar is used to indicate the pitch range of the notes",
+    "wrongAnswer1":"True",
+    "correctAnswer":"False"
+  },
+  {
+    "question":"What is used to indicate the pitch range of the notes?",
+    "correctAnswer":"The Clef",
+    "wrongAnswer1":"The Stave",
+    "wrongAnswer2":"The Dynamic Symbol",
+    "wrongAnswer3":"The Octave"
+  },
+  {
+    "question":"The styalised \"F\" on some sheet music means \"quiet\"",
+    "wrongAnswer1":"True",
+    "correctAnswer":"False"
+  }
+ ]
+
+    
+  
+   
+  
+    
+    
     
     
     
