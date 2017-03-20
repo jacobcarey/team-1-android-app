@@ -3,7 +3,6 @@ package com.project.one.team.musictheoryapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 /**
  * Created by Cogythea on 01/02/2017.
@@ -21,7 +20,8 @@ public class SplashScreen extends Activity {
             public void run(){
                 try
                 {
-                    sleep(3000); //Duration of splash screen
+//                    sleep(3000); //Duration of splash screen
+                    sleep(5); // Set to make boot up faster when developing.
                 }
                 catch (InterruptedException e)
                 {
