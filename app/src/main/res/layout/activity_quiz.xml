@@ -47,7 +47,7 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="65dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_alignTop="@+id/answer1Text"
@@ -66,7 +66,7 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="65dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_alignTop="@+id/answer2Text"
@@ -84,7 +84,7 @@
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@android:color/black"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="65dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_alignTop="@+id/answer3Text"
@@ -179,17 +179,17 @@
             android:visibility="invisible"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/star_img"
-            android:id="@+id/star2"
-            android:layout_below="@+id/questionText"
-            android:gravity="center"
-            android:layout_marginLeft="110dp"
-            android:layout_above="@+id/answer3Text"
-            android:layout_marginBottom="30dp"
-            android:visibility="invisible"
-            />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/star_img"
+        android:id="@+id/star2"
+        android:layout_below="@+id/questionText"
+        android:gravity="center"
+        android:layout_marginLeft="110dp"
+        android:layout_above="@+id/answer3Text"
+        android:layout_marginBottom="30dp"
+        android:visibility="invisible"
+        />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -209,6 +209,45 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/star_img"
             android:id="@+id/star3"
+            android:layout_below="@+id/questionText"
+            android:gravity="center"
+            android:layout_marginLeft="200dp"
+            android:layout_above="@+id/answer3Text"
+            android:layout_marginBottom="40dp"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/star_img2"
+            android:id="@+id/star2_margin"
+            android:layout_below="@+id/questionText"
+            android:gravity="center"
+            android:layout_marginLeft="110dp"
+            android:layout_above="@+id/answer3Text"
+            android:layout_marginBottom="30dp"
+            android:visibility="invisible"
+        />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/star_img2"
+            android:id="@+id/star1_margin"
+            android:layout_below="@+id/questionText"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_above="@+id/answer3Text"
+            android:layout_marginBottom="40dp"
+            android:visibility="invisible"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/star_img2"
+            android:id="@+id/star3_margin"
             android:layout_below="@+id/questionText"
             android:gravity="center"
             android:layout_marginLeft="200dp"
