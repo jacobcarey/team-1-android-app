@@ -25,6 +25,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+
+
 public class QuizActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
@@ -155,10 +157,11 @@ public class QuizActivity extends AppCompatActivity {
      * in JSON file.
      */
     public void nextQuestion() {
-        findViewById(R.id.answer1Text).setBackgroundColor(Color.LTGRAY);
-        findViewById(R.id.answer2Text).setBackgroundColor(Color.LTGRAY);
-        findViewById(R.id.answer3Text).setBackgroundColor(Color.LTGRAY);
-        findViewById(R.id.answer4Text).setBackgroundColor(Color.LTGRAY);
+        findViewById(R.id.answer1Text).setBackgroundColor(Color.WHITE);
+
+        findViewById(R.id.answer2Text).setBackgroundColor(Color.WHITE);
+        findViewById(R.id.answer3Text).setBackgroundColor(Color.WHITE);
+        findViewById(R.id.answer4Text).setBackgroundColor(Color.WHITE);
         qProgress.setProgress(index*33);
 
         try {
@@ -175,7 +178,7 @@ public class QuizActivity extends AppCompatActivity {
                 ((TextView)findViewById(R.id.marks)).setText(" ");
                 if(quizMarks==numberOfQuestions){
                     ((TextView)findViewById(R.id.questionText)).setTextColor(Color.GREEN);
-                }else{
+               }else{
                     ((TextView)findViewById(R.id.questionText)).setTextColor(Color.RED);
                 }
                 findViewById(R.id.answer1Text).setVisibility(View.INVISIBLE);
@@ -206,6 +209,9 @@ public class QuizActivity extends AppCompatActivity {
                 });
                 findViewById(R.id.returnText).setVisibility(View.VISIBLE);
                 findViewById(R.id.retryText).setVisibility(View.VISIBLE);
+                findViewById(R.id.star1_margin).setVisibility(View.VISIBLE);
+                findViewById(R.id.star2_margin).setVisibility(View.VISIBLE);
+                findViewById(R.id.star3_margin).setVisibility(View.VISIBLE);
                 if(quizMarks==1){
                     findViewById(R.id.star1).setVisibility(View.VISIBLE);
                 }else if(quizMarks==2){
