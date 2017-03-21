@@ -8,16 +8,16 @@
   {
     "title":"",
     "content":[
-      "The set of 5 lines is known as the \"stave\" (or staff). These five lines indicate changes in pitch. the lower the note on the staff the lower the pitch of the note. These notes will be different depending on the clef.",
-      "The number on the top left of the sheet represents something called \"time signature\" The top number represents how many beats are contained in a bar. The bottom number represents the note value/duration."
+      "The set of 5 lines is known as the <b>stave</b> (or staff). These five lines indicate changes in pitch. the lower the note on the staff the lower the pitch of the note. These notes will be different depending on the clef.",
+      "The number on the top left of the sheet represents something called <b>time signature</b> The top number represents how many beats are contained in a bar. The bottom number represents the note value/duration."
       ]
   },
   {
     "title":"",
     "content":[
-      "The symbol at the top left of the stave is known as the treble clef. this is to indicate the pitch of the notes. There exist other types of clefs, which we will look into later.",
-      "The symbols going across the stave are known as notes. The horizontal position of the note represents how far along the note is in the song and the vertical position represents pitch. The different shapes and styles of the notes represent note length.",
-      "The stylized F on the top stave is a dynamic symbol. This is to represent change in volume. In this case, the F represents forte meaning \"loud\"."
+      "The symbol at the top left of the stave is known as the <b>treble clef</b>. This is to indicate the pitch of the notes. There exist other types of clefs, which we will look into later.",
+      "The symbols going across the stave are known as <b>notes</b>. The horizontal position of the note represents how far along the note is in the song and the vertical position represents pitch. The different shapes and styles of the notes represent note length.",
+      "The stylized F on the top stave is a <b>dynamic symbol</b>. This is to represent change in volume. In this case, the F represents forte meaning \"loud\"."
       ]
   }
   
