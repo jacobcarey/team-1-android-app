@@ -125,7 +125,7 @@
         android:background="@drawable/night_mode_crescent"
         android:layout_gravity="right"
         android:layout_marginRight="10dp"
-        android:layout_width="64px"
-        android:layout_height="64px" />
+        android:layout_width="32dp"
+        android:layout_height="32dp" />
 
 </LinearLayout>

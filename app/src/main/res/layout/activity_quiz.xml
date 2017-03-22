@@ -2,265 +2,220 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quiz_background"
-    >
+    android:background="@drawable/quiz_background_gradient"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
 
         <TextView
-            android:text="Marks: 0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/marks"
-            android:gravity="right"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            />
-
-        <TextView
-            android:text="Question 1 of 3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/processText"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_below="@+id/marks"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:gravity="right"
+            android:text="Marks: 0"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <TextView
-            android:text="Answer 2"
-            android:layout_width="100dp"
-            android:id="@+id/answer2Text"
-            android:background="@drawable/border"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="65dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignTop="@+id/answer1Text"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
+            android:id="@+id/processText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            />
-
-        <TextView
-            android:text="Answer 3"
-            android:layout_width="100dp"
-            android:id="@+id/answer3Text"
-            android:background="@drawable/border"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="65dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignTop="@+id/answer2Text"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:text="Answer 4"
-            android:layout_width="100dp"
-            android:id="@+id/answer4Text"
-            android:background="@drawable/border"
-            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/marks"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="18sp"
+            android:text="Question 1 of 3"
             android:textColor="@android:color/black"
-            android:layout_marginTop="65dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignTop="@+id/answer3Text"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textSize="18sp" />
 
         <TextView
-            android:text="Answer 1"
-            android:layout_width="100dp"
             android:id="@+id/answer1Text"
-            android:background="@drawable/border"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="54dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_below="@+id/questionText"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/questionText"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/quiz_button"
+            android:gravity="center"
+            android:text="Answer 1"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/answer2Text"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/answer1Text"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/quiz_button"
+            android:gravity="center"
+            android:text="Answer 2"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/answer3Text"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/answer2Text"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/quiz_button"
+            android:gravity="center"
+            android:text="Answer 3"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/answer4Text"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/answer3Text"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/quiz_button"
+            android:gravity="center"
+            android:text="Answer 4"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <ProgressBar
+            android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-            android:progress="0"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/processText" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/processText"
+            android:progress="0" />
 
         <TextView
-            android:text="Question"
+            android:id="@+id/questionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/questionText"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:textColor="@android:color/black"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
             android:layout_below="@+id/progressBar"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Question"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
 
         <TextView
-            android:text="Return To Main Menu"
-            android:layout_width="100dp"
             android:id="@+id/returnText"
-            android:background="@drawable/border"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignTop="@+id/answer2Text"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:visibility="invisible"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/answer2Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/quiz_button"
+            android:gravity="center"
+            android:text="Return To Topic Select"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:visibility="invisible" />
 
         <TextView
-            android:text="Try It Again"
-            android:layout_width="100dp"
             android:id="@+id/retryText"
-            android:background="@drawable/border"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_alignTop="@+id/answer1Text"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
             android:layout_alignParentEnd="true"
-            android:visibility="invisible"/>
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignTop="@+id/answer1Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/quiz_button"
+            android:gravity="center"
+            android:text="Try It Again"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:visibility="invisible" />
 
         <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/star_img"
-        android:id="@+id/star2"
-        android:layout_below="@+id/questionText"
-        android:gravity="center"
-        android:layout_marginLeft="110dp"
-        android:layout_above="@+id/answer3Text"
-        android:layout_marginBottom="30dp"
-        android:visibility="invisible"
-        />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/star_img"
             android:id="@+id/star1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/answer3Text"
             android:layout_below="@+id/questionText"
-            android:gravity="center"
+            android:layout_marginBottom="40dp"
             android:layout_marginLeft="20dp"
-            android:layout_above="@+id/answer3Text"
-            android:layout_marginBottom="40dp"
+            android:gravity="center"
             android:visibility="invisible"
-            />
+            app:srcCompat="@drawable/star_img" />
 
         <ImageView
+            android:id="@+id/star2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/star_img"
-            android:id="@+id/star3"
-            android:layout_below="@+id/questionText"
-            android:gravity="center"
-            android:layout_marginLeft="200dp"
             android:layout_above="@+id/answer3Text"
-            android:layout_marginBottom="40dp"
-            android:visibility="invisible"
-            />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/star_img2"
-            android:id="@+id/star2_margin"
             android:layout_below="@+id/questionText"
-            android:gravity="center"
-            android:layout_marginLeft="110dp"
-            android:layout_above="@+id/answer3Text"
             android:layout_marginBottom="30dp"
+            android:layout_marginLeft="110dp"
+            android:gravity="center"
             android:visibility="invisible"
-        />
+            app:srcCompat="@drawable/star_img" />
 
         <ImageView
+            android:id="@+id/star3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/star_img2"
-            android:id="@+id/star1_margin"
-            android:layout_below="@+id/questionText"
-            android:gravity="center"
-            android:layout_marginLeft="20dp"
             android:layout_above="@+id/answer3Text"
-            android:layout_marginBottom="40dp"
-            android:visibility="invisible"
-            />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/star_img2"
-            android:id="@+id/star3_margin"
             android:layout_below="@+id/questionText"
-            android:gravity="center"
+            android:layout_marginBottom="40dp"
             android:layout_marginLeft="200dp"
-            android:layout_above="@+id/answer3Text"
-            android:layout_marginBottom="40dp"
+            android:gravity="center"
             android:visibility="invisible"
-            />
+            app:srcCompat="@drawable/star_img" />
     </RelativeLayout>
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="46dp">
-    </GridLayout>
+        android:layout_height="46dp"></GridLayout>
 
 
 </LinearLayout>
