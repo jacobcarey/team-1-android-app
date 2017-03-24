@@ -198,13 +198,17 @@ public class QuizActivity extends AppCompatActivity {
 
                 Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
 
-                ((TextView)findViewById(R.id.processText)).setText("Quiz Finished");
-                ((TextView)findViewById(R.id.questionText)).setText(quizMarks+"/"+numberOfQuestions);
-                ((TextView)findViewById(R.id.questionText)).setTextSize(80);
+                ((TextView) findViewById(R.id.processText)).setText("Quiz Finished");
+                ((TextView) findViewById(R.id.questionText)).setText(quizMarks + "/" + numberOfQuestions);
+                ((TextView) findViewById(R.id.questionText)).setTextSize(80);
 
-                ((TextView)findViewById(R.id.marks)).setText(" ");
+                ((TextView) findViewById(R.id.marks)).setText(" ");
 
-                ((TextView)findViewById(R.id.questionText)).setTextColor(Color.WHITE);
+                if (quizMarks == 3) {
+                    ((TextView) findViewById(R.id.questionText)).setTextColor(Color.WHITE);
+                } else{
+                    ((TextView) findViewById(R.id.questionText)).setTextColor(Color.RED);
+                }
 
                 answer1Text.setVisibility(View.INVISIBLE);
                 answer2Text.setVisibility(View.INVISIBLE);
