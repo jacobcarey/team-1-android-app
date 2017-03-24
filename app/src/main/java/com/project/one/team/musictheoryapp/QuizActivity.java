@@ -119,7 +119,7 @@ public class QuizActivity extends AppCompatActivity {
 
             // Read in the json file in and parse it
             try {
-                InputStream is = getAssets().open(topic + "_quiz.json");
+                InputStream is = getAssets().open("basic/quiz/"+topic + "_quiz.json");
                 int size = is.available();
                 byte[] buff = new byte[size];
                 is.read(buff);
