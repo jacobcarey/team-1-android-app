@@ -243,7 +243,9 @@ public class QuizActivity extends AppCompatActivity {
 
                 findViewById(R.id.retryText).setVisibility(View.VISIBLE);
                 findViewById(R.id.returnText).setVisibility(View.VISIBLE);
-
+                findViewById(R.id.star1margin).setVisibility(View.VISIBLE);
+                findViewById(R.id.star2margin).setVisibility(View.VISIBLE);
+                findViewById(R.id.star3margin).setVisibility(View.VISIBLE);
                 if(quizMarks>=1){
                     findViewById(R.id.star1).setVisibility(View.VISIBLE);
                 }
