@@ -1,10 +1,11 @@
 package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -17,8 +18,15 @@ public class MainPageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AppCompatDelegate.getDefaultNightMode();
         super.onCreate(savedInstanceState);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean nightMode = preferences.getBoolean("nightMode", false);
+        if(nightMode){
+            ((Theoryously) getApplication()).setNightMode(true);
+        }
+
+
         setContentView(R.layout.activity_main_page);
 
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
@@ -114,5 +122,14 @@ public class MainPageActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(MainPageActivity.this, SettingsActivity.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_left, R.anim.slide_right_out);
+    }
+
 
 }
