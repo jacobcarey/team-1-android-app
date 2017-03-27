@@ -1,6 +1,8 @@
 package com.project.one.team.musictheoryapp;
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatDelegate;
 
 /**
@@ -24,6 +26,10 @@ public class Theoryously extends Application {
             AppCompatDelegate.setDefaultNightMode(
                     AppCompatDelegate.MODE_NIGHT_NO);
         }
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("nightMode",nightMode);
+        editor.apply();
     }
 
 }
