@@ -1,27 +1,17 @@
-Oliver
- - content pages
- - settings page placeholder
-   - credits
-   - social media
-
-Jacob
- - rework main page
-
-Jeremy
- - piano roll
-
-Alex
- - quiz page
-   - progress bar
-
-Later:
- - topic select screen
-   - redesign
-   - procedural
- - other quiz stuff
-   - minigames
- - account management
- - achievements
-   - PUNS
- - sheet music
- - easter eggs
+ -Settings page (preferences)
+ 
+ -Piano roll
+ 
+ -Content Pages
+ 
+ -Facebook/Twitter sharing
+ 
+ -Showing progress through topics
+ 
+ -Remake icons
+ 
+ -Save progress
+ 
+ -Website
+ 
+ -Documentation

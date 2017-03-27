@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
@@ -25,16 +26,13 @@ public class Piano extends View {
     Paint paint = new Paint();
     int screenWidth;
     int screenHeight;
-    int WHITE_KEY_WIDTH = 120;
-    int BLACK_KEY_WIDTH = 70;
+    int WHITE_KEY_WIDTH = 150;
+    int BLACK_KEY_WIDTH = 90;
     int octaves = 2;
     int octaveWidth;
 
-    MediaPlayer mediaPlayer;
-
     ArrayList<PianoKey> whiteKeys = new ArrayList<>();
     ArrayList<PianoKey> blackKeys = new ArrayList<>();
-
 
     public Piano (Context context)
     {
@@ -69,16 +67,19 @@ public class Piano extends View {
                         0,                                                              //Posy
                         WHITE_KEY_WIDTH,                                                //Width
                         screenHeight,                                                   //Height
-                        keyIndexToPitch(i, PianoKey.Colour.White) + String.valueOf(o),  //Key value
+                        keyIndexToPitch(i, PianoKey.Colour.White) + String.valueOf(o),  //Key name (string concatenation)
+                        MediaPlayer.create(getContext(), getResources().getIdentifier(keyIndexToPitch(i, PianoKey.Colour.White) + String.valueOf(o), "raw", getContext().getPackageName())),
                         PianoKey.Colour.White));
 
-                if (i == 0 || i == 3) continue;
+                if (i == 0 || i == 3) continue; //Skip adding a black key if it's b# or e#
+
                 blackKeys.add(new PianoKey(
                         (i * WHITE_KEY_WIDTH) - (BLACK_KEY_WIDTH / 2) + ((o - startOctave) * octaveWidth),
                         0,
                         BLACK_KEY_WIDTH,
                         screenHeight / 2,
                         keyIndexToPitch(i, PianoKey.Colour.Black) + String.valueOf(o),
+                        MediaPlayer.create(getContext(), getResources().getIdentifier(keyIndexToPitch(i, PianoKey.Colour.Black) + String.valueOf(o), "raw", getContext().getPackageName())),
                         PianoKey.Colour.Black));
             }
         }
@@ -86,6 +87,7 @@ public class Piano extends View {
 
     public void draw(Canvas canvas)
     {
+        super.draw(canvas);
         for(int i = 0; i < whiteKeys.size(); i++)
         {
             canvas.drawBitmap((whiteKeys.get(i).getKeyPressed() ? whitekeydown : whitekey), whiteKeys.get(i).getPositionX(), whiteKeys.get(i).getPositionY(), paint);
@@ -103,8 +105,10 @@ public class Piano extends View {
         switch(event.getAction())
         {
             case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
             {
                 String touchedKeyName = "";
+                PianoKey touchedKey = null;
                 //Give priority to black keys
                 for(int i = 0; i < blackKeys.size(); i++)
                 {
@@ -112,18 +116,20 @@ public class Piano extends View {
                     {
                         touchedKeyName = blackKeys.get(i).getKeyName();
                         blackKeys.get(i).setKeyPressed(true);
+                        touchedKey = blackKeys.get(i);
                         Toast.makeText(getContext(), "Key pressed: " + blackKeys.get(i).getKeyName(), Toast.LENGTH_SHORT).show();
                         break;
                     }
                 }
                 //If a black key hasn't been touched
-                if(touchedKeyName == "")
+                if(touchedKeyName == "" && touchedKey == null)
                 {
                     for(int i = 0; i < whiteKeys.size(); i++)
                     {
                         if(whiteKeys.get(i).pointIsOnKey(event.getX(), event.getY()))
                         {
                             touchedKeyName = whiteKeys.get(i).getKeyName();
+                            touchedKey = whiteKeys.get(i);
                             whiteKeys.get(i).setKeyPressed(true);
                             Toast.makeText(getContext(), "Key pressed: " + whiteKeys.get(i).getKeyName(), Toast.LENGTH_SHORT).show();
                             break;
@@ -132,8 +138,7 @@ public class Piano extends View {
                 }
                 if(touchedKeyName != "")
                 {
-                    mediaPlayer = MediaPlayer.create(getContext(), getResources().getIdentifier(touchedKeyName, "raw", getContext().getPackageName()));
-                    mediaPlayer.start();
+                    touchedKey.playSound();
                 }
             }
         }

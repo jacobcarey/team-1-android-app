@@ -1,5 +1,11 @@
 package com.project.one.team.musictheoryapp;
 
+import android.media.MediaPlayer;
+
+import java.io.IOException;
+
+import static java.security.AccessController.getContext;
+
 /**
  * Created by Cogythea on 23/11/2016.
  */
@@ -16,6 +22,7 @@ public class PianoKey {
     private float width;
     private float height;
     private String keyName;
+    private MediaPlayer mPlayer;
     public Boolean keyPressed;
     private Colour colour;
 
@@ -39,6 +46,11 @@ public class PianoKey {
         return keyName;
     }
 
+    public void playSound()
+    {
+        mPlayer.start();
+    }
+
     public void setKeyPressed(Boolean keyPressed) {
         this.keyPressed = keyPressed;
     }
@@ -46,13 +58,15 @@ public class PianoKey {
         return keyPressed;
     }
 
-    public PianoKey(float posx, float posy, float w, float h, String key, Colour col)
+    public PianoKey(float posx, float posy, float w, float h, String keyname, MediaPlayer player, Colour col)
     {
         positionX = posx;
         positionY = posy;
         width = w;
         height = h;
-        keyName = key;
+        keyName = keyname;
+        mPlayer = player;
+        try{mPlayer.prepare();}catch(Exception e) {e.printStackTrace();};
         colour = col;
         keyPressed = false;
     }

@@ -4,15 +4,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,13 +27,15 @@ public class QuizActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
 
+    private final int QUESTION_DELAY = 1000;
+
     //public static final int NUMBER_OF_ANSWERS = 4;
     private static final int MULTI_CHOICE_ANSWERS = 4;
     private static final int TRUE_FALSE_ANSWERS = 2;
     private JSONArray jsonArray;
     private String topic;
     private TextView questionTextView;
-    private int index = 0;
+    private int currentQuestionIndex = 0;
     private int numberOfQuestions;
     private int correctAnswer;
     private int quizMarks;
@@ -43,22 +43,30 @@ public class QuizActivity extends AppCompatActivity {
     private List<String> answers;
     private ProgressBar qProgress;
     final Handler handler = new Handler();
+    final int buttonBackgroundDefault = R.drawable.quiz_button;
+    final int buttonBackgroundCorrect = R.drawable.quiz_button_correct;
+    final int buttonBackgroundIncorrect = R.drawable.quiz_button_incorrect;
 
     public final View.OnClickListener CORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            view.setBackgroundColor(Color.GREEN);
+
+            TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
+            TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
+            TextView answer3Text = (TextView)findViewById(R.id.answer3Text);
+            TextView answer4Text = (TextView)findViewById(R.id.answer4Text);
+            view.setBackgroundResource(buttonBackgroundCorrect);
             quizMarks += 1;
             ((TextView)findViewById(R.id.marks)).setText("Marks: "+quizMarks);
-            findViewById(R.id.answer1Text).setClickable(false);
-            findViewById(R.id.answer2Text).setClickable(false);
-            findViewById(R.id.answer3Text).setClickable(false);
-            findViewById(R.id.answer4Text).setClickable(false);
+            answer1Text.setClickable(false);
+            answer2Text.setClickable(false);
+            answer3Text.setClickable(false);
+            answer4Text.setClickable(false);
             handler.postDelayed(new Runnable() {
                 public void run() {
                     nextQuestion();
                 }
-            }, 1000);
+            }, QUESTION_DELAY);
 
         }
     };
@@ -66,17 +74,22 @@ public class QuizActivity extends AppCompatActivity {
     public final View.OnClickListener INCORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+
+            TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
+            TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
+            TextView answer3Text = (TextView)findViewById(R.id.answer3Text);
+            TextView answer4Text = (TextView)findViewById(R.id.answer4Text);
           //  Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
-            view.setBackgroundColor(Color.RED);
-            findViewById(R.id.answer1Text).setClickable(false);
-            findViewById(R.id.answer2Text).setClickable(false);
-            findViewById(R.id.answer3Text).setClickable(false);
-            findViewById(R.id.answer4Text).setClickable(false);
+            view.setBackgroundResource(buttonBackgroundIncorrect);
+            answer1Text.setClickable(false);
+            answer2Text.setClickable(false);
+            answer3Text.setClickable(false);
+            answer4Text.setClickable(false);
             handler.postDelayed(new Runnable() {
                 public void run() {
                     nextQuestion();
                 }
-            }, 2000);
+            }, QUESTION_DELAY);
         }
     };
 
@@ -86,13 +99,18 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
+        TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
+        TextView answer3Text = (TextView)findViewById(R.id.answer3Text);
+        TextView answer4Text = (TextView)findViewById(R.id.answer4Text);
+
         // Get all references to the text fields
         questionTextView = (TextView) findViewById(R.id.questionText);
         answerTextViews = Collections.unmodifiableList(Arrays.asList(
-                (TextView) findViewById(R.id.answer1Text),
-                (TextView) findViewById(R.id.answer2Text),
-                (TextView) findViewById(R.id.answer3Text),
-                (TextView) findViewById(R.id.answer4Text)
+                answer1Text,
+                answer2Text,
+                answer3Text,
+                answer4Text
         ));
         qProgress =(ProgressBar)findViewById(R.id.progressBar);
 
@@ -101,7 +119,7 @@ public class QuizActivity extends AppCompatActivity {
 
             // Read in the json file in and parse it
             try {
-                InputStream is = getAssets().open(topic + "_quiz.json");
+                InputStream is = getAssets().open("basic/quiz/"+topic + "_quiz.json");
                 int size = is.available();
                 byte[] buff = new byte[size];
                 is.read(buff);
@@ -155,34 +173,61 @@ public class QuizActivity extends AppCompatActivity {
      * in JSON file.
      */
     public void nextQuestion() {
-        findViewById(R.id.answer1Text).setBackgroundColor(Color.LTGRAY);
-        findViewById(R.id.answer2Text).setBackgroundColor(Color.LTGRAY);
-        findViewById(R.id.answer3Text).setBackgroundColor(Color.LTGRAY);
-        findViewById(R.id.answer4Text).setBackgroundColor(Color.LTGRAY);
-        qProgress.setProgress(index*33);
+
+        TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
+        TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
+        TextView answer3Text = (TextView)findViewById(R.id.answer3Text);
+        TextView answer4Text = (TextView)findViewById(R.id.answer4Text);
+
+        answer1Text.setBackgroundResource(buttonBackgroundDefault);
+        answer2Text.setBackgroundResource(buttonBackgroundDefault);
+        answer3Text.setBackgroundResource(buttonBackgroundDefault);
+        answer4Text.setBackgroundResource(buttonBackgroundDefault);
+        qProgress.setProgress(currentQuestionIndex * 33);
 
         try {
             // Randomise the order of the json keys
             // TODO: just loops for now
-            if (index == numberOfQuestions) {
-                findViewById(R.id.answer1Text).setClickable(false);
-                findViewById(R.id.answer2Text).setClickable(false);
-                findViewById(R.id.answer3Text).setClickable(false);
-                findViewById(R.id.answer4Text).setClickable(false);
-                ((TextView)findViewById(R.id.processText)).setText("Quiz Finished");
-                ((TextView)findViewById(R.id.questionText)).setText(quizMarks+"/"+numberOfQuestions);
-                ((TextView)findViewById(R.id.questionText)).setTextSize(80);
-                ((TextView)findViewById(R.id.marks)).setText(" ");
-                if(quizMarks==numberOfQuestions){
-                    ((TextView)findViewById(R.id.questionText)).setTextColor(Color.GREEN);
-                }else{
-                    ((TextView)findViewById(R.id.questionText)).setTextColor(Color.RED);
+
+            //End of quiz
+            if (currentQuestionIndex == numberOfQuestions) {
+                answer1Text.setClickable(false);
+                answer2Text.setClickable(false);
+                answer3Text.setClickable(false);
+                answer4Text.setClickable(false);
+
+                Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
+
+                ((TextView) findViewById(R.id.processText)).setText("Quiz Finished");
+                ((TextView) findViewById(R.id.questionText)).setText(quizMarks + "/" + numberOfQuestions);
+                ((TextView) findViewById(R.id.questionText)).setTextSize(80);
+
+                ((TextView) findViewById(R.id.marks)).setText(" ");
+
+                if (quizMarks == 3) {
+                    ((TextView) findViewById(R.id.questionText)).setTextColor(Color.WHITE);
+                } else{
+                    ((TextView) findViewById(R.id.questionText)).setTextColor(Color.RED);
                 }
-                findViewById(R.id.answer1Text).setVisibility(View.INVISIBLE);
-                findViewById(R.id.answer2Text).setVisibility(View.INVISIBLE);
-                findViewById(R.id.answer3Text).setVisibility(View.INVISIBLE);
-                findViewById(R.id.answer4Text).setVisibility(View.INVISIBLE);
-                index = 0;
+
+                answer1Text.setVisibility(View.INVISIBLE);
+                answer2Text.setVisibility(View.INVISIBLE);
+                answer3Text.setVisibility(View.INVISIBLE);
+                answer4Text.setVisibility(View.INVISIBLE);
+                currentQuestionIndex = 0;
+
+
+                //set up retry button
+                TextView retryButton = (TextView) findViewById(R.id.retryText);
+                retryButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(QuizActivity.this, QuizActivity.class);
+                        i.putExtra(QuizActivity.EXTRA_TOPIC, topic );
+                        startActivity(i);
+                    }
+                });
+
                 //set up return button
                 TextView returnButton = (TextView) findViewById(R.id.returnText);
                 returnButton.setOnClickListener(new View.OnClickListener() {
@@ -194,31 +239,25 @@ public class QuizActivity extends AppCompatActivity {
                                 R.anim.slide_right_out);
                     }
                 });
-                //set up retry button
-                TextView retryButton = (TextView) findViewById(R.id.retryText);
-                retryButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(QuizActivity.this, QuizActivity.class);
-                        i.putExtra(QuizActivity.EXTRA_TOPIC, topic );
-                        startActivity(i);
-                    }
-                });
-                findViewById(R.id.returnText).setVisibility(View.VISIBLE);
+
+
                 findViewById(R.id.retryText).setVisibility(View.VISIBLE);
-                if(quizMarks==1){
+                findViewById(R.id.returnText).setVisibility(View.VISIBLE);
+                findViewById(R.id.star1margin).setVisibility(View.VISIBLE);
+                findViewById(R.id.star2margin).setVisibility(View.VISIBLE);
+                findViewById(R.id.star3margin).setVisibility(View.VISIBLE);
+                if(quizMarks>=1){
                     findViewById(R.id.star1).setVisibility(View.VISIBLE);
-                }else if(quizMarks==2){
-                    findViewById(R.id.star1).setVisibility(View.VISIBLE);
+                }
+                if(quizMarks>=2){
                     findViewById(R.id.star2).setVisibility(View.VISIBLE);
-                }else if(quizMarks==3){
-                    findViewById(R.id.star1).setVisibility(View.VISIBLE);
-                    findViewById(R.id.star2).setVisibility(View.VISIBLE);
+                }
+                if(quizMarks>=3){
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
                 }
-            }else if(index < numberOfQuestions){
+            }else if(currentQuestionIndex < numberOfQuestions){
                 // Get the next question, show it on screen
-                JSONObject jsonObject = jsonArray.getJSONObject(index);
+                JSONObject jsonObject = jsonArray.getJSONObject(currentQuestionIndex);
                 int numberOfAnswers = jsonObject.length(); // 5 for 4 answers + question, 3 for for 2 answers + question.
 
                 // Create temp array as a quiz may have both true/false and multi choice questions:
@@ -232,7 +271,7 @@ public class QuizActivity extends AppCompatActivity {
                     Collections.shuffle(tempAnswers); // Only shuffle if it's multiple choice.
                 }
 
-                ((TextView)findViewById(R.id.processText)).setText("Question "+(index+1)+" of "+numberOfQuestions);
+                ((TextView)findViewById(R.id.processText)).setText("Question "+(currentQuestionIndex +1)+" of "+numberOfQuestions);
                 correctAnswer = tempAnswers.indexOf("correctAnswer");
 
                 questionTextView.setText((CharSequence) jsonObject.get("question"));
@@ -247,7 +286,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 answerTextViews.get(correctAnswer).setOnClickListener(CORRECT_ANSWER_CLICK);
 
-                index += 1;
+                currentQuestionIndex += 1;
 
                 findViewById(R.id.answer1Text).setVisibility(View.VISIBLE);
                 findViewById(R.id.answer2Text).setVisibility(View.VISIBLE);

@@ -29,6 +29,7 @@ public class MainPageActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main_page);
 
+
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
         getSupportActionBar().hide();

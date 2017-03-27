@@ -60,7 +60,7 @@ public class ContentActivity extends FragmentActivity {
 
             // Read in the json file in and parse it
             try {
-                InputStream is = getAssets().open(contentFile);
+                InputStream is = getAssets().open("basic/content/"+contentFile);
                 int size = is.available();
                 byte[] buff = new byte[size];
                 is.read(buff);
