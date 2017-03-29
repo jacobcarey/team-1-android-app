@@ -60,7 +60,7 @@ public class ContentActivity extends FragmentActivity {
 
             // Read in the json file in and parse it
             try {
-                InputStream is = getAssets().open("basic/content/"+contentFile);
+                InputStream is = getAssets().open(contentFile);
                 int size = is.available();
                 byte[] buff = new byte[size];
                 is.read(buff);
@@ -95,12 +95,21 @@ public class ContentActivity extends FragmentActivity {
 
         for (int i=0; i<jsonArray.length(); i++) {
             String title = jsonArray.getJSONObject(i).getString("title");
+            String image;
+            try
+            {
+                image = jsonArray.getJSONObject(i).getString("image");
+            }
+            catch(Exception e)
+            {
+                image = null;
+            }
             JSONArray contentArray = jsonArray.getJSONObject(i).getJSONArray("content");
-            ContentFragment fragment = ContentFragment.newInstance(title, contentArray.getString(0));
+            ContentFragment fragment = ContentFragment.newInstance(title, image, contentArray.getString(0));
             fList.add(fragment);
 
             for (int j=1; j<contentArray.length(); j++) {
-                ContentFragment untitledFragment = ContentFragment.newInstance("", contentArray.getString(j));
+                ContentFragment untitledFragment = ContentFragment.newInstance(title, image, contentArray.getString(j));
                 fList.add(untitledFragment);
             }
         }

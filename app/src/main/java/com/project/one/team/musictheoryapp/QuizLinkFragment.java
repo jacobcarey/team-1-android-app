@@ -22,14 +22,13 @@ public class QuizLinkFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final String topic = getArguments().getString(ARG_TOPIC);
+        final String topic = getArguments().getString(ARG_TOPIC).replaceAll("content", "quiz");
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_quizlink, container, false);
 
         // Enable the quiz button
         Button quizButton = (Button) v.findViewById(R.id.quizButton);
-        quizButton.setText(topic);
         quizButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

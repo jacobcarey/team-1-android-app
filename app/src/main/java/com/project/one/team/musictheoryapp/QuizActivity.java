@@ -119,7 +119,7 @@ public class QuizActivity extends AppCompatActivity {
 
             // Read in the json file in and parse it
             try {
-                InputStream is = getAssets().open("basic/quiz/"+topic + "_quiz.json");
+                InputStream is = getAssets().open(topic + "_quiz.json");
                 int size = is.available();
                 byte[] buff = new byte[size];
                 is.read(buff);
@@ -204,11 +204,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 ((TextView) findViewById(R.id.marks)).setText(" ");
 
-                if (quizMarks == 3) {
-                    ((TextView) findViewById(R.id.questionText)).setTextColor(Color.WHITE);
-                } else{
-                    ((TextView) findViewById(R.id.questionText)).setTextColor(Color.RED);
-                }
+                ((TextView) findViewById(R.id.questionText)).setTextColor(Color.WHITE);
 
                 answer1Text.setVisibility(View.INVISIBLE);
                 answer2Text.setVisibility(View.INVISIBLE);
@@ -216,17 +212,20 @@ public class QuizActivity extends AppCompatActivity {
                 answer4Text.setVisibility(View.INVISIBLE);
                 currentQuestionIndex = 0;
 
-
-                //set up retry button
-                TextView retryButton = (TextView) findViewById(R.id.retryText);
-                retryButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i = new Intent(QuizActivity.this, QuizActivity.class);
-                        i.putExtra(QuizActivity.EXTRA_TOPIC, topic );
-                        startActivity(i);
-                    }
-                });
+                //Don't show the retry button if they got all the questions right
+                if(quizMarks!=numberOfQuestions) {
+                    //set up retry button
+                    TextView retryButton = (TextView) findViewById(R.id.retryText);
+                    retryButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent i = new Intent(QuizActivity.this, QuizActivity.class);
+                            i.putExtra(QuizActivity.EXTRA_TOPIC, topic);
+                            startActivity(i);
+                        }
+                    });
+                    findViewById(R.id.retryText).setVisibility(View.VISIBLE);
+                }
 
                 //set up return button
                 TextView returnButton = (TextView) findViewById(R.id.returnText);
@@ -239,13 +238,9 @@ public class QuizActivity extends AppCompatActivity {
                                 R.anim.slide_right_out);
                     }
                 });
-
-
-                findViewById(R.id.retryText).setVisibility(View.VISIBLE);
                 findViewById(R.id.returnText).setVisibility(View.VISIBLE);
-                findViewById(R.id.star1margin).setVisibility(View.VISIBLE);
-                findViewById(R.id.star2margin).setVisibility(View.VISIBLE);
-                findViewById(R.id.star3margin).setVisibility(View.VISIBLE);
+
+
                 if(quizMarks>=1){
                     findViewById(R.id.star1).setVisibility(View.VISIBLE);
                 }

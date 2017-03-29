@@ -44,8 +44,8 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
             //t.setTypeface(kozukaTF);
             if(i <= TOPIC_REACHED)
             {
-                l.setOnClickListener(getListener(Topics[i]));
-                b.setOnClickListener(getListener(Topics[i]));
+                l.setOnClickListener(getListener("basic/content/" + Topics[i]));
+                b.setOnClickListener(getListener("basic/content/" + Topics[i]));
             }
             else
             {

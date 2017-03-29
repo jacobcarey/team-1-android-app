@@ -2,16 +2,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_screen_bg_gradient"
     tools:context="com.project.one.team.musictheoryapp.ContentFragment">
 
     <Button
-        android:text="Quiz"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/quizButton"
-        android:minWidth="266dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:background="@drawable/main_screen_button"
+        android:minWidth="266dp"
+        android:text="Quiz" />
 
 </FrameLayout>

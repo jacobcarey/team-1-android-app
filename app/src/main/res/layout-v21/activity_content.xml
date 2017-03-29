@@ -25,12 +25,14 @@
 
         <com.viewpagerindicator.LinePageIndicator
             android:id="@+id/contentPageIndicator"
-            android:padding="5dp"
-            android:layout_height="wrap_content"
             android:layout_width="fill_parent"
-            app:strokeWidth="4dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryLight"
+            android:padding="5dp"
             app:lineWidth="30dp"
-            app:selectedColor="?android:colorAccent" />
+            app:selectedColor="?attr/colorAccent"
+            app:strokeWidth="4dp"
+            app:unselectedColor="@color/colorMainScreenGradientEnd" />
 
     </LinearLayout>
 

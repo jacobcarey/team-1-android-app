@@ -212,42 +212,6 @@
             android:visibility="invisible"
             app:srcCompat="@drawable/star_img" />
 
-        <ImageView
-            android:id="@+id/star1margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/answer3Text"
-            android:layout_below="@+id/questionText"
-            android:layout_marginBottom="40dp"
-            android:layout_marginLeft="20dp"
-            android:gravity="center"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/star_img2" />
-
-        <ImageView
-            android:id="@+id/star2margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/answer3Text"
-            android:layout_below="@+id/questionText"
-            android:layout_marginBottom="30dp"
-            android:layout_marginLeft="110dp"
-            android:gravity="center"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/star_img2" />
-
-        <ImageView
-            android:id="@+id/star3margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/answer3Text"
-            android:layout_below="@+id/questionText"
-            android:layout_marginBottom="40dp"
-            android:layout_marginLeft="200dp"
-            android:gravity="center"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/star_img2" />
-
     </RelativeLayout>
 
     <GridLayout
