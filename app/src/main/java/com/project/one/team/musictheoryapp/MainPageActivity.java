@@ -1,19 +1,24 @@
 package com.project.one.team.musictheoryapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by Jacob on 27/11/2016.
  */
 
 public class MainPageActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,26 +36,12 @@ public class MainPageActivity extends AppCompatActivity {
         TextView userNameField = (TextView) findViewById(R.id.userName);
 
         if (!userName.isEmpty()) {
-            userNameField.setText(userName);
+            userNameField.setText("Logged in as: " + userName);
         }
 
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
         getSupportActionBar().hide();
-
-//        Night Mode Button
-        ImageButton nmButton = (ImageButton) findViewById(R.id.nightModeButton);
-        nmButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (((Theoryously) getApplication()).getNightMode()) {
-                    ((Theoryously) getApplication()).setNightMode(false);
-                } else {
-                    ((Theoryously) getApplication()).setNightMode(true);
-                }
-                recreate();
-            }
-        });
 
 //        Settings
         ImageButton settingsCog = (ImageButton) findViewById(R.id.settingsCog);

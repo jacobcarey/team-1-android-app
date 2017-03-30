@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.one.team.musictheoryapp">
 
+    <!-- Facebook -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".Theoryously"
         android:allowBackup="true"
@@ -9,6 +12,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <!-- Facebook -->
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+        <provider android:authorities="com.facebook.app.FacebookContentProvider173154259840037"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
+
+
         <activity android:name=".SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -54,8 +72,8 @@
 
         <activity android:name=".SettingsPreferenceActivity"
                     android:label="Preferences">
+        </activity>
 
-    </activity>
     </application>
 
 </manifest>

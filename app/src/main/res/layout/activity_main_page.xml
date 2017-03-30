@@ -45,16 +45,6 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="10dp" />
 
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/settingsCog"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/default_title_indicator_text_color"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -81,61 +71,61 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="224dp"
-        android:paddingTop="70dp"
-        android:layout_weight="0.36">
+        android:layout_weight="0.36"
+        android:paddingTop="70dp">
 
         <Button
-            android:text="BASIC"
-            android:layout_width="200dp"
             android:id="@+id/basic"
-            android:minWidth="220dp"
-            android:layout_centerHorizontal="true"
-            android:hapticFeedbackEnabled="false"
-            android:fontFamily="sans-serif-medium"
-            android:background="@drawable/main_screen_button"
-            android:textSize="14sp"
-            android:layout_height="40dp"
-            android:textColor="@color/colorTextPrimary" />
-
-        <Button
-            android:text="ADVANCED"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:id="@+id/advanced"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/main_screen_button"
+            android:fontFamily="sans-serif-medium"
+            android:hapticFeedbackEnabled="false"
             android:minWidth="220dp"
-            android:layout_below="@+id/intermediate"
+            android:text="BASIC"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/advanced"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_alignLeft="@+id/intermediate"
             android:layout_alignStart="@+id/intermediate"
-            android:background="@drawable/main_screen_button"
+            android:layout_below="@+id/intermediate"
             android:layout_marginTop="20dp"
+            android:background="@drawable/main_screen_button"
+            android:minWidth="220dp"
+            android:text="ADVANCED"
             android:textColor="@color/colorTextPrimary" />
 
         <Button
-            android:text="INTERMEDIATE"
+            android:id="@+id/intermediate"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:id="@+id/intermediate"
-            android:minWidth="220dp"
-            android:layout_below="@+id/basic"
             android:layout_alignLeft="@+id/basic"
             android:layout_alignStart="@+id/basic"
-            android:background="@drawable/main_screen_button"
+            android:layout_below="@+id/basic"
             android:layout_marginTop="20dp"
+            android:background="@drawable/main_screen_button"
+            android:minWidth="220dp"
+            android:text="INTERMEDIATE"
             android:textColor="@color/colorTextPrimary" />
 
     </RelativeLayout>
 
-    <ImageButton
-        app:srcCompat="@drawable/night_mode_crescent"
-        android:id="@+id/nightModeButton"
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/settingsCog"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
         android:layout_weight="0.06"
-        android:layout_alignTop="@+id/advanced"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:background="@drawable/night_mode_crescent"
-        android:layout_gravity="right"
-        android:layout_marginRight="10dp"
-        android:layout_width="32dp"
-        android:layout_height="32dp" />
+        android:textAlignment="textStart"
+        android:textColor="@color/default_title_indicator_text_color"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

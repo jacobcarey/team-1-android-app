@@ -5,12 +5,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.facebook.CallbackManager;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,7 +34,7 @@ public class QuizActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
 
-    private final int QUESTION_DELAY = 1000;
+    private final int QUESTION_DELAY = 500;
 
     //public static final int NUMBER_OF_ANSWERS = 4;
     private static final int MULTI_CHOICE_ANSWERS = 4;
@@ -46,6 +53,11 @@ public class QuizActivity extends AppCompatActivity {
     final int buttonBackgroundDefault = R.drawable.quiz_button;
     final int buttonBackgroundCorrect = R.drawable.quiz_button_correct;
     final int buttonBackgroundIncorrect = R.drawable.quiz_button_incorrect;
+
+    ImageButton shareButton;
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
+
 
     public final View.OnClickListener CORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
@@ -79,7 +91,7 @@ public class QuizActivity extends AppCompatActivity {
             TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
             TextView answer3Text = (TextView)findViewById(R.id.answer3Text);
             TextView answer4Text = (TextView)findViewById(R.id.answer4Text);
-          //  Toast.makeText(getApplicationContext(), "Wrong answer!", Toast.LENGTH_SHORT).show();
+
             view.setBackgroundResource(buttonBackgroundIncorrect);
             answer1Text.setClickable(false);
             answer2Text.setClickable(false);
@@ -98,6 +110,9 @@ public class QuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        callbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(this);
 
         TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
         TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
@@ -158,10 +173,21 @@ public class QuizActivity extends AppCompatActivity {
 
         //Initialise the marks
         quizMarks = 0;
-        ((TextView)findViewById(R.id.marks)).setText("Marks: "+quizMarks);
+        ((TextView)findViewById(R.id.marks)).setText("Marks: " + quizMarks);
 
         // Show the first question
         if (jsonArray != null) nextQuestion();
+
+
+//        Facebook
+        shareButton = (ImageButton) findViewById(R.id.shareButton);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                ShareToFacebook();
+            }
+        });
+        shareButton.setVisibility(View.INVISIBLE);
+        shareButton.setClickable(false);
     }
 
     /**
@@ -250,6 +276,10 @@ public class QuizActivity extends AppCompatActivity {
                 if(quizMarks>=3){
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
                 }
+
+                shareButton.setVisibility(View.VISIBLE);
+                shareButton.setClickable(true);
+
             }else if(currentQuestionIndex < numberOfQuestions){
                 // Get the next question, show it on screen
                 JSONObject jsonObject = jsonArray.getJSONObject(currentQuestionIndex);
@@ -311,6 +341,27 @@ public class QuizActivity extends AppCompatActivity {
                         }
                     })
                     .show();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void ShareToFacebook()
+    {
+        if (ShareDialog.canShow(ShareLinkContent.class)) {
+            ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                    .setContentTitle("Theoryously")
+                    .setContentDescription(
+                            "I just scored " + quizMarks + "/" + numberOfQuestions + " on " + TopicParser.TopicIDToName(topic) + " in Theoryously!" +
+                                    "\nTry to beat my score!")
+                    .setContentUrl(Uri.parse("https://www.facebook.com/Theoryously/"))
+                    .build();
+
+            shareDialog.show(linkContent);
         }
     }
 }
