@@ -12,8 +12,11 @@ import android.support.v7.app.AppCompatDelegate;
 public class Theoryously extends Application {
 
     private boolean nightMode = false;
+    private String userName = "";
 
     public boolean getNightMode() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        nightMode = preferences.getBoolean("nightMode", false);
         return nightMode;
     }
 
@@ -28,9 +31,22 @@ public class Theoryously extends Application {
         }
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("nightMode",nightMode);
+        editor.putBoolean("nightMode", nightMode);
         editor.apply();
     }
 
+    public String getUserName() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        userName = preferences.getString("userName", "");
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("userName", userName);
+        editor.apply();
+    }
 }
 

@@ -1,10 +1,14 @@
 package com.project.one.team.musictheoryapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ToggleButton;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -31,6 +35,30 @@ public class SettingsActivity extends AppCompatActivity {
                     ((Theoryously) getApplication()).setNightMode(true);
                 }
                 recreate();
+            }
+        });
+
+        final EditText userNameInput = (EditText) findViewById(R.id.userName);
+        userNameInput.setText(((Theoryously) getApplication()).getUserName());
+
+        userNameInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                userNameInput.setText("");
+            }
+        });
+
+        Button userNameButton = (Button) findViewById(R.id.userNameButton);
+        userNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user = userNameInput.getText().toString();
+                ((Theoryously) getApplication()).setUserName(user);
+
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
             }
         });
     }

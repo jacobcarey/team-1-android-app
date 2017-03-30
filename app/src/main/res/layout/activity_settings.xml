@@ -10,86 +10,56 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <TextView
-            android:text="Bold Text"
+        <EditText
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="96dp"
-            android:layout_marginStart="96dp"
-            android:layout_marginTop="115dp"
-            android:id="@+id/textView2"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:text="Audio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/textView3"
-            android:layout_alignStart="@+id/textView3"
-            android:id="@+id/textView10" />
-
-        <ToggleButton
-            android:text="ToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/toggleButton"
-            android:layout_alignBaseline="@+id/textView2"
-            android:layout_alignBottom="@+id/textView2"
-            android:layout_toRightOf="@+id/textView2"
-            android:layout_toEndOf="@+id/textView2"
-            android:layout_marginLeft="68dp"
-            android:layout_marginStart="68dp" />
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="70dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="72dp"
+            tools:text="Enter Name" />
 
         <ToggleButton
-            android:text="ToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/toggleButton2"
-            android:layout_alignBaseline="@+id/textView3"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_alignLeft="@+id/toggleButton"
-            android:layout_alignStart="@+id/toggleButton" />
-
-        <ToggleButton
-            android:text="ToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignRight="@+id/toggleButton2"
-            android:layout_alignEnd="@+id/toggleButton2"
-            android:id="@+id/toggleButton3" />
-
-        <ToggleButton
-            android:text="ToggleButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/nightModeToggle"
-            android:layout_alignBaseline="@+id/textView11"
-            android:layout_alignBottom="@+id/textView11"
-            android:layout_alignLeft="@+id/toggleButton3"
-            android:layout_alignStart="@+id/toggleButton3" />
-
-        <TextView
-            android:text="Night Mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="37dp"
+            android:layout_alignLeft="@+id/userNameButton"
+            android:layout_alignStart="@+id/userNameButton"
+            android:layout_below="@+id/userNameButton"
+            android:layout_marginTop="83dp"
+            android:text="ToggleButton"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            tools:layout_editor_absoluteX="204dp"
+            tools:layout_editor_absoluteY="231dp"></ToggleButton>
+
+        <TextView
             android:id="@+id/textView11"
-            android:layout_below="@+id/toggleButton3"
-            android:layout_alignLeft="@+id/textView10"
-            android:layout_alignStart="@+id/textView10" />
-
-        <TextView
-            android:text="Colour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView3"
-            android:layout_above="@+id/toggleButton3"
-            android:layout_alignLeft="@+id/textView2"
-            android:layout_alignStart="@+id/textView2"
-            android:layout_marginBottom="32dp" />
+            android:layout_alignBaseline="@+id/nightModeToggle"
+            android:layout_alignBottom="@+id/nightModeToggle"
+            android:layout_alignLeft="@+id/userName"
+            android:layout_alignStart="@+id/userName"
+            android:text="Night Mode"
+            tools:layout_editor_absoluteY="247dp" />
+
+        <Button
+            android:id="@+id/userNameButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/userName"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/userName"
+            android:layout_toRightOf="@+id/userName"
+            android:text="Ok" />
+
     </RelativeLayout>
+
 </LinearLayout>

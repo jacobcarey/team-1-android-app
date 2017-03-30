@@ -1,14 +1,13 @@
 package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * Created by Jacob on 27/11/2016.
@@ -20,15 +19,20 @@ public class MainPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean nightMode = preferences.getBoolean("nightMode", false);
+
+        boolean nightMode = ((Theoryously) getApplication()).getNightMode();
         if(nightMode){
             ((Theoryously) getApplication()).setNightMode(true);
         }
 
-
         setContentView(R.layout.activity_main_page);
 
+        String userName = ((Theoryously) getApplication()).getUserName();
+        TextView userNameField = (TextView) findViewById(R.id.userName);
+
+        if (!userName.isEmpty()) {
+            userNameField.setText(userName);
+        }
 
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
