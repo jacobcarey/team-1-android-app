@@ -32,4 +32,7 @@ dependencies {
     compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     compile 'com.facebook.android:facebook-android-sdk:[4,5)'
+    compile 'com.google.android.gms:play-services-gcm:10.2.0'
+    apply plugin: 'com.google.gms.google-services'
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
 }

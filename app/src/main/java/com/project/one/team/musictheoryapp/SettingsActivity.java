@@ -9,7 +9,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.widget.ToggleButton;
+
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -59,6 +62,17 @@ public class SettingsActivity extends AppCompatActivity {
                         getSystemService(Context.INPUT_METHOD_SERVICE);
                 inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                         InputMethodManager.HIDE_NOT_ALWAYS);
+            }
+        });
+
+        Button noteButton = (Button) findViewById(R.id.noteTest);
+        noteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Get the token
+                String token = FirebaseInstanceId.getInstance().getToken();
+//                Log.d(TAG, "Token: " + token);
+                Toast.makeText(SettingsActivity.this, token, Toast.LENGTH_SHORT).show();
             }
         });
     }

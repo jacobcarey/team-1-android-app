@@ -60,6 +60,16 @@
             android:layout_toRightOf="@+id/userName"
             android:text="Ok" />
 
+        <Button
+            android:id="@+id/noteTest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/nightModeToggle"
+            android:layout_alignRight="@+id/nightModeToggle"
+            android:layout_below="@+id/nightModeToggle"
+            android:layout_marginTop="74dp"
+            android:text="Note" />
+
     </RelativeLayout>
 
 </LinearLayout>
