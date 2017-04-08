@@ -5,6 +5,7 @@
     android:id="@+id/activity_basic_select"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_screen_bg_gradient"
     android:paddingBottom="0dp"
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
@@ -12,10 +13,10 @@
     android:title="Content">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/contentLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/contentLayout">
+        android:orientation="vertical">
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"

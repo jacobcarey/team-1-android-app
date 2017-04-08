@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -58,10 +59,15 @@ public class ContentFragment extends Fragment {
         TextView titleTextView = (TextView) v.findViewById(R.id.titleTextView);
         titleTextView.setText(title);
 
+        ImageView contentImageView = (ImageView) v.findViewById(R.id.contentImageView);
+
         if(image != "null")
         {
-            ImageView contentImageView = (ImageView) v.findViewById(R.id.contentImageView);
             contentImageView.setImageResource(getResources().getIdentifier(image, "drawable", getContext().getPackageName()));
+        }
+        else
+        {
+            contentImageView.setLayoutParams(new LinearLayout.LayoutParams(contentImageView.getLayoutParams().width, 200));
         }
 
         TextView contentTextView = (TextView) v.findViewById(R.id.contentTextView);
