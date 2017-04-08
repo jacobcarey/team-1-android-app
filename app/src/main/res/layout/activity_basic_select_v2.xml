@@ -53,35 +53,35 @@
             android:id="@+id/scrollLL">
 
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="131dp"
-                android:weightSum="1"
-                android:gravity="center_vertical"
                 android:id="@+id/introLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
                 <TextView
-                    android:text="Introduction to \nMusic Theory"
+                    android:id="@+id/introTxt"
                     android:layout_width="255dp"
                     android:layout_height="128dp"
-                    android:id="@+id/introTxt"
                     android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Introduction to \nMusic Theory"
                     android:textAlignment="center"
-                    android:textSize="22sp"
                     android:textColor="@android:color/black"
-                    android:gravity="center_vertical" />
+                    android:textSize="22sp" />
 
                 <ImageButton
+                    android:id="@+id/introBtn"
                     android:layout_width="128dp"
                     android:layout_height="120dp"
-                    app:srcCompat="@drawable/introbtn"
-                    android:id="@+id/introBtn"
+                    android:layout_marginRight="20dp"
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    android:layout_marginRight="20dp" />
+                    app:srcCompat="@drawable/introbtn" />
             </LinearLayout>
 
             <LinearLayout
@@ -180,6 +180,70 @@
                     android:textColor="@android:color/black"
                     android:gravity="center_vertical" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/scaleconmajLayout"
+                android:layout_width="match_parent"
+                android:layout_height="131dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/scaleconmajTxt"
+                    android:layout_width="255dp"
+                    android:layout_height="128dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Major Scale Construction"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+
+                <ImageButton
+                    android:id="@+id/scaleconmajBtn"
+                    android:layout_width="128dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/select_icon"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/introbtn" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/scaleconminLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/scaleconminTxt"
+                    android:layout_width="255dp"
+                    android:layout_height="128dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Minor Scale Construction"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="22sp" />
+
+                <ImageButton
+                    android:id="@+id/scaleconminBtn"
+                    android:layout_width="128dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/select_icon"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/introbtn" />
             </LinearLayout>
 
             <LinearLayout

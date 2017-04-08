@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Scale Construction",
+    "content": [
+      "In music, the two main types of scales are known as ‘major’ and ‘minor’. Though the differences are subtle, a Major scale has a happier sound, while a Minor scale has a sadder, more sinister feel."
+    ]
+  },
+  {
+    "title": "Refresher",
+    "content": [
+      "As you should recall from previous lessons, the first note in a scale is known as the tonic. We use the tonic as the name of the scale e.g. a tonic of C would give us C major or C minor."
+    ]
+  },
+  {
+    "title": "Major Scales",
+    "content": [
+      "Now for the fun part: scales are constructed using a very specific pattern of intervals (remember, an interval just means the distance between two notes). This pattern is expressed as tones and semitones, with each interval relative to the last. It’s easier to show, so let’s get to it."
+    ]
+  },
+  {
+    "title": "Major Scales",
+    "image": "basic_majorintervalpattern",
+    "content": [
+      "So here it is, the pattern for all major scales. A ‘T’ represents a tone, and an ‘S’ represents a semitone, so we read this as Tone Tone Semitone Tone Tone Tone Semitone. It’s quite a mouthful, but very useful. Let’s see how it works by constructing the scale of C major."
+    ]
+  },
+  {
+    "title": "C major: C",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "First off, we know the first note in C major, so let’s start there. The first interval in the pattern is T, or tone. Looking at the piano, we can see that a tone up from C is D, so let’s add this to the scale. Remember that a tone is two steps!"
+    ]
+  },
+  {
+    "title": "C major: C D",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "Next, we have another tone. One tone up from D is E, so let’s add that too."
+    ]
+  },
+  {
+    "title": "C major: C D E",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "Now we have a semitone. Remembering a semitone is only one step up, we see that moving from E, our next note is F."
+    ]
+  },
+  {
+    "title": "C major: C D E F",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "Another tone, so we move from F to G."
+    ]
+  },
+  {
+    "title": "C major: C D E F G",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "Another tone, so we move from G to A."
+    ]
+  },
+  {
+    "title": "C major: C D E F G A",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "Another tone, so we move from A to B."
+    ]
+  },
+  {
+    "title": "C major: C D E F G A B",
+    "image": "basic_majorintervalpatternwkeyboard",
+    "content": [
+      "A semitone takes us from B to C. \nYou might have noticed this takes us back to the tonic - this is where you should always end up when building a scale, otherwise something’s definitely gone wrong! "
+    ]
+  },
+  {
+    "title": "Scale Construction",
+    "image": "",
+    "content": [
+      "So there we go, we just built C major from scratch! In the quiz we’ll construct F major together, see you there!"
+    ]
+  }
+]
