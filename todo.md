@@ -11,6 +11,7 @@
  -Remake icons
  
  -Save progress, database connectivity potentially achieved via Firebase (Jacob).
+ ---------- Login acheived, data should now be able to saved agaisnt a user, however, code is an absolute mess!
  
  -Website
  
