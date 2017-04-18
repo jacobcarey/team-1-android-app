@@ -1,4 +1,4 @@
- -Settings page (preferences)
+ -Settings page (preferences) - Android has most of these built it, 
  
  -Piano roll
  
@@ -18,3 +18,4 @@
  
  -Testing!
 
+- Input and Method validation
