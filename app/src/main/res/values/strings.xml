@@ -5,7 +5,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="auth_failed">Authentication failed</string>
 
+    <string name="auth_pass">Signed in.</string>
+
+    <string name="auth_signUp">Signed up.</string>
+
+    <string name="ask_sign_out">Already signed in.</string>
     <!-- Facebook -->
     <string name="facebook_app_id">173154259840037</string>
 

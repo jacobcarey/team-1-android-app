@@ -10,65 +10,78 @@
         android:layout_height="match_parent"
         android:layout_weight="1">
 
-        <EditText
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="23dp"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="70dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="72dp"
-            tools:text="Enter Name" />
-
         <ToggleButton
             android:id="@+id/nightModeToggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/userNameButton"
-            android:layout_alignStart="@+id/userNameButton"
-            android:layout_below="@+id/userNameButton"
-            android:layout_marginTop="83dp"
             android:text="ToggleButton"
             app:layout_constraintHorizontal_chainStyle="spread"
             tools:layout_editor_absoluteX="204dp"
-            tools:layout_editor_absoluteY="231dp"></ToggleButton>
+            tools:layout_editor_absoluteY="231dp"
+            android:layout_below="@+id/loginSubmit"
+            android:layout_alignLeft="@+id/loginSubmit"
+            android:layout_alignStart="@+id/loginSubmit"
+            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="100dp"></ToggleButton>
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Night Mode"
+            tools:layout_editor_absoluteY="247dp"
             android:layout_alignBaseline="@+id/nightModeToggle"
             android:layout_alignBottom="@+id/nightModeToggle"
-            android:layout_alignLeft="@+id/userName"
-            android:layout_alignStart="@+id/userName"
-            android:text="Night Mode"
-            tools:layout_editor_absoluteY="247dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="77dp"
+            android:layout_marginStart="77dp" />
 
-        <Button
-            android:id="@+id/userNameButton"
+        <EditText
+            android:id="@+id/userEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/userName"
-            android:layout_marginLeft="11dp"
-            android:layout_marginStart="11dp"
-            android:layout_toEndOf="@+id/userName"
-            android:layout_toRightOf="@+id/userName"
-            android:text="Ok" />
+            android:layout_alignLeft="@+id/userPass"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/userPass"
+            android:layout_marginTop="29dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            tools:text="Email" />
 
-        <Button
-            android:id="@+id/noteTest"
+        <EditText
+            android:id="@+id/userPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/nightModeToggle"
-            android:layout_alignRight="@+id/nightModeToggle"
-            android:layout_below="@+id/nightModeToggle"
-            android:layout_marginTop="74dp"
-            android:text="Note" />
+            android:layout_below="@+id/userEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:text="Pass" />
+
+        <Button
+            android:id="@+id/loginSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:layout_marginTop="42dp"
+            android:layout_below="@+id/userPass"
+            android:layout_toRightOf="@+id/signUp"
+            android:layout_toEndOf="@+id/signUp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp" />
+
+        <Button
+            android:id="@+id/signUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:layout_alignBaseline="@+id/loginSubmit"
+            android:layout_alignBottom="@+id/loginSubmit"
+            android:layout_alignLeft="@+id/textView11"
+            android:layout_alignStart="@+id/textView11" />
 
     </RelativeLayout>
 
