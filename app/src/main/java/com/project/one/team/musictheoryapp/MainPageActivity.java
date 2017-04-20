@@ -115,10 +115,10 @@ public class MainPageActivity extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
-                startActivity(i);
-                overridePendingTransition(R.anim.slide_right,
-                        R.anim.slide_left_out);
+//                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
+//                startActivity(i);
+//                overridePendingTransition(R.anim.slide_right,
+//                        R.anim.slide_left_out);
             }
         });
 

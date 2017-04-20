@@ -23,8 +23,8 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
     private static final String GREY_OUT_COLOUR = "#888888"; //Defines the greyed out colour
-    String[] Topics = new String[]{"intro", "mnotes", "smpnotelen", "advnotelen"};
-    int TOPIC_REACHED = 1; //How far the user has progressed TODO: save this externally
+    String[] Topics = new String[]{"intro", "mnotes", "smpnotelen", "advnotelen", "scaleconmaj", "scaleconmin"};
+    int TOPIC_REACHED = 7; //How far the user has progressed TODO: save this externally
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +50,7 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
             else
             {
                 //If the topic has not been reached (and therefore cannot be accessed)
-                //t.setTextColor(Color.parseColor(GREY_OUT_COLOUR));
+                t.setTextColor(Color.parseColor(GREY_OUT_COLOUR));
             }
         }
 

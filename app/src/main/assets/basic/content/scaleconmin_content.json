@@ -1,0 +1,70 @@
+[
+  {
+    "title": "Scale Construction",
+    "content": [
+      "So hopefully by now you have the hang of major scale construction, now it’s time to learn about minor scale construction. Don’t worry, it’s very similar, but we use a different interval pattern. Let’s get right into it by constructing C minor!"
+    ]
+  },
+  {
+    "title": "Minor Scales",
+    "image": "basic_minorintervalpattern",
+    "content": [
+      "Here’s the interval pattern for minor scales. It’s very similar to that of major scales, so be careful you don’t mix them up!"
+    ]
+  },
+  {
+    "title": "C minor: C",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "So once again, we know the first note of the scale: C. The first interval in the pattern is a tone, so we move up from C to D and add it to the scale."
+    ]
+  },
+  {
+    "title": "C minor: C D",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "Now the first difference from major scales - we have a semitone. A semitone up from D is Eb, so we add this to the scale."
+    ]
+  },
+  {
+    "title": "C minor: C D Eb",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "A tone, so we move from Eb to F."
+    ]
+  },
+  {
+    "title": "C minor: C D Eb F",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "Another tone, so we move from F to G."
+    ]
+  },
+  {
+    "title": "C minor: C D Eb F G",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "A semitone, so we move from G to Ab."
+    ]
+  },
+  {
+    "title": "C minor: C D Eb F G Ab",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "A tone, so we move from Ab to Bb."
+    ]
+  },
+  {
+    "title": "C minor: C D Eb F G Ab Bb",
+    "image": "basic_minorintervalpatternwkeyboard",
+    "content": [
+      "A tone, so we move from Bb back to our tonic, C."
+    ]
+  },
+  {
+    "title": "Minor Scales",
+    "content": [
+      "So there we go, C minor! If you’ve got the hang of this, the hardest part should be remembering the difference between the major and minor patterns, but it just takes practice. In the quiz, have a go at constructing A minor!"
+    ]
+  }
+]

@@ -43,7 +43,7 @@ public class ContentFragment extends Fragment {
         if(image != "null")
         {
             ImageView contentImageView = (ImageView) v.findViewById(R.id.contentImageView);
-            contentImageView.setImageResource(getResources().getIdentifier("basic_intro1", "drawable", getContext().getPackageName()));
+            contentImageView.setImageResource(getResources().getIdentifier(image, "drawable", getContext().getPackageName()));
         }
 
         TextView contentTextView = (TextView) v.findViewById(R.id.contentTextView);
