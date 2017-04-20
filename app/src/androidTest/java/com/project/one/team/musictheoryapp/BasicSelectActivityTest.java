@@ -20,7 +20,6 @@ import static org.hamcrest.Matchers.allOf;
 /**
  * Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.BasicSelectActivityV2 BasicSelectActivityV2}.
  */
-
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class BasicSelectActivityTest {

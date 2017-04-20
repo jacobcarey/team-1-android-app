@@ -28,19 +28,19 @@ import static org.hamcrest.Matchers.allOf;
 public class SettingsActivityTest {
 
     @Rule
-    public ActivityTestRule<SettingsActivity> sActivityTestRule = new ActivityTestRule<>(SettingsActivity.class);
+    public ActivityTestRule<SettingsActivity> mActivityTestRule = new ActivityTestRule<>(SettingsActivity.class);
 
     @Test
     public void nightModeButtonShouldToggleNightMode() {
         // Store the night mode state before the toggle.
-        boolean currentValue = ((Theoryously) sActivityTestRule.getActivity().getApplication()).getNightMode();
+        boolean currentValue = ((Theoryously) mActivityTestRule.getActivity().getApplication()).getNightMode();
 
         onView(allOf(withId(R.id.nightModeToggle), isDisplayed()))
                 .perform(click());
 
         // Check that new night mode value is different from the original.
         Assert.assertNotEquals("Night Mode should be didn't toggle!", currentValue,
-                ((Theoryously) sActivityTestRule.getActivity().getApplication()).getNightMode());
+                ((Theoryously) mActivityTestRule.getActivity().getApplication()).getNightMode());
     }
 
     @Test

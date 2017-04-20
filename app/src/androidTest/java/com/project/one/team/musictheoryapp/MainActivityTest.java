@@ -30,6 +30,7 @@ public class MainActivityTest {
     @Rule
     public ActivityTestRule<MainPageActivity> mActivityTestRule = new ActivityTestRule<>(MainPageActivity.class);
 
+    // This test seems a bit unnecessary.
     @Test
     public void uiElementsShouldExist() {
         // Basic Button
