@@ -68,10 +68,11 @@
         <activity android:name=".ContentActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".CreditsActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".PianoRollActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".SignUpActivity" android:screenOrientation="portrait"></activity>
 
-        <activity android:name=".SettingsPreferenceActivity"
-                    android:label="Preferences">
-        </activity>
+        <!--<activity android:name=".SettingsPreferenceActivity"-->
+                    <!--android:label="Preferences">-->
+        <!--</activity>-->
 
         <service android:name=".FirebaseMessaging">
             <intent-filter>

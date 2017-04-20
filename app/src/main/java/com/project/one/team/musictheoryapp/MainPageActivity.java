@@ -1,17 +1,20 @@
 package com.project.one.team.musictheoryapp;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import static com.project.one.team.musictheoryapp.R.id.userName;
 
 /**
  * Created by Jacob on 27/11/2016.
@@ -19,25 +22,39 @@ import android.widget.Toast;
 
 public class MainPageActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainPageActivity";
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        mAuth = FirebaseAuth.getInstance();
         boolean nightMode = ((Theoryously) getApplication()).getNightMode();
         if(nightMode){
             ((Theoryously) getApplication()).setNightMode(true);
         }
 
         setContentView(R.layout.activity_main_page);
+        final TextView userNameField = (TextView) findViewById(userName);
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        String userName = ((Theoryously) getApplication()).getUserName();
-        TextView userNameField = (TextView) findViewById(R.id.userName);
-
-        if (!userName.isEmpty()) {
-            userNameField.setText("Logged in as: " + userName);
-        }
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    userNameField.setText("Logged in as: " + user.getDisplayName());
+                    ((Theoryously) getApplication()).setSignedIn(true);
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                    userNameField.setText("");
+                }
+                // ...
+            }
+        };
 
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
@@ -125,6 +142,21 @@ public class MainPageActivity extends AppCompatActivity {
         Intent i = new Intent(MainPageActivity.this, SettingsActivity.class);
         startActivity(i);
         overridePendingTransition(R.anim.slide_left, R.anim.slide_right_out);
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
     }
 
 

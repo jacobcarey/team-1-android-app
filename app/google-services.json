@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "514767393269-9lo96ukc8t905mn30g0954vsdq2iartn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.one.team.musictheoryapp",
+            "certificate_hash": "a86bd11843fc9ede082d42248672e930c70cb0b7"
+          }
+        },
+        {
           "client_id": "514767393269-9fm3abnrhvu42f2umkdb8rcv71fdcbak.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514767393269-9fm3abnrhvu42f2umkdb8rcv71fdcbak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
