@@ -1,19 +1,12 @@
 package com.project.one.team.musictheoryapp;
 
 
-import android.support.test.espresso.ViewInteraction;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.test.filters.LargeTest;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
-import org.hamcrest.TypeSafeMatcher;
-import org.hamcrest.core.IsInstanceOf;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,22 +33,22 @@ public class MainActivityTest {
     @Test
     public void uiElementsShouldExist() {
         // Basic Button
-        onView(allOf(withId(R.id.basic), isDisplayed()))
+        onView(withId(R.id.basic))
                 .check(matches(isDisplayed()));
         // Intermediate Button
-        onView(allOf(withId(R.id.intermediate), isDisplayed()))
+        onView(withId(R.id.intermediate))
                 .check(matches(isDisplayed()));
         // Advanced Button
-        onView(allOf(withId(R.id.advanced), isDisplayed()))
+        onView(withId(R.id.advanced))
                 .check(matches(isDisplayed()));
         // Settings Button
-        onView(allOf(withId(R.id.settingsCog), isDisplayed()))
+        onView(withId(R.id.settingsCog))
                 .check(matches(isDisplayed()));
         // Piano Roll Button
-        onView(allOf(withId(R.id.pianoRollBtn), isDisplayed()))
+        onView(withId(R.id.pianoRollBtn))
                 .check(matches(isDisplayed()));
         // Main Logo
-        onView(allOf(withId(R.id.main_Logo), isDisplayed()))
+        onView(withId(R.id.main_Logo))
                 .check(matches(isDisplayed()));
     }
 
@@ -75,7 +68,7 @@ public class MainActivityTest {
                 .perform(click());
 
         // Check if Piano view object exists.
-        onView(allOf(withClassName(Matchers.equalTo(Piano.class.getName())), isDisplayed()))
+        onView(withClassName(Matchers.equalTo(Piano.class.getName())))
                 .check(matches(isDisplayed()));
     }
 
@@ -95,7 +88,7 @@ public class MainActivityTest {
                 .perform(click());
 
         // Check if the night mode button exists.
-        onView(allOf(withId(R.id.nightModeToggle), isDisplayed()))
+        onView(withId(R.id.nightModeToggle))
                 .check(matches(isDisplayed()));
     }
 }
