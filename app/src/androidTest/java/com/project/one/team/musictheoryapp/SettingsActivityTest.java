@@ -11,13 +11,8 @@ import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static android.support.test.espresso.action.ViewActions.pressBack;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 /**
@@ -41,19 +36,6 @@ public class SettingsActivityTest {
         // Check that new night mode value is different from the original.
         Assert.assertNotEquals("Night Mode should be didn't toggle!", currentValue,
                 ((Theoryously) mActivityTestRule.getActivity().getApplication()).getNightMode());
-    }
-
-    @Test
-    public void canSaveUsername() {
-        // Could use parameterized tests here.
-        String testUsername = "TestUser";
-        onView(allOf(withId(R.id.userName), isDisplayed()))
-                .perform(typeText(testUsername), closeSoftKeyboard());
-        onView(allOf(withId(R.id.userNameButton), isDisplayed()))
-                .perform(click(), pressBack());
-
-        onView(allOf(withId(R.id.userName), isDisplayed()))
-                .check(matches(withText("Logged in as: " + testUsername)));
     }
 
 }
