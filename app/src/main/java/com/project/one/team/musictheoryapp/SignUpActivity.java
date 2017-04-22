@@ -91,7 +91,7 @@ public class SignUpActivity extends AppCompatActivity {
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     ((Theoryously) getApplication()).setSignedIn(true);
                         UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(userPassInput.getText().toString()).build();
+                                .setDisplayName(userNameInput.getText().toString()).build();
                         user.updateProfile(profileUpdates);
 
                         Intent i = new Intent(SignUpActivity.this, SettingsActivity.class);
