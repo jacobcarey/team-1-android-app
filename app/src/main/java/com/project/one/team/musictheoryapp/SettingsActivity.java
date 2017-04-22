@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
@@ -138,6 +139,13 @@ public class SettingsActivity extends AppCompatActivity {
                     userEmail.setText("Email");
                     recreate();
                 }else {
+                    if (userEmail.getText().toString().isEmpty() || userPass.getText().toString().isEmpty()) {
+                        Snackbar.make(findViewById(R.id.settingsLayout),
+                                "Email/Password cannot be blank!", Snackbar.LENGTH_LONG).show();
+                        return;
+                    }
+
+
                     InputMethodManager inputManager = (InputMethodManager)
                             getSystemService(Context.INPUT_METHOD_SERVICE);
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
