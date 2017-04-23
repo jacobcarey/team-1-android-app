@@ -34,7 +34,7 @@ public class SettingsActivityTest {
                 .perform(click());
 
         // Check that new night mode value is different from the original.
-        Assert.assertNotEquals("Night Mode should be didn't toggle!", currentValue,
+        Assert.assertNotEquals("Night Mode didn't toggle!", currentValue,
                 ((Theoryously) mActivityTestRule.getActivity().getApplication()).getNightMode());
     }
 

@@ -90,7 +90,7 @@ public class AuthenticationTest {
                 .perform(click());
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(2000);
         } catch (InterruptedException ex) {
             Assert.fail("Thread.sleep() Interrupted!\n" + ex.getMessage());
         }

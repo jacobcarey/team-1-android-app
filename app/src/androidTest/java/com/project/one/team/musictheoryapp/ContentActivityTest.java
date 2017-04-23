@@ -52,7 +52,7 @@ public class ContentActivityTest {
 
         // There is apparently a delay in opening the quiz that Espresso cannot wait for automatically.
         try {
-            Thread.sleep(150);
+            Thread.sleep(450);
         } catch (InterruptedException ex) {
             Assert.fail("Thread.sleep() Interrupted!\n" + ex.getMessage());
         }

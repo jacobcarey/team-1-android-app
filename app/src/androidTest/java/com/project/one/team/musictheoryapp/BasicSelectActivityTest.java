@@ -1,6 +1,5 @@
 package com.project.one.team.musictheoryapp;
 
-import android.support.test.espresso.action.ViewActions;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -9,8 +8,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.scrollTo;
+import static android.support.test.espresso.action.ViewActions.swipeUp;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -19,6 +21,7 @@ import static org.hamcrest.Matchers.allOf;
 
 /**
  * Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.BasicSelectActivityV2 BasicSelectActivityV2}.
+ * (ScrollTo actions don't work for testing Android versions lower than 7.1.)
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -30,7 +33,7 @@ public class BasicSelectActivityTest {
     @Test
     public void canNavigateToIntroTopicPage() {
         onView(withId(R.id.introLayout))
-                .perform(ViewActions.scrollTo(), click());
+                .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Intro to music theory")));
@@ -39,7 +42,7 @@ public class BasicSelectActivityTest {
     @Test
     public void canNavigateToMusicNotesTopicPage() {
         onView(withId(R.id.mnotesLayout))
-                .perform(ViewActions.scrollTo(), click());
+                .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Musical notes and how to find them")));
@@ -48,7 +51,7 @@ public class BasicSelectActivityTest {
     @Test
     public void canNavigateToSimpleNotesTopicPage() {
         onView(withId(R.id.smpnotelenLayout))
-                .perform(ViewActions.scrollTo(), click());
+                .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Simple Note Lengths")));
@@ -57,7 +60,7 @@ public class BasicSelectActivityTest {
     @Test
     public void canNavigateToAdvancedNotesTopicPage() {
         onView(withId(R.id.advnotelenLayout))
-                .perform(ViewActions.scrollTo(), click());
+                .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Advanced Note Lengths")));
@@ -66,7 +69,7 @@ public class BasicSelectActivityTest {
     @Test
     public void canNavigateToMajorScaleTopicPage() {
         onView(withId(R.id.scaleconmajLayout))
-                .perform(ViewActions.scrollTo(), click());
+                .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Scale Construction")));
@@ -75,7 +78,7 @@ public class BasicSelectActivityTest {
     @Test
     public void canNavigateToMinorScaleTopicPage() {
         onView(withId(R.id.scaleconminLayout))
-                .perform(ViewActions.scrollTo(), click());
+                .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Scale Construction")));
