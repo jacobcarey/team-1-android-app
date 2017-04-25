@@ -133,7 +133,7 @@ public class SettingsActivity extends AppCompatActivity {
                     String user = userEmail.getText().toString();
                     String password = userPass.getText().toString();
                     signInWithEmail(user, password);
-                    recreate();
+//                    recreate();
                 }
             }
         });
@@ -224,6 +224,7 @@ public class SettingsActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(SettingsActivity.this, R.string.auth_pass,
                                     Toast.LENGTH_SHORT).show();
+                            ((Theoryously) getApplication()).setSignedIn(true);
                         }
 
                         // ...
