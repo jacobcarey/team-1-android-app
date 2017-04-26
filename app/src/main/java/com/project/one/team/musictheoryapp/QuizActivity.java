@@ -43,7 +43,7 @@ public class QuizActivity extends AppCompatActivity {
     private String topic;
     private TextView questionTextView;
     private int currentQuestionIndex = 0;
-    private int numberOfQuestions;
+    private int numberOfQuestions = 0;
     private int correctAnswer;
     private int quizMarks;
     private List<TextView> answerTextViews;
@@ -209,7 +209,7 @@ public class QuizActivity extends AppCompatActivity {
         answer2Text.setBackgroundResource(buttonBackgroundDefault);
         answer3Text.setBackgroundResource(buttonBackgroundDefault);
         answer4Text.setBackgroundResource(buttonBackgroundDefault);
-        qProgress.setProgress(currentQuestionIndex * 33);
+        qProgress.setProgress(Math.round(currentQuestionIndex *100/ numberOfQuestions));
 
         try {
             // Randomise the order of the json keys
