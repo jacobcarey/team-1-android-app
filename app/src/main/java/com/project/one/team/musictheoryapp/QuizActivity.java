@@ -267,13 +267,13 @@ public class QuizActivity extends AppCompatActivity {
                 findViewById(R.id.returnText).setVisibility(View.VISIBLE);
 
 
-                if(quizMarks>=1){
+                if(quizMarks>=numberOfQuestions/3){
                     findViewById(R.id.star1).setVisibility(View.VISIBLE);
                 }
-                if(quizMarks>=2){
+                if(quizMarks>=numberOfQuestions/3*2){
                     findViewById(R.id.star2).setVisibility(View.VISIBLE);
                 }
-                if(quizMarks>=3){
+                if(quizMarks>=numberOfQuestions){
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
                 }
 
