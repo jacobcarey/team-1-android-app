@@ -84,6 +84,26 @@
             android:layout_alignLeft="@+id/textView11"
             android:layout_alignStart="@+id/textView11" />
 
+        <ToggleButton
+            android:id="@+id/notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/nightModeToggle"
+            android:layout_alignStart="@+id/nightModeToggle"
+            android:layout_below="@+id/nightModeToggle"
+            android:layout_marginTop="14dp"
+            android:text="ToggleButton" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:layout_alignBaseline="@+id/notifications"
+            android:layout_alignBottom="@+id/notifications"
+            android:layout_alignLeft="@+id/textView11"
+            android:layout_alignStart="@+id/textView11" />
+
     </RelativeLayout>
 
 </LinearLayout>

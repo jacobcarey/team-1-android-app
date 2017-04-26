@@ -20,6 +20,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -34,6 +40,7 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         getSupportActionBar().hide();
         mAuth = FirebaseAuth.getInstance();
+        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
         ToggleButton nmButton = (ToggleButton) findViewById(R.id.nightModeToggle);
         if (((Theoryously) getApplication()).getNightMode()) {
@@ -42,25 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
             nmButton.setChecked(false);
         }
 
-
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-
-                if (user != null) {
-                    // User is signed in
-                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    ((Theoryously) getApplication()).setSignedIn(true);
-
-                } else {
-                    // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
-                }
-                // ...
-            }
-        };
+        final ToggleButton notificationsToggle = (ToggleButton) findViewById(R.id.notifications);
 
         nmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
         userEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!((Theoryously) getApplication()).getSignedIn()) {
+                if (!((Theoryously) getApplication()).getSignedIn()) {
                     userEmail.setText("");
                 }
             }
@@ -88,29 +77,19 @@ public class SettingsActivity extends AppCompatActivity {
         userPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!((Theoryously) getApplication()).getSignedIn()) {
+                if (!((Theoryously) getApplication()).getSignedIn()) {
                     userPass.setText("");
                 }
             }
         });
 
-        Button loginInButton = (Button) findViewById(R.id.loginSubmit);
-        Button signUpButton = (Button) findViewById(R.id.signUp);
-
-        if(((Theoryously) getApplication()).getSignedIn()){
-            userEmail.setFocusable(false);
-            userPass.setFocusable(false);
-            userEmail.setFocusableInTouchMode(false);
-            userPass.setFocusableInTouchMode(false);
-            userEmail.setText("Already signed in.");
-            userPass.setText("");
-            loginInButton.setText("Sign Out");
-        }
+        final Button loginInButton = (Button) findViewById(R.id.loginSubmit);
+        final Button signUpButton = (Button) findViewById(R.id.signUp);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!((Theoryously) getApplication()).getSignedIn()) {
+                if (!((Theoryously) getApplication()).getSignedIn()) {
                     InputMethodManager inputManager = (InputMethodManager)
                             getSystemService(Context.INPUT_METHOD_SERVICE);
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
@@ -121,7 +100,7 @@ public class SettingsActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_left,
                             R.anim.slide_right_out);
                     recreate();
-                }else{
+                } else {
                     Toast.makeText(SettingsActivity.this, R.string.ask_sign_out,
                             Toast.LENGTH_SHORT).show();
                 }
@@ -133,12 +112,12 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(((Theoryously) getApplication()).getSignedIn()){
+                if (((Theoryously) getApplication()).getSignedIn()) {
                     mAuth.signOut();
                     ((Theoryously) getApplication()).setSignedIn(false);
                     userEmail.setText("Email");
                     recreate();
-                }else {
+                } else {
                     if (userEmail.getText().toString().isEmpty() || userPass.getText().toString().isEmpty()) {
                         Snackbar.make(findViewById(R.id.settingsLayout),
                                 "Email/Password cannot be blank!", Snackbar.LENGTH_LONG).show();
@@ -154,10 +133,75 @@ public class SettingsActivity extends AppCompatActivity {
                     String user = userEmail.getText().toString();
                     String password = userPass.getText().toString();
                     signInWithEmail(user, password);
-                    recreate();
+//                    recreate();
                 }
             }
         });
+
+        notificationsToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                if (notificationsToggle.isChecked()) {
+                    FirebaseMessaging.getInstance().subscribeToTopic("all");
+                    database.child("users").child(userId).child("notifications").setValue("true");
+                } else {
+                    FirebaseMessaging.getInstance().unsubscribeFromTopic("all");
+                    database.child("users").child(userId).child("notifications").setValue("false");
+                }
+
+            }
+        });
+
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if (user != null) {
+                    // User is signed in
+                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
+                    notificationsToggle.setEnabled(true);
+                    final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                    database.getDatabase().getReference().child("users").child(userId).child("notifications").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            String notificationBoolStr = dataSnapshot.getValue(String.class);
+                            if (notificationBoolStr.equals("true")) {
+                                notificationsToggle.setChecked(true);
+                            } else {
+                                notificationsToggle.setChecked(false);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    });
+
+                    userPass.setEnabled(false);
+                    userEmail.setEnabled(false);
+                    userEmail.setText("Already signed in.");
+                    userPass.setText("");
+                    loginInButton.setText("Sign Out");
+
+                } else {
+                    // User is signed out
+                    Log.d(TAG, "onAuthStateChanged:signed_out");
+                    notificationsToggle.setEnabled(false);
+                    userPass.setEnabled(true);
+                    userEmail.setEnabled(true);
+                    userEmail.setText("Email:");
+                    userPass.setText("Password");
+                    loginInButton.setText("Sign In");
+                    notificationsToggle.setChecked(false);
+                    notificationsToggle.setEnabled(false);
+                }
+                // ...
+            }
+        };
 
     }
 
@@ -180,6 +224,7 @@ public class SettingsActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(SettingsActivity.this, R.string.auth_pass,
                                     Toast.LENGTH_SHORT).show();
+                            ((Theoryously) getApplication()).setSignedIn(true);
                         }
 
                         // ...

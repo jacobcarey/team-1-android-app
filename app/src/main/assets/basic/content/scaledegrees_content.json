@@ -1,0 +1,39 @@
+[
+	{
+		"title": "Scale Degrees",
+		"content": [
+		"You might think you’re done with scales - well not quite yet. Every position in a scale has a name, called a <b> degree </b>, which indicates its distance from the first note, known as the tonic (you might remember this from Scale Construction). Let’s run through these now."	
+		]
+	},
+	{
+		"title": "",
+		"content": [
+		"As we just said, the first note in a scale is called the tonic. This is the note used to name the scale - for example, the tonic of C major is C. Note that, since a scale always ends on the note it started on, the last note in the scale is also called the tonic - usually referred to as the <b>‘upper tonic’</b>."
+		]
+	},
+	{
+		"title": "",
+		"content": [
+		"The second note in a scale is called the <b> supertonic </b> - super means ‘above’ in Latin.",
+		"The third degree is called the <b> mediant </b>, as it is halfway between the tonic and the fifth degree, the dominant.",
+		"The fourth degree is called the <b> subdominant </b>, as it is below (‘sub’ in Latin) the dominant.",
+		"As mentioned above, the fifth degree is called the <b> dominant </b>",
+		"The sixth note is called the <b> submediant </b> - it is below the degree halfway between the dominant and the upper tonic."
+		]
+	},
+	{
+		"title": "",
+		"content": [
+		"The seventh degree is a little different - its name depends on whether the scale is <b>major</b> or <b>minor</b>. If it’s major, it’s called the <b>leading tone</b>. If you listen to a major scale being played, you’ll hear the seventh note feels like it ‘leads’ into the eighth note, the <b>upper tonic</b>. Otherwise, in a minor scale, the seventh degree is called the ‘subtonic’ - it’s one note below the tonic."
+		]
+	},
+	{
+		"title": "",
+		"content": [
+		"That’s it - all seven scale degree names. The most important to learn are tonic, subdominant and dominant, but it’s handy to know them all! "
+		]
+	}
+
+
+
+]
