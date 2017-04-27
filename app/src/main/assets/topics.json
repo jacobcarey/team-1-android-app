@@ -1,0 +1,18 @@
+{
+  "basic": [
+    "intro",
+    "mnotes",
+    "smpnotelen",
+    "advnotelen",
+    "scaleconmin",
+    "scaleconmaj",
+    "scaledegrees",
+    "smusic"
+  ],
+  "intermediate": [
+    ""
+  ],
+  "advanced": [
+    ""
+  ]
+}

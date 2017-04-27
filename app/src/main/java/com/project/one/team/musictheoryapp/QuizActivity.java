@@ -3,6 +3,7 @@ package com.project.one.team.musictheoryapp;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.share.model.ShareLinkContent;
@@ -275,6 +277,15 @@ public class QuizActivity extends AppCompatActivity {
                 }
                 if(quizMarks>=numberOfQuestions){
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
+
+                    String difficulty = TopicParser.TopicIDToDifficulty(topic);
+                    String _topic = TopicParser.TopicIDToTopic(topic);
+                    SharedPreferences progression = getSharedPreferences("progression", MODE_PRIVATE);
+
+                    int topic_index = Topics.getInstance(this).getTopics(difficulty).indexOf(_topic);
+
+                    if (topic_index < Topics.getInstance(this).getTopics(difficulty).size()-1 && topic_index+1 > progression.getInt(difficulty, 0))
+                        Progression.getInstance(this).increment(difficulty);
                 }
 
                 shareButton.setVisibility(View.VISIBLE);

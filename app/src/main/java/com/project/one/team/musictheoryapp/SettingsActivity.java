@@ -153,20 +153,12 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        final Button progressButton = (Button) findViewById(R.id.progress);
         final Button resetButton = (Button) findViewById(R.id.reset);
-
-        progressButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Progression.getInstance(getApplicationContext()).increment("basic");
-            }
-        });
 
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Progression.getInstance(getApplicationContext()).reset("basic");
+                Progression.getInstance(getApplicationContext()).resetAll();
             }
         });
 
