@@ -104,6 +104,25 @@
             android:layout_alignLeft="@+id/textView11"
             android:layout_alignStart="@+id/textView11" />
 
+        <Button
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView2"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/notifications"
+            android:layout_marginTop="12dp"
+            android:text="Increment" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/userPass"
+            android:layout_alignRight="@+id/userPass"
+            android:layout_alignTop="@+id/progress"
+            android:text="Reset" />
+
     </RelativeLayout>
 
 </LinearLayout>

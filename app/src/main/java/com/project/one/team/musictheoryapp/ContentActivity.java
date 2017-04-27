@@ -21,6 +21,8 @@ import java.util.List;
 
 public class ContentActivity extends FragmentActivity {
 
+    public static final String EXTRA_TOPIC = "topic";
+
     private JSONArray jsonArray;
     private TextView titleTextView;
     private PagerAdapter pagerAdapter;
@@ -55,8 +57,8 @@ public class ContentActivity extends FragmentActivity {
         titleTextView = (TextView) findViewById(R.id.titleTextView);
 
         String contentFile;
-        if (getIntent().hasExtra("topic")) {
-            contentFile = getIntent().getStringExtra("topic") + "_content.json";
+        if (getIntent().hasExtra(EXTRA_TOPIC)) {
+            contentFile = getIntent().getStringExtra(EXTRA_TOPIC) + "_content.json";
 
             // Read in the json file in and parse it
             try {
@@ -115,7 +117,7 @@ public class ContentActivity extends FragmentActivity {
         }
 
         // Add the fragment that contains the link to the quiz for this topic section
-        fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra("topic")));
+        fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra(EXTRA_TOPIC)));
 
         return fList;
     }
