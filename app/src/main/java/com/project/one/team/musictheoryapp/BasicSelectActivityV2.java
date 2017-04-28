@@ -47,7 +47,10 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        int topicReached = progression.getInt("basic", 0); //How far the user has progressed
+        // As Firebase data operations are asynchronous, the page is often rendered before the correct
+        // progress data is retrieved.
+        int topicReached = Progression.getInstance(this).getProgression("basic");
+        //int topicReached = progression.getInt("basic", 0); //How far the user has progressed
         Toast.makeText(getApplicationContext(), "progression/basic is: "+topicReached, Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i < topics.length; i++)
