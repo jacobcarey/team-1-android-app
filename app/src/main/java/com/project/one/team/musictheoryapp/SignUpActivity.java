@@ -19,6 +19,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import static com.project.one.team.musictheoryapp.R.id.userEmail;
 import static com.project.one.team.musictheoryapp.R.id.userPass;
@@ -32,6 +35,7 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private static final String TAG = "SignUpActivity";
+    private final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         getSupportActionBar().hide();
         mAuth = FirebaseAuth.getInstance();
+
 
         final EditText userNameInput = (EditText) findViewById(R.id.userName);
         userNameInput.setOnClickListener(new View.OnClickListener() {
@@ -130,6 +135,9 @@ public class SignUpActivity extends AppCompatActivity {
                         } else {
                             Toast.makeText(SignUpActivity.this, R.string.auth_signUp,
                                     Toast.LENGTH_SHORT).show();
+                            final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            FirebaseMessaging.getInstance().subscribeToTopic("all");
+                            database.child("users").child(userId).child("notifications").setValue("true");
                         }
 
                         // [START_EXCLUDE]
