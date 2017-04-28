@@ -196,6 +196,11 @@ public class SettingsActivity extends AppCompatActivity {
                     userPass.setText("");
                     loginInButton.setText("Sign Out");
 
+                    // Update the user's progression when they log in.
+                    Progression.getInstance(SettingsActivity.this).getProgression("basic");
+                    //Progression.getInstance(SettingsActivity.this).getProgression("intermediate");
+                    //Progression.getInstance(SettingsActivity.this).getProgression("advanced");
+
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");

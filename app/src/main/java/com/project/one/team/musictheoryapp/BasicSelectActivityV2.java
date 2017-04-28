@@ -47,10 +47,7 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // As Firebase data operations are asynchronous, the page is often rendered before the correct
-        // progress data is retrieved.
         int topicReached = Progression.getInstance(this).getProgression("basic");
-        //int topicReached = progression.getInt("basic", 0); //How far the user has progressed
         Toast.makeText(getApplicationContext(), "progression/basic is: "+topicReached, Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i < topics.length; i++)
@@ -68,6 +65,7 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
                 // Set the colours and styles to 'enabled'
                 l.setBackgroundResource(R.drawable.can_select_background);
                 l.setClickable(true);
+                b.setClickable(true);
                 b.setColorFilter(getResources().getColor(android.R.color.transparent));
                 t.setTextColor(getResources().getColor(android.R.color.black));
             }
@@ -76,6 +74,7 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
                 //If the topic has not been reached (and therefore cannot be accessed)
                 l.setBackgroundResource(R.drawable.cant_select_gradient);
                 l.setClickable(false);
+                b.setClickable(false);
                 b.setColorFilter(Color.parseColor(GREY_OUT_COLOUR));
                 t.setTextColor(Color.parseColor(GREY_OUT_COLOUR));
             }

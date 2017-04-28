@@ -57,7 +57,7 @@ public class AuthenticationTest {
             .perform(click(), typeText(testEmail), closeSoftKeyboard());
         onView(allOf(withId(R.id.userPass), isDisplayed()))
                 .perform(click(), typeText(testPassword), closeSoftKeyboard());
-        onView(allOf(withText("Login"), isDisplayed()))
+        onView(allOf(withText("Sign In"), isDisplayed()))
                 .perform(click());
 
         try {
