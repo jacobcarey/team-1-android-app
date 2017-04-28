@@ -37,9 +37,11 @@ public class Progression {
         editor.putInt(difficulty, newValue);
         editor.commit();
 
-        final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child("users").child(userId).child("progression").child(difficulty).setValue(newValue);
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child("users").child(userId).child("progression").child(difficulty).setValue(newValue);
+        }
 
         Toast.makeText(context.getApplicationContext(), "progression/"+difficulty+" is: "+progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
     }
@@ -51,9 +53,11 @@ public class Progression {
         editor.putInt(difficulty, 0);
         editor.commit();
 
-        final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child("users").child(userId).child("progression").child(difficulty).setValue(0);
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child("users").child(userId).child("progression").child(difficulty).setValue(0);
+        }
 
         Toast.makeText(context.getApplicationContext(), "progression/"+difficulty+" is: "+progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
     }
@@ -67,11 +71,13 @@ public class Progression {
         editor.putInt("advanced", 0);
         editor.commit();
 
-        final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        database.child("users").child(userId).child("progression").child("basic").setValue(0);
-        database.child("users").child(userId).child("progression").child("intermediate").setValue(0);
-        database.child("users").child(userId).child("progression").child("advanced").setValue(0);
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+            database.child("users").child(userId).child("progression").child("basic").setValue(0);
+            database.child("users").child(userId).child("progression").child("intermediate").setValue(0);
+            database.child("users").child(userId).child("progression").child("advanced").setValue(0);
+        }
 
         Toast.makeText(context.getApplicationContext(), "Reset all progression!", Toast.LENGTH_SHORT).show();
     }
