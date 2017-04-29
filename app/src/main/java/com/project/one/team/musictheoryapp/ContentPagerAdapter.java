@@ -7,7 +7,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.List;
 
 /**
- * Created by oliver on 24/11/16.
+ * <p>Pager Adapter for holding {@link ContentFragment ContentFragments} and
+ * {@link QuizLinkFragment QuizLinkFragments}.</p>
+ *
+ * <p>Passed to a {@link android.support.v4.view.ViewPager ViewPager} to render the
+ * Fragments/pages.</p>
+ *
+ * @author Team One
  */
 
 public class ContentPagerAdapter extends FragmentPagerAdapter {

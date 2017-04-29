@@ -27,6 +27,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+/**
+ * <p>Activity for controlling various settings in the app.</p>
+ *
+ * <p>This activity enables the user to toggle the app-wide night mode theme, which is persisted
+ * across app restarts using the {@link Theoryously} application state class.</p>
+ *
+ * <p>The SettingsActivity also handles the <a href="https://firebase.google.com/">Firebase</a>
+ * authentication integration within the app. Using Firebase, the user is able to create or log in
+ * to an account which enables them to save their topic progress as well as receive push notifications
+ * when new topics or quizzes are added to the app.</p>
+ *
+ * @author Team One
+ *
+ * @see SignUpActivity
+ * @see com.project.one.team.musictheoryapp.FirebaseMessaging
+ */
+
 public class SettingsActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
@@ -153,6 +170,15 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        final Button resetButton = (Button) findViewById(R.id.reset);
+
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Progression.getInstance(getApplicationContext()).resetAll();
+            }
+        });
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -186,6 +212,11 @@ public class SettingsActivity extends AppCompatActivity {
                     userEmail.setText("Already signed in.");
                     userPass.setText("");
                     loginInButton.setText("Sign Out");
+
+                    // Update the user's progression when they log in.
+                    Progression.getInstance(SettingsActivity.this).getProgression("basic");
+                    //Progression.getInstance(SettingsActivity.this).getProgression("intermediate");
+                    //Progression.getInstance(SettingsActivity.this).getProgression("advanced");
 
                 } else {
                     // User is signed out

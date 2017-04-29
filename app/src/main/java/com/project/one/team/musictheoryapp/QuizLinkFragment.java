@@ -8,6 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+/**
+ * <p>Represents and renders a page with a button leading to the quiz for a specific topic.</p>
+ *
+ * @author Team One
+ *
+ * @see ContentFragment
+ */
+
 public class QuizLinkFragment extends Fragment {
     private static final String ARG_TOPIC = "topic";
 

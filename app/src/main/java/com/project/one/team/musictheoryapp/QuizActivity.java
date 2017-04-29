@@ -3,6 +3,7 @@ package com.project.one.team.musictheoryapp;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.share.model.ShareLinkContent;
@@ -29,6 +31,29 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+
+/**
+ * <p>Activity with multiple choice quiz questions.</p>
+ *
+ * <p>The QuizActivity is responsible for displaying questions and answers related to a certain topic
+ * to the user. Much like the {@link ContentActivity}, the QuizActivity is created with an intent extra
+ * specifying the topic of the quiz which enables the correct JSON file to be read.</p>
+ *
+ * <p>The quiz JSON files contain multiple questions and answers. Each question can either have 2 or
+ * 4 answers. When each question is loaded, the order of the answers are randomised and event listeners
+ * are added to each answer button, one of which is the correct answer click listener. </p>
+ *
+ * <p>When an answer is selected, the answer button turns green or red, depending on whether the user
+ * got the question correct or incorrect. If the user answered correctly, their score is incremented by one.
+ * In any case, the quiz moves onto the next question, or, if the previous question was the last, the
+ * final score screen.</p>
+ *
+ * <p>On the final score screen, the user's score is displayed and they are given the option to
+ * share it on Facebook. If the user achieved full marks, their progression value is incremented and
+ * saved to the database using the {@link Progression} class. Otherwise, the user can restart the quiz.</p>
+ *
+ * @author Team One
+ */
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -276,6 +301,15 @@ public class QuizActivity extends AppCompatActivity {
                 }
                 if(quizMarks>=numberOfQuestions){
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
+
+                    String difficulty = TopicParser.TopicIDToDifficulty(topic);
+                    String _topic = TopicParser.TopicIDToTopic(topic);
+                    SharedPreferences progression = getSharedPreferences("progression", MODE_PRIVATE);
+
+                    int topic_index = Topics.getInstance(this).getTopics(difficulty).indexOf(_topic);
+
+                    if (topic_index < Topics.getInstance(this).getTopics(difficulty).size()-1 && topic_index+1 > progression.getInt(difficulty, 0))
+                        Progression.getInstance(this).increment(difficulty);
                 }
 
                 shareButton.setVisibility(View.VISIBLE);

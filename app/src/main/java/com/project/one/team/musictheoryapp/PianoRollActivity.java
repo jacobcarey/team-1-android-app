@@ -9,7 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 /**
- * Created by Cogythea on 23/11/2016.
+ * <p>Activity providing access to the interactive Piano Roll.</p>
+ *
+ * @author Team One
+ *
+ * @see Piano
+ * @see PianoKey
  */
 
 public class PianoRollActivity extends Activity {

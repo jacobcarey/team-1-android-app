@@ -8,11 +8,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.scrollTo;
-import static android.support.test.espresso.action.ViewActions.swipeUp;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
@@ -20,8 +18,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 /**
- * Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.BasicSelectActivityV2 BasicSelectActivityV2}.
- * (ScrollTo actions don't work for testing Android versions lower than 7.1.)
+ * Espresso Test Class for testing UI elements on {@link BasicSelectActivityV2 BasicSelectActivityV2}.
+ * NOTE:
+ * ScrollTo actions are finicky for testing Android versions lower than 7.1.
+ * Many of the click action may fail if the signed in user does not have all topics unlocked.
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)

@@ -98,11 +98,31 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notifications"
+            android:layout_alignBaseline="@+id/reset"
+            android:layout_alignBottom="@+id/reset"
+            android:layout_alignLeft="@+id/textView10"
+            android:layout_alignStart="@+id/textView10"
+            android:text="Reset progress" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/notifications"
             android:layout_alignBottom="@+id/notifications"
             android:layout_alignLeft="@+id/textView11"
-            android:layout_alignStart="@+id/textView11" />
+            android:layout_alignStart="@+id/textView11"
+            android:text="Notifications" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_below="@+id/notifications"
+            android:layout_alignLeft="@+id/notifications"
+            android:layout_alignStart="@+id/notifications"
+            android:layout_marginTop="15dp" />
 
     </RelativeLayout>
 

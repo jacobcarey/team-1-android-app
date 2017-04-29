@@ -19,7 +19,27 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <p>Activity used for displaying topic tutorial content.</p>
+ *
+ * <p>Upon creation of this Activity, an intent extra is passed along from the {@link BasicSelectActivityV2}
+ * specifying the topic of this tutorial. Using this extra, the content for the tutorial is
+ * retrieved from JSON files and passed along to {@link ContentFragment} objects which represent
+ * pages of content.</p>
+ *
+ * <p>The created ContentFragment objects are added to a {@link ContentPagerAdapter} which
+ * is then passed to a {@link ViewPager}, allowing the user to swipe between the ContentFragment
+ * pages.</p>
+ *
+ * <p>At the end of each ContentPagerAdapter, a {@link QuizLinkFragment} is added that
+ * directs the user to the corresponding quiz for that topic.</p>
+ *
+ * @author Team One
+ */
+
 public class ContentActivity extends FragmentActivity {
+
+    public static final String EXTRA_TOPIC = "topic";
 
     private JSONArray jsonArray;
     private TextView titleTextView;
@@ -55,8 +75,8 @@ public class ContentActivity extends FragmentActivity {
         titleTextView = (TextView) findViewById(R.id.titleTextView);
 
         String contentFile;
-        if (getIntent().hasExtra("topic")) {
-            contentFile = getIntent().getStringExtra("topic") + "_content.json";
+        if (getIntent().hasExtra(EXTRA_TOPIC)) {
+            contentFile = getIntent().getStringExtra(EXTRA_TOPIC) + "_content.json";
 
             // Read in the json file in and parse it
             try {
@@ -115,7 +135,7 @@ public class ContentActivity extends FragmentActivity {
         }
 
         // Add the fragment that contains the link to the quiz for this topic section
-        fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra("topic")));
+        fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra(EXTRA_TOPIC)));
 
         return fList;
     }
