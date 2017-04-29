@@ -27,6 +27,23 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+/**
+ * <p>Activity for controlling various settings in the app.</p>
+ *
+ * <p>This activity enables the user to toggle the app-wide night mode theme, which is persisted
+ * across app restarts using the {@link Theoryously} application state class.</p>
+ *
+ * <p>The SettingsActivity also handles the <a href="https://firebase.google.com/">Firebase</a>
+ * authentication integration within the app. Using Firebase, the user is able to create or log in
+ * to an account which enables them to save their topic progress as well as receive push notifications
+ * when new topics or quizzes are added to the app.</p>
+ *
+ * @author Team One
+ *
+ * @see SignUpActivity
+ * @see com.project.one.team.musictheoryapp.FirebaseMessaging
+ */
+
 public class SettingsActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;

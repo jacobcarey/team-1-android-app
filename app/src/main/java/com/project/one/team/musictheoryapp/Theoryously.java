@@ -6,7 +6,13 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatDelegate;
 
 /**
- * Created by Jacob on 20/03/2017.
+ * <p>{@link Application} descendant allowing the getting and setting of app-wide global variables.</p>
+ *
+ * <p>Currently used to maintain logged in, and night mode state across the entire app. In the
+ * case of night mode, the class makes use of Android's {@link SharedPreferences} framework to persist
+ * the night mode state across app restarts.</p>
+ *
+ * @author Team One
  */
 
 public class Theoryously extends Application {

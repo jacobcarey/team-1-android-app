@@ -17,7 +17,17 @@ import com.google.firebase.auth.FirebaseUser;
 import static com.project.one.team.musictheoryapp.R.id.userName;
 
 /**
- * Created by Jacob on 27/11/2016.
+ * <p>As the Main Page of the application, the user is directed here when the app is first opened
+ * (after viewing the {@link SplashScreen}).</p>
+ *
+ * <p>This activity acts as a main hub, allowing the user access to the rest of the app, including
+ * the topic pages, the settings and the piano roll.</p>
+ *
+ * @author Team One
+ *
+ * @see BasicSelectActivityV2
+ * @see SettingsActivity
+ * @see PianoRollActivity
  */
 
 public class MainPageActivity extends AppCompatActivity {

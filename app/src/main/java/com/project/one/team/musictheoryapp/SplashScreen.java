@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.os.Bundle;
 
 /**
- * Created by Cogythea on 01/02/2017.
+ * Simple Splash Screen activity that is displayed when the app is first opened. This class displays
+ * the app's logo for a few seconds before navigating the user to the {@link MainPageActivity}.
+ *
+ * @author Team One
  */
 
 public class SplashScreen extends Activity {

@@ -27,7 +27,13 @@ import static com.project.one.team.musictheoryapp.R.id.userEmail;
 import static com.project.one.team.musictheoryapp.R.id.userPass;
 
 /**
- * Created by Jacob on 20/04/2017.
+ * <p>Activity for handling user account sign up.</p>
+ *
+ * <p>The Activity makes use <a href="https://firebase.google.com/">Firebase</a> authentication,
+ * allowing the user to create an account with a Display Name, Email Address and Password. Upon creation,
+ * the user is automatically logged into their new account and their Display Name is set.</p>
+ *
+ * @author Team One
  */
 
 public class SignUpActivity extends AppCompatActivity {

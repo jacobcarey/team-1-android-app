@@ -14,6 +14,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * <p>Activity for displaying the list of basic topics available.</p>
+ *
+ * <p>This activity makes use of the {@link Progression} class
+ * to retrieve the user's progression stats in order to lock later topics until the user has completed
+ * the previous topics.</p>
+ *
+ * @author Team One
+ */
+
 public class BasicSelectActivityV2 extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";

@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 /**
- * Created by Jacob on 27/11/2016.
+ * Simple Activity for displaying team member names.
+ *
+ * @author Team One
  */
 
 public class CreditsActivity extends AppCompatActivity {
