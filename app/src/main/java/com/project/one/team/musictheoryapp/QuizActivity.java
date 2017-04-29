@@ -236,6 +236,7 @@ public class QuizActivity extends AppCompatActivity {
                 answer2Text.setVisibility(View.INVISIBLE);
                 answer3Text.setVisibility(View.INVISIBLE);
                 answer4Text.setVisibility(View.INVISIBLE);
+                ((TextView) findViewById(R.id.sharetext)).setVisibility(View.VISIBLE);
                 currentQuestionIndex = 0;
 
                 //Don't show the retry button if they got all the questions right

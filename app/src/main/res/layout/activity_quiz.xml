@@ -214,8 +214,8 @@
 
         <ImageButton
             android:id="@+id/shareButton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -228,6 +228,16 @@
             android:contentDescription="Share"
             android:scaleType="fitXY"
             app:srcCompat="@drawable/com_facebook_button_icon_blue" />
+
+        <TextView
+            android:id="@+id/sharetext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/shareButton"
+            android:text="SHARE"
+            android:layout_alignRight="@+id/shareButton"
+            android:layout_alignEnd="@+id/shareButton"
+            android:visibility="invisible"/>
 
     </RelativeLayout>
 
