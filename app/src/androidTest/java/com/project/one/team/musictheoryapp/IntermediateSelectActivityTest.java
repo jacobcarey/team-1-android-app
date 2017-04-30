@@ -18,7 +18,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 /**
- * <p>Espresso Test Class for testing UI elements on {@link BasicSelectActivityV2}.</p>
+ * <p>Espresso Test Class for testing UI elements on {@link IntermediateSelectActivity}.</p>
  *
  * <h3>NOTE:</h3>
  * <p>ScrollTo actions are finicky for testing Android versions lower than 7.1.
@@ -28,54 +28,36 @@ import static org.hamcrest.Matchers.allOf;
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class BasicSelectActivityTest {
+public class IntermediateSelectActivityTest {
 
     @Rule
-    public ActivityTestRule<BasicSelectActivityV2> mActivityTestRule = new ActivityTestRule<>(BasicSelectActivityV2.class);
+    public ActivityTestRule<IntermediateSelectActivity> mActivityTestRule = new ActivityTestRule<>(IntermediateSelectActivity.class);
 
     @Test
-    public void canNavigateToIntroTopicPage() {
-        onView(withId(R.id.introLayout))
+    public void canNavigateToMajorScaleConstructionTopicPage() {
+        onView(withId(R.id.scaleconmajLayout))
                 .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Intro to music theory")));
+                .check(matches(withText("Scale Construction")));
     }
 
     @Test
-    public void canNavigateToMusicNotesTopicPage() {
-        onView(withId(R.id.mnotesLayout))
+    public void canNavigateToMinorScaleConstructionTopicPage() {
+        onView(withId(R.id.scaleconminLayout))
                 .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Musical notes and how to find them")));
+                .check(matches(withText("Scale Construction")));
     }
 
     @Test
-    public void canNavigateToSimpleNotesTopicPage() {
-        onView(withId(R.id.smpnotelenLayout))
+    public void canNavigateToChordConstructionTopicPage() {
+        onView(withId(R.id.cconstructionLayout))
                 .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Simple Note Lengths")));
-    }
-
-    @Test
-    public void canNavigateToAdvancedNotesTopicPage() {
-        onView(withId(R.id.advnotelenLayout))
-                .perform(scrollTo(), click());
-
-        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Advanced Note Lengths")));
-    }
-
-    @Test
-    public void canNavigateToSheetMusicTopicPage() {
-        onView(withId(R.id.sheetmusicLayout))
-                .perform(scrollTo(), click());
-
-        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Sheet Music")));
+                .check(matches(withText("Chord Construction")));
     }
 
 }

@@ -10,12 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.share.model.ShareLinkContent;
@@ -318,8 +316,6 @@ public class QuizActivity extends AppCompatActivity {
                     SharedPreferences progression = getSharedPreferences("progression", MODE_PRIVATE);
 
                     int topic_index = Topics.getInstance(this).getTopics(difficulty).indexOf(_topic);
-                    Log.d("QUIZ", "t: " + topic_index);
-                    Log.d("QUIZ", "t2: " + (Topics.getInstance(this).getTopics(difficulty).size()-1));
 
                     if (topic_index < Topics.getInstance(this).getTopics(difficulty).size()-1 && topic_index+1 > progression.getInt(difficulty, 0))
                         Progression.getInstance(this).increment(difficulty);

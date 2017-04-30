@@ -28,6 +28,7 @@ import static com.project.one.team.musictheoryapp.R.id.userName;
  * @author Team One
  *
  * @see BasicSelectActivityV2
+ * @see IntermediateSelectActivity
  * @see SettingsActivity
  * @see PianoRollActivity
  */

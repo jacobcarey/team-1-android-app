@@ -66,6 +66,16 @@ public class MainActivityTest {
     }
 
     @Test
+    public void intermediateButtonShouldNavigate() {
+        onView(allOf(withId(R.id.intermediate), isDisplayed()))
+                .perform(click());
+
+        // Check if header text of the newly displayed activity reads "BASIC".
+        onView(allOf(withId(R.id.headerText), isDisplayed()))
+                .check(matches(withText("INTERMEDIATE")));
+    }
+
+    @Test
     public void pianoButtonShouldNavigate() {
         onView(allOf(withId(R.id.pianoRollBtn), isDisplayed()))
                 .perform(click());

@@ -2,7 +2,6 @@ package com.project.one.team.musictheoryapp;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 
 import org.json.JSONArray;
 import org.json.JSONException;
