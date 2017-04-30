@@ -23,12 +23,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static com.project.one.team.musictheoryapp.R.id.userEmail;
 import static com.project.one.team.musictheoryapp.R.id.userPass;
 
 /**
  * <p>Activity for handling user account sign up.</p>
- *
+ * <p>
  * <p>The Activity makes use <a href="https://firebase.google.com/">Firebase</a> authentication,
  * allowing the user to create an account with a Display Name, Email Address and Password. Upon creation,
  * the user is automatically logged into their new account and their Display Name is set.</p>
@@ -101,12 +104,12 @@ public class SignUpActivity extends AppCompatActivity {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     ((Theoryously) getApplication()).setSignedIn(true);
-                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(userNameInput.getText().toString()).build();
-                        user.updateProfile(profileUpdates);
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(userNameInput.getText().toString()).build();
+                    user.updateProfile(profileUpdates);
 
-                        Intent i = new Intent(SignUpActivity.this, SettingsActivity.class);
-                        startActivity(i);
+                    Intent i = new Intent(SignUpActivity.this, SettingsActivity.class);
+                    startActivity(i);
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -119,9 +122,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
-//        if (!validateForm()) {
-//            return;
-//        }
+        if (!validateForm()) {
+            return;
+        }
 
         // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -153,26 +156,63 @@ public class SignUpActivity extends AppCompatActivity {
         // [END create_user_with_email]
     }
 
-       @Override
-        public void onStart() {
-            super.onStart();
-            mAuth.addAuthStateListener(mAuthListener);
+    /**
+     * Ensures that the input fields for registering a user account are not empty, and that the
+     * entered email address is of a valid format.
+     * @return <code>true</code> if everything in form is valid, <code>false</code> otherwise.
+     */
+    private boolean validateForm() {
+        final EditText userNameInput = (EditText) findViewById(R.id.userName);
+        final EditText userEmailInput = (EditText) findViewById(userEmail);
+        final EditText userPassInput = (EditText) findViewById(userPass);
+        Pattern emailPattern = Pattern.compile("[A-Z0-9._+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}");
+        Matcher matcher = emailPattern.matcher(userEmailInput.getText().toString());
+
+
+        // Check for empty fields
+        if (userNameInput.getText().toString().isEmpty()) {
+            Toast.makeText(SignUpActivity.this, "Username cannot be blank!", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
-        @Override
-        public void onStop() {
-            super.onStop();
-            if (mAuthListener != null) {
-                mAuth.removeAuthStateListener(mAuthListener);
-            }
+        if (userEmailInput.getText().toString().isEmpty()) {
+            Toast.makeText(SignUpActivity.this, "Email cannot be blank!", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
-        @Override
-        public void onBackPressed() {
-            super.onBackPressed();
-            Intent i = new Intent(SignUpActivity.this, SettingsActivity.class);
-            startActivity(i);
-            overridePendingTransition(R.anim.slide_right, R.anim.slide_left_out);
+        if (!matcher.matches()) {
+            Toast.makeText(SignUpActivity.this, "Email is invalid!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        if (userPassInput.getText().toString().isEmpty()) {
+            Toast.makeText(SignUpActivity.this, "Password cannot be blank!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(SignUpActivity.this, SettingsActivity.class);
+        startActivity(i);
+        overridePendingTransition(R.anim.slide_right, R.anim.slide_left_out);
+    }
+}
 
