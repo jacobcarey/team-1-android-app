@@ -1,0 +1,40 @@
+[
+	{
+		"title": "Sheet Music",
+		"content": [
+		"Sheet music is how music is written down. It’s reasonably simple to read, but everything you can do in music can be expressed in sheet music. In this topic we’re just browsing over each area, we’ll cover everything in more detail in later topics. Let’s have a look at what sheet music can do!"
+		]
+	},
+	{
+		"title": "Note Lengths",
+		"content": [
+		"The note <b> length </b>, intuitively, represents how long a note is played for. The length of a note is communicated either by how filled in the <b>bulb</b> is, or the shape of the <b>tail</b>."
+		]
+	},
+	{
+		"title": "Note Pitch",
+		"content": [
+		"The <p>pitch</p> of the note means how high or low it sounds. To indicate this we use <p>staves</p> - the 5 lines you see running across the page. Each <p>staff</p> has its own pitch, which it gives to any notes on it. Each gap between the staves also has its own pitch!"
+		]
+	},
+	{
+		"title": "Time Signature",
+		"content":[
+		" A <b>time signature</b> tells the musician how many beats are in a <b>bar</b>. This is quite a complex topic, so we won’t get much into it here!"
+		]
+	},
+	{
+		"title": "Key Signatures",
+		"content":[
+		"The <b>key signature</b> lets us know what <b>key</b> we’re playing in. We’ll go over keys in a later topic!"
+		]
+	},
+	{
+		"title": "Sheet Music",
+		"content":[
+		"So there’s a few of the main features of sheet music. We didn’t go into them in much detail, so have a look at the next topics where we explain them a bit more!"
+		]
+	}
+
+
+]
