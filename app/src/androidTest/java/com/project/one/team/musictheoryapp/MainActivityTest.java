@@ -21,7 +21,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 /**
- * Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.MainPageActivity MainPageActivity}.
+ * <p>Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.MainPageActivity MainPageActivity}.</p>
+ *
+ * @author Team One
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)

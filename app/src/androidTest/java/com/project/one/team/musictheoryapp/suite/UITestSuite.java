@@ -10,7 +10,9 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * Test Suite for running all Espresso UI tests.
+ * <p>Test Suite for running all Espresso UI tests.</p>
+ *
+ * @author Team One
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({MainActivityTest.class, SettingsActivityTest.class,

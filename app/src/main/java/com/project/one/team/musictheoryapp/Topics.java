@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by oliver on 27/04/17.
+ * <p>Helper class for getting a list of topics within a given difficulty.</p>
+ *
+ * @author Team One
  */
 
 public class Topics {

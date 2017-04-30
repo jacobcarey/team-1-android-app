@@ -13,7 +13,12 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 /**
- * Created by Jacob on 06/04/2017.
+ * <p>Helper class for handling and displaying incoming notifications.</p>
+ *
+ * <p>Using Firebase, we are able to push notifications to users of the app. This can be used
+ * when new features and new content is added.</p>
+ *
+ * @author Team One
  */
 
 public class FirebaseMessaging extends FirebaseMessagingService {
@@ -38,7 +43,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
     }
 
     /**
-     * Dispay the notification
+     * Display the notification
      * @param body
      */
     private void sendNotification(String body) {

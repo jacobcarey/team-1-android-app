@@ -21,7 +21,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
- * Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.ContentActivity ContentActivity}.
+ * <p>Espresso Test Class for testing UI elements on {@link com.project.one.team.musictheoryapp.ContentActivity ContentActivity}.</p>
+ *
+ * @author Team One
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)

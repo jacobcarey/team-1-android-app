@@ -18,10 +18,13 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 /**
- * Espresso Test Class for testing UI elements on {@link BasicSelectActivityV2 BasicSelectActivityV2}.
- * NOTE:
- * ScrollTo actions are finicky for testing Android versions lower than 7.1.
- * Many of the click action may fail if the signed in user does not have all topics unlocked.
+ * <p>Espresso Test Class for testing UI elements on {@link BasicSelectActivityV2 BasicSelectActivityV2}.</p>
+ *
+ * <h3>NOTE:</h3>
+ * <p>ScrollTo actions are finicky for testing Android versions lower than 7.1.
+ * Many of the click action may fail if the signed in user does not have all topics unlocked.</p>
+ *
+ * @author Team One
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)

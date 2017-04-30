@@ -6,7 +6,9 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
 /**
- * Created by Jacob on 06/04/2017.
+ * <p>Helper class for getting the Firebase identifier token for our app.</p>
+ *
+ * @author Team One
  */
 
 public class FirebaseInstanceIDService extends FirebaseInstanceIdService {

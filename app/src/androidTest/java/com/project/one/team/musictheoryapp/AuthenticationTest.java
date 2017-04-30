@@ -26,7 +26,9 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 
 /**
- * Espresso Test Class for testing Firebase authentication.
+ * <p>Espresso Test Class for testing Firebase authentication.</p>
+ *
+ * @author Team One
  */
 @LargeTest
 @RunWith(AndroidJUnit4.class)

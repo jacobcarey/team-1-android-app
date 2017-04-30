@@ -1,7 +1,12 @@
 package com.project.one.team.musictheoryapp;
 
 /**
- * Created by Cogythea on 30/03/2017.
+ * <p>Helper class for manipulating Topic IDs into usable formats.</p>
+ *
+ * <p>Used for displaying human-friendly topic names when sharing on Facebook, or  for retrieving
+ * the difficulty of a topic when updating {@link Progression} stats.</p>
+ *
+ * @author Team One
  */
 
 public class TopicParser {
