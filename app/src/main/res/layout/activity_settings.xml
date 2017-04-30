@@ -2,128 +2,166 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_screen_bg_gradient"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/settingsLayout">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <ToggleButton
-            android:id="@+id/nightModeToggle"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            tools:layout_editor_absoluteX="204dp"
-            tools:layout_editor_absoluteY="231dp"
-            android:layout_below="@+id/loginSubmit"
-            android:layout_alignLeft="@+id/loginSubmit"
-            android:layout_alignStart="@+id/loginSubmit"
-            android:layout_marginLeft="9dp"
-            android:layout_marginStart="9dp"
-            android:layout_marginTop="100dp"></ToggleButton>
+            android:layout_weight="1"
+            android:background="@drawable/settings_bordered_box"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/userPass"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/userPass"
+                android:layout_marginTop="5dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                tools:text="Email" />
+
+            <EditText
+                android:id="@+id/userPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userEmail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:text="Pass" />
+
+            <Button
+                android:id="@+id/loginSubmit"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0"
+                android:background="@drawable/main_screen_button"
+                android:text="Login" />
+
+            <Button
+                android:id="@+id/signUp"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0"
+                android:background="@drawable/main_screen_button"
+                android:text="Sign Up" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_bordered_box"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentStart="false"
+            android:layout_gravity="left|center_vertical"
+            android:gravity="center_vertical"
             android:text="Night Mode"
-            tools:layout_editor_absoluteY="247dp"
-            android:layout_alignBaseline="@+id/nightModeToggle"
-            android:layout_alignBottom="@+id/nightModeToggle"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="77dp"
-            android:layout_marginStart="77dp" />
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteY="247dp" />
 
-        <EditText
-            android:id="@+id/userEmail"
+        <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/userPass"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/userPass"
-            android:layout_marginTop="29dp"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            tools:text="Email" />
-
-        <EditText
-            android:id="@+id/userPass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/userEmail"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="13dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:text="Pass" />
-
-        <Button
-            android:id="@+id/loginSubmit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:layout_marginTop="42dp"
-            android:layout_below="@+id/userPass"
-            android:layout_toRightOf="@+id/signUp"
-            android:layout_toEndOf="@+id/signUp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginStart="34dp" />
-
-        <Button
-            android:id="@+id/signUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:layout_alignBaseline="@+id/loginSubmit"
-            android:layout_alignBottom="@+id/loginSubmit"
-            android:layout_alignLeft="@+id/textView11"
-            android:layout_alignStart="@+id/textView11" />
+            android:layout_weight="1" />
 
         <ToggleButton
-            android:id="@+id/notifications"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/nightModeToggle"
-            android:layout_alignStart="@+id/nightModeToggle"
-            android:layout_below="@+id/nightModeToggle"
-            android:layout_marginTop="14dp"
-            android:text="ToggleButton" />
+            android:id="@+id/nightModeToggle"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@drawable/main_screen_button"
+            android:text="ToggleButton"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            tools:layout_editor_absoluteX="204dp"
+            tools:layout_editor_absoluteY="231dp"></ToggleButton>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/reset"
-            android:layout_alignBottom="@+id/reset"
-            android:layout_alignLeft="@+id/textView10"
-            android:layout_alignStart="@+id/textView10"
-            android:text="Reset progress" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_bordered_box"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="Notifications"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/notifications"
-            android:layout_alignBottom="@+id/notifications"
-            android:layout_alignLeft="@+id/textView11"
-            android:layout_alignStart="@+id/textView11"
-            android:text="Notifications" />
+            android:layout_weight="1" />
+
+        <ToggleButton
+            android:id="@+id/notifications"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/main_screen_button"
+            android:text="ToggleButton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/settings_bordered_box"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="Reset progress"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reset"
-            android:layout_below="@+id/notifications"
-            android:layout_alignLeft="@+id/notifications"
-            android:layout_alignStart="@+id/notifications"
-            android:layout_marginTop="15dp" />
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="@drawable/main_screen_button"
+            android:text="Reset" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>
