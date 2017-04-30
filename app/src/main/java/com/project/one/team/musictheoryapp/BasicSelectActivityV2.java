@@ -73,7 +73,6 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
             if(i <= topicReached)
             {
                 // Set the colours and styles to 'enabled'
-                l.setBackgroundResource(R.drawable.can_select_background);
                 l.setClickable(true);
                 b.setClickable(true);
                 b.setColorFilter(getResources().getColor(android.R.color.transparent));
@@ -82,7 +81,6 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
             else
             {
                 //If the topic has not been reached (and therefore cannot be accessed)
-                l.setBackgroundResource(R.drawable.cant_select_gradient);
                 l.setClickable(false);
                 b.setClickable(false);
                 b.setColorFilter(Color.parseColor(GREY_OUT_COLOUR));
