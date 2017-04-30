@@ -67,6 +67,11 @@ public class MainPageActivity extends AppCompatActivity {
             }
         };
 
+        final Toast intermediateToast = Toast.makeText(MainPageActivity.this,
+                "Intermediate Topics coming soon!", Toast.LENGTH_SHORT);
+        final Toast advancedToast = Toast.makeText(MainPageActivity.this,
+                "Advanced Topics coming soon!", Toast.LENGTH_SHORT);
+
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
         getSupportActionBar().hide();
@@ -126,8 +131,7 @@ public class MainPageActivity extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainPageActivity.this, "Intermediate Topics coming soon!", Toast.LENGTH_SHORT)
-                .show();
+                intermediateToast.show();
 //                Intent i = new Intent(MainPageActivity.this, IntermediateSelectActivity.class);
 //                startActivity(i);
 //                overridePendingTransition(R.anim.slide_right,
@@ -141,8 +145,7 @@ public class MainPageActivity extends AppCompatActivity {
         advanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainPageActivity.this, "Advanced Topics coming soon!", Toast.LENGTH_SHORT)
-                .show();
+                advancedToast.show();
 //                Intent i = new Intent(MainPageActivity.this, AdvancedSelectActivity.class);
 //                startActivity(i);
 //                overridePendingTransition(R.anim.slide_right,
