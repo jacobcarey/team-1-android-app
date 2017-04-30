@@ -16,6 +16,11 @@ import org.w3c.dom.Text;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+/**
+ * @deprecated See {@link BasicSelectActivityV2} instead.
+ * @author Team One
+ */
+
 public class BasicSelectActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
