@@ -7,7 +7,11 @@ import java.io.IOException;
 import static java.security.AccessController.getContext;
 
 /**
- * Created by Cogythea on 23/11/2016.
+ * <p>Represents an interactive piano key used in the {@link Piano} Roll.</p>
+ *
+ * @author Team One
+ *
+ * @see PianoRollActivity
  */
 
 public class PianoKey {

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -69,6 +70,11 @@ public class MainPageActivity extends AppCompatActivity {
                 // ...
             }
         };
+
+        final Toast intermediateToast = Toast.makeText(MainPageActivity.this,
+                "Intermediate Topics coming soon!", Toast.LENGTH_SHORT);
+        final Toast advancedToast = Toast.makeText(MainPageActivity.this,
+                "Advanced Topics coming soon!", Toast.LENGTH_SHORT);
 
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
         //Hide the action/title bar
@@ -134,6 +140,8 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 buttonMP.start();
 //                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
+                intermediateToast.show();
+//                Intent i = new Intent(MainPageActivity.this, IntermediateSelectActivity.class);
 //                startActivity(i);
 //                overridePendingTransition(R.anim.slide_right,
 //                        R.anim.slide_left_out);
@@ -148,6 +156,8 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View view) {
                 buttonMP.start();
 //                Intent i = new Intent(MainPageActivity.this, AdvancedActivity.class);
+                advancedToast.show();
+//                Intent i = new Intent(MainPageActivity.this, AdvancedSelectActivity.class);
 //                startActivity(i);
 //                overridePendingTransition(R.anim.slide_right,
 //                        R.anim.slide_left_out);

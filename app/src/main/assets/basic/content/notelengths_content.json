@@ -1,0 +1,38 @@
+[
+	{
+		"title": "BPM",
+		"content": [
+		"Note lengths don’t represent the exact amount of time a note is played for - this is instead defined by the speed of the piece. Most pieces of sheet music will have a symbol indicating the <b>Beats Per Minute</b>, or <b>BPM</b> for short. For example, the symbol above means there are 100 <b>crotchet</b> beats per minute."
+		]
+	},
+	{
+		"title": "Crotchet",
+		"content": [
+		"A crotchet is the simplest note - it lasts exactly one <b>beat</b>. "
+		]
+	},
+	{
+		"title": "Quaver",
+		"content": [
+		"A quaver is half a crotchet - it lasts half a beat."
+		]
+	},
+	{
+		"title": "Semiquaver",
+		"content": [
+		"A semiquaver is half a quaver (semi means half). It lasts one quarter of a beat. There are smaller lengths than semiquavers (all the way down to hemidemisemiquavers, which last one sixty-fourth of a beat!), but we won’t be covering those in this topic."
+		]
+	},
+	{
+		"title": "Minim",
+		"content": [
+		"A minim is the next length up from a crotchet, lasting two beats."
+		]
+	},
+	{
+		"title": "Semibreve",
+		"content": [
+		"A semibreve is the longest commonly used length, lasting 4 beats!"
+		]
+	}
+]

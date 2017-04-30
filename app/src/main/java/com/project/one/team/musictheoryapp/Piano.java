@@ -16,7 +16,23 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * Created by Cogythea on 23/11/2016.
+ * <p>Main Piano View that handles {@link PianoKey} touch events.</p>
+ *
+ * <p>The Piano view creates multiple PianoKeys, both Black and White keys, and draws them onto the screen.
+ * Each key is given a name and a corresponding sound file that is in line with an actual piano.</p>
+ *
+ * <p>In order to play the correct sound, the Piano view gets the co-ordinates of the user's tap location
+ * and compares it against the co-ordinates stored by each PianoKey using the
+ * {@link PianoKey#pointIsOnKey(float, float) pointIsOnKey} method in the PianoKey objects. If the
+ * co-ordinates match up, that particular key's sound file is played and a Toast notification is
+ * displayed to the user with the name of the key they pressed.</p>
+ *
+ * <p>Unfortunately, due to the limitations of the MediaPlayer class used for playing the sound files,
+ * multiple sound files cannot be played simultaneously.</p>
+ *
+ * @author Team One
+ *
+ * @see PianoRollActivity
  */
 
 public class Piano extends View {
