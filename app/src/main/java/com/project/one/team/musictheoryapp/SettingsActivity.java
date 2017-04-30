@@ -220,6 +220,7 @@ public class SettingsActivity extends AppCompatActivity {
                     userEmail.setText("Already signed in.");
                     userPass.setText("");
                     loginInButton.setText("Sign Out");
+                    signUpButton.setVisibility(View.GONE);
 
                     // Update the user's progression when they log in.
                     Progression.getInstance(SettingsActivity.this).getProgression("basic");
@@ -235,6 +236,7 @@ public class SettingsActivity extends AppCompatActivity {
                     userEmail.setText("Email:");
                     userPass.setText("Password");
                     loginInButton.setText("Sign In");
+                    signUpButton.setVisibility(View.VISIBLE);
                     notificationsToggle.setChecked(false);
                     notificationsToggle.setEnabled(false);
                 }
