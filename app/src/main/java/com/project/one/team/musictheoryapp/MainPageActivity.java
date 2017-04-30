@@ -2,6 +2,7 @@ package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +42,9 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         boolean nightMode = ((Theoryously) getApplication()).getNightMode();
+        final MediaPlayer buttonMP = MediaPlayer.create(this, R.raw.menu_click);
+
+
         if(nightMode){
             ((Theoryously) getApplication()).setNightMode(true);
         }
@@ -75,6 +79,7 @@ public class MainPageActivity extends AppCompatActivity {
         settingsCog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buttonMP.start();
                 Intent i = new Intent(MainPageActivity.this, SettingsActivity.class); //Can use SettingsPreferenceActivity if we get it working
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_left,
@@ -87,6 +92,7 @@ public class MainPageActivity extends AppCompatActivity {
         pianoRoll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buttonMP.start();
                 Intent i = new Intent(MainPageActivity.this, PianoRollActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_right,
@@ -112,6 +118,7 @@ public class MainPageActivity extends AppCompatActivity {
         basic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buttonMP.start();
                 Intent i = new Intent(MainPageActivity.this, BasicSelectActivityV2.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.slide_up,
@@ -125,6 +132,7 @@ public class MainPageActivity extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buttonMP.start();
 //                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
 //                startActivity(i);
 //                overridePendingTransition(R.anim.slide_right,
@@ -138,6 +146,7 @@ public class MainPageActivity extends AppCompatActivity {
         advanced.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buttonMP.start();
 //                Intent i = new Intent(MainPageActivity.this, AdvancedActivity.class);
 //                startActivity(i);
 //                overridePendingTransition(R.anim.slide_right,
