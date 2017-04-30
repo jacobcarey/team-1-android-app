@@ -4,13 +4,13 @@
     "mnotes",
     "smpnotelen",
     "advnotelen",
-    "scaledegrees",
-    "smusic"
+    "sheetmusic"
   ],
   "intermediate": [
     "scaleconmaj",
     "scaleconmin",
-    "cconstruction"
+    "cconstruction",
+    "scaledegrees"
   ],
   "advanced": [
     ""

@@ -22,8 +22,8 @@ import java.util.List;
 /**
  * <p>Activity used for displaying topic tutorial content.</p>
  *
- * <p>Upon creation of this Activity, an intent extra is passed along from the {@link BasicSelectActivityV2}
- * specifying the topic of this tutorial. Using this extra, the content for the tutorial is
+ * <p>Upon creation of this Activity, an intent extra is passed along from the difficulty topic select
+ * activities specifying the topic of this tutorial. Using this extra, the content for the tutorial is
  * retrieved from JSON files and passed along to {@link ContentFragment} objects which represent
  * pages of content.</p>
  *

@@ -183,6 +183,39 @@
             </LinearLayout>
 
             <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="131dp"
+                android:weightSum="1"
+                android:gravity="center_vertical"
+                android:id="@+id/sheetmusicLayout"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:text="Sheet Music"
+                    android:layout_width="255dp"
+                    android:layout_height="128dp"
+                    android:id="@+id/sheetmusicTxt"
+                    android:layout_weight="0.8"
+                    android:textAlignment="center"
+                    android:textSize="22sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center_vertical" />
+
+                <ImageButton
+                    android:layout_width="128dp"
+                    android:layout_height="120dp"
+                    app:srcCompat="@drawable/introbtn"
+                    android:id="@+id/sheetmusicBtn"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/select_icon"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
