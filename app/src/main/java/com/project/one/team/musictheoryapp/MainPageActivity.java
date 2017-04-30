@@ -139,12 +139,10 @@ public class MainPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 buttonMP.start();
-//                Intent i = new Intent(MainPageActivity.this, BasicSelectActivity.class);
-                intermediateToast.show();
-//                Intent i = new Intent(MainPageActivity.this, IntermediateSelectActivity.class);
-//                startActivity(i);
-//                overridePendingTransition(R.anim.slide_right,
-//                        R.anim.slide_left_out);
+                Intent i = new Intent(MainPageActivity.this, IntermediateSelectActivity.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.slide_right,
+                        R.anim.slide_left_out);
             }
         });
 

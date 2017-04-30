@@ -1,0 +1,58 @@
+[
+	{
+		"question":"What will the first note in F major be?",
+		"correctAnswer":"F",
+		"wrongAnswer1":"C",
+		"wrongAnswer2":"G",
+		"wrongAnswer3":"D"
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the second note in F major be? ",
+		"correctAnswer":"G",
+		"wrongAnswer1":"F#",
+		"wrongAnswer2":"Gb",
+		"wrongAnswer3":"E"	
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the third note in F major be?",
+		"correctAnswer":"A",
+		"wrongAnswer1":"Bb",
+		"wrongAnswer2":"Gb",
+		"wrongAnswer3":"G#"
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the fourth note in F major be?",
+		"correctAnswer":"Bb",
+		"wrongAnswer1":"C",
+		"wrongAnswer2":"B",
+		"wrongAnswer3":"G#"
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the fifth note in F major be?",
+		"correctAnswer":"C",
+		"wrongAnswer1":"B",
+		"wrongAnswer2":"A#",
+		"wrongAnswer3":"C#"
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the sixth note in F major be?",
+		"correctAnswer":"D",
+		"wrongAnswer1":"C#",
+		"wrongAnswer2":"B",
+		"wrongAnswer3":"D#"
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the seventh note in F major be?",
+		"correctAnswer":"E",
+		"wrongAnswer1":"Eb",
+		"wrongAnswer2":"F",
+		"wrongAnswer3":"D#"
+	},
+	{
+		"question":"Using the major interval pattern TTSTTTS, what will the eighth and final note in F major be?",
+		"correctAnswer":"F",
+		"wrongAnswer1":"Eb",
+		"wrongAnswer2":"F#",
+		"wrongAnswer3":"G"
+	}
+]

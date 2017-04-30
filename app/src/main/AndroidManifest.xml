@@ -62,6 +62,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainPageActivity" />
         </activity>
+        <activity android:name=".IntermediateSelectActivity"
+            android:parentActivityName=".MainPageActivity"
+            android:screenOrientation="portrait">
+            <!-- For API level 15: -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainPageActivity" />
+        </activity>
 
         <activity android:name=".SettingsActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".BasicSelectActivity" android:screenOrientation="portrait"></activity>

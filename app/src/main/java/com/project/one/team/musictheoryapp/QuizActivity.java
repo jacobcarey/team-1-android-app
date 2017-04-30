@@ -294,7 +294,7 @@ public class QuizActivity extends AppCompatActivity {
                 returnButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(QuizActivity.this, BasicSelectActivityV2.class);
+                        Intent i = new Intent(QuizActivity.this, MainPageActivity.class);
                         startActivity(i);
                         overridePendingTransition(R.anim.slide_left,
                                 R.anim.slide_right_out);
@@ -313,11 +313,13 @@ public class QuizActivity extends AppCompatActivity {
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
 
                     String difficulty = TopicParser.TopicIDToDifficulty(topic);
+
                     String _topic = TopicParser.TopicIDToTopic(topic);
                     SharedPreferences progression = getSharedPreferences("progression", MODE_PRIVATE);
 
                     int topic_index = Topics.getInstance(this).getTopics(difficulty).indexOf(_topic);
-
+                    Toast.makeText(QuizActivity.this, _topic + " in " + Arrays.toString(Topics.getInstance(this).getTopics(difficulty).toArray()), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(QuizActivity.this, topic_index + " < " + (Topics.getInstance(this).getTopics(difficulty).size()-1) + " > " + progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
                     if (topic_index < Topics.getInstance(this).getTopics(difficulty).size()-1 && topic_index+1 > progression.getInt(difficulty, 0))
                         Progression.getInstance(this).increment(difficulty);
                 }

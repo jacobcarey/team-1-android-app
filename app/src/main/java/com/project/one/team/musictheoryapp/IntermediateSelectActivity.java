@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * <p>Activity for displaying the list of basic topics available.</p>
+ * <p>Activity for displaying the list of intermediate topics available.</p>
  *
  * <p>This activity makes use of the {@link Progression} class
  * to retrieve the user's progression stats in order to lock later topics until the user has completed
@@ -24,16 +24,16 @@ import android.widget.Toast;
  * @author Team One
  */
 
-public class BasicSelectActivityV2 extends AppCompatActivity {
+public class IntermediateSelectActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
     private static final String GREY_OUT_COLOUR = "#888888"; //Defines the greyed out colour
-    String[] topics = new String[]{"intro", "mnotes", "smpnotelen", "advnotelen"};
+    String[] topics = new String[]{"scaleconmaj", "scaleconmin", "cconstruction"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basic_select_v2);
+        setContentView(R.layout.activity_intermediate_select);
         getSupportActionBar().hide();
 
         Typeface kozukaTF = Typeface.createFromAsset(getAssets(), "fonts/Kozuka Gothic Pro M.ttf");
@@ -54,8 +54,8 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        int topicReached = Progression.getInstance(this).getProgression("basic");
-        Toast.makeText(getApplicationContext(), "progression/basic is: "+topicReached, Toast.LENGTH_SHORT).show();
+        int topicReached = Progression.getInstance(this).getProgression("intermediate");
+        Toast.makeText(getApplicationContext(), "progression/intermediate is: "+topicReached, Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i < topics.length; i++)
         {
@@ -64,8 +64,8 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
             TextView t = (TextView) findViewById(getResources().getIdentifier(topics[i] + "Txt", "id", getPackageName()));
             //t.setTypeface(kozukaTF);
 
-            l.setOnClickListener(getListener("basic/content/" + topics[i]));
-            b.setOnClickListener(getListener("basic/content/" + topics[i]));
+            l.setOnClickListener(getListener("intermediate/content/" + topics[i]));
+            b.setOnClickListener(getListener("intermediate/content/" + topics[i]));
 
             if(i <= topicReached)
             {

@@ -22,7 +22,7 @@
             android:layout_marginTop="15dp" />
 
         <TextView
-            android:text="BASIC"
+            android:text="INTERMEDIATE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/headerText"
@@ -53,9 +53,9 @@
             android:id="@+id/scrollLL">
 
             <LinearLayout
-                android:id="@+id/introLayout"
+                android:id="@+id/scaleconmajLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="131dp"
                 android:layout_marginBottom="12dp"
                 android:layout_marginTop="12dp"
                 android:gravity="center_vertical"
@@ -63,18 +63,18 @@
                 android:weightSum="1">
 
                 <TextView
-                    android:id="@+id/introTxt"
+                    android:id="@+id/scaleconmajTxt"
                     android:layout_width="255dp"
                     android:layout_height="128dp"
                     android:layout_weight="0.8"
                     android:gravity="center_vertical"
-                    android:text="Introduction to \nMusic Theory"
+                    android:text="Major Scale Construction"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="22sp" />
 
                 <ImageButton
-                    android:id="@+id/introBtn"
+                    android:id="@+id/scaleconmajBtn"
                     android:layout_width="128dp"
                     android:layout_height="120dp"
                     android:layout_marginRight="20dp"
@@ -85,101 +85,67 @@
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:id="@+id/scaleconminLayout"
                 android:layout_width="match_parent"
-                android:layout_height="131dp"
-                android:weightSum="1"
-                android:gravity="center_vertical"
-                android:id="@+id/mnotesLayout"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
                 <TextView
-                    android:text="Musical Notes"
+                    android:id="@+id/scaleconminTxt"
                     android:layout_width="255dp"
                     android:layout_height="128dp"
-                    android:id="@+id/mnotesTxt"
                     android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Minor Scale Construction"
                     android:textAlignment="center"
-                    android:textSize="22sp"
                     android:textColor="@android:color/black"
-                    android:gravity="center_vertical" />
+                    android:textSize="22sp" />
 
                 <ImageButton
+                    android:id="@+id/scaleconminBtn"
                     android:layout_width="128dp"
                     android:layout_height="120dp"
-                    app:srcCompat="@drawable/keyboardbtn"
-                    android:id="@+id/mnotesBtn"
+                    android:layout_marginRight="20dp"
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    android:layout_marginRight="20dp" />
+                    app:srcCompat="@drawable/introbtn" />
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:id="@+id/cconstructionLayout"
                 android:layout_width="match_parent"
-                android:layout_height="131dp"
-                android:weightSum="1"
-                android:gravity="center_vertical"
-                android:id="@+id/smpnotelenLayout"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp">
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
 
                 <ImageButton
+                    android:id="@+id/cconstructionBtn"
                     android:layout_width="128dp"
                     android:layout_height="120dp"
-                    app:srcCompat="@drawable/smpnotelenbtn"
-                    android:id="@+id/smpnotelenBtn"
+                    android:layout_marginRight="20dp"
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    android:layout_marginLeft="20dp" />
+                    app:srcCompat="@drawable/introbtn" />
 
                 <TextView
-                    android:text="Simple Note Lengths"
+                    android:id="@+id/cconstructionTxt"
                     android:layout_width="255dp"
                     android:layout_height="128dp"
-                    android:id="@+id/smpnotelenTxt"
                     android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Chord Construction"
                     android:textAlignment="center"
-                    android:textSize="22sp"
                     android:textColor="@android:color/black"
-                    android:gravity="center_vertical" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="131dp"
-                android:weightSum="1"
-                android:gravity="center_vertical"
-                android:id="@+id/advnotelenLayout"
-                android:layout_marginBottom="12dp"
-                android:layout_marginTop="12dp">
-
-                <ImageButton
-                    android:layout_width="128dp"
-                    android:layout_height="120dp"
-                    app:srcCompat="@drawable/advnotelenbtn"
-                    android:id="@+id/advnotelenBtn"
-                    android:layout_weight="0.20"
-                    android:background="@drawable/select_icon"
-                    android:scaleType="fitXY"
-                    android:layout_marginLeft="20dp" />
-
-                <TextView
-                    android:text="Advanced Note Lengths"
-                    android:layout_width="255dp"
-                    android:layout_height="128dp"
-                    android:id="@+id/advnotelenTxt"
-                    android:layout_weight="0.8"
-                    android:textAlignment="center"
-                    android:textSize="22sp"
-                    android:textColor="@android:color/black"
-                    android:gravity="center_vertical" />
-
+                    android:textSize="22sp" />
             </LinearLayout>
 
             <LinearLayout
