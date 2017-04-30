@@ -1,5 +1,11 @@
 package com.project.one.team.musictheoryapp;
 
+import android.content.Context;
+import android.util.Log;
+
+import java.io.IOException;
+import java.util.Arrays;
+
 /**
  * <p>Helper class for manipulating Topic IDs into usable formats.</p>
  *
@@ -11,44 +17,38 @@ package com.project.one.team.musictheoryapp;
 
 public class TopicParser {
 
-    public static String TopicIDToName(String topicID)
+    public static String topicIDToName(String topicID)
     {
-        return TopicName(TopicIDToTopic(topicID));
+        return topicName(topicIDToTopic(topicID));
     }
 
-    public static String TopicIDToTopic(String topicID) {
+    public static String topicIDToTopic(String topicID) {
         //Remove any file path prefixes
-        if (topicID.contains("basic/q")) {
+        if (topicID.contains("basic/q"))
             topicID = topicID.replace("basic/quiz/", "");
 
-            if (topicID.length() > 6) {
-                if (topicID.contains("basic/c"))
-                    topicID = topicID.replace("basic/content/", "");
-            }
+        if (topicID.contains("basic/c"))
+            topicID = topicID.replace("basic/content/", "");
 
-        } else if (topicID.contains("intermediate/q")) {
+
+        if (topicID.contains("intermediate/q"))
             topicID = topicID.replace("intermediate/quiz/", "");
 
-            if (topicID.length() > 6) {
-                if (topicID.contains("intermediate/c"))
-                    topicID = topicID.replace("intermediate/content/", "");
-            }
+        if (topicID.contains("intermediate/c"))
+            topicID = topicID.replace("intermediate/content/", "");
 
-        } else if (topicID.contains("advanced/q")) {
-            topicID = topicID.substring(14, topicID.length());
 
+        if (topicID.contains("advanced/q"))
             topicID = topicID.replace("advanced/quiz/", "");
 
-            if (topicID.length() > 6) {
-                if (topicID.contains("advanced/c"))
-                    topicID = topicID.replace("advanced/content/", "");
-            }
-        }
+        if (topicID.contains("advanced/c"))
+            topicID = topicID.replace("advanced/content/", "");
+
 
         return topicID;
     }
 
-    public static String TopicName(String topic) {
+    private static String topicName(String topic) {
         switch(topic)
         {
             case "intro":
@@ -71,8 +71,20 @@ public class TopicParser {
 
     }
 
-    public static String TopicIDToDifficulty(String topicID) {
+    public static String topicIDToDifficulty(String topicID) {
         return topicID.split("/")[0];
+    }
+
+    public static boolean topicHasQuiz(Context context, String topic) {
+        String difficulty = topicIDToDifficulty(topic);
+        String quizName = topicIDToTopic(topic) + "_quiz.json";
+        try {
+            return Arrays.asList(context.getAssets().list(difficulty + "/quiz")).contains(quizName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 }

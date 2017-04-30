@@ -1,10 +1,12 @@
 package com.project.one.team.musictheoryapp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -104,6 +107,19 @@ public class ContentActivity extends FragmentActivity {
                 e.printStackTrace();
             }
 
+            // If the current topic does not have a quiz, simply increment the user's progress just
+            // for reading the topic.
+            if (!TopicParser.topicHasQuiz(ContentActivity.this, getIntent().getStringExtra(EXTRA_TOPIC))) {
+                String topic = TopicParser.topicIDToTopic(getIntent().getStringExtra(EXTRA_TOPIC));
+                String difficulty = TopicParser.topicIDToDifficulty(getIntent().getStringExtra(EXTRA_TOPIC));
+                SharedPreferences progression = getSharedPreferences("progression", MODE_PRIVATE);
+
+                int topic_index = Topics.getInstance(this).getTopics(difficulty).indexOf(topic);
+
+                if (topic_index < Topics.getInstance(this).getTopics(difficulty).size()-1 && topic_index+1 > progression.getInt(difficulty, 0))
+                    Progression.getInstance(this).increment(difficulty);
+            }
+
         } else {
             //throw new Exception("No extra provided...");
             titleTextView.setText("No extra provided...");
@@ -134,8 +150,11 @@ public class ContentActivity extends FragmentActivity {
             }
         }
 
-        // Add the fragment that contains the link to the quiz for this topic section
-        fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra(EXTRA_TOPIC)));
+            if (TopicParser.topicHasQuiz(ContentActivity.this, getIntent().getStringExtra(EXTRA_TOPIC)))
+                // Add the fragment that contains the link to the quiz for this topic section
+                // if we have a quiz file for that topic.
+                fList.add(QuizLinkFragment.newInstance(getIntent().getStringExtra(EXTRA_TOPIC)));
+
 
         return fList;
     }

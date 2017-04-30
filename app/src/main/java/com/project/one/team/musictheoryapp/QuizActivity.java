@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -18,7 +19,6 @@ import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.share.model.ShareLinkContent;
-import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
 
 import org.json.JSONArray;
@@ -312,14 +312,15 @@ public class QuizActivity extends AppCompatActivity {
                 if(quizMarks>=numberOfQuestions){
                     findViewById(R.id.star3).setVisibility(View.VISIBLE);
 
-                    String difficulty = TopicParser.TopicIDToDifficulty(topic);
+                    String difficulty = TopicParser.topicIDToDifficulty(topic);
 
-                    String _topic = TopicParser.TopicIDToTopic(topic);
+                    String _topic = TopicParser.topicIDToTopic(topic);
                     SharedPreferences progression = getSharedPreferences("progression", MODE_PRIVATE);
 
                     int topic_index = Topics.getInstance(this).getTopics(difficulty).indexOf(_topic);
-                    Toast.makeText(QuizActivity.this, _topic + " in " + Arrays.toString(Topics.getInstance(this).getTopics(difficulty).toArray()), Toast.LENGTH_SHORT).show();
-                    //Toast.makeText(QuizActivity.this, topic_index + " < " + (Topics.getInstance(this).getTopics(difficulty).size()-1) + " > " + progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
+                    Log.d("QUIZ", "t: " + topic_index);
+                    Log.d("QUIZ", "t2: " + (Topics.getInstance(this).getTopics(difficulty).size()-1));
+
                     if (topic_index < Topics.getInstance(this).getTopics(difficulty).size()-1 && topic_index+1 > progression.getInt(difficulty, 0))
                         Progression.getInstance(this).increment(difficulty);
                 }
@@ -403,7 +404,7 @@ public class QuizActivity extends AppCompatActivity {
             ShareLinkContent linkContent = new ShareLinkContent.Builder()
                     .setContentTitle("Theoryously")
                     .setContentDescription(
-                            "I just scored " + quizMarks + "/" + numberOfQuestions + " on " + TopicParser.TopicIDToName(topic) + " in Theoryously!" +
+                            "I just scored " + quizMarks + "/" + numberOfQuestions + " on " + TopicParser.topicIDToName(topic) + " in Theoryously!" +
                                     "\nTry to beat my score!")
                     .setContentUrl(Uri.parse("https://www.facebook.com/Theoryously/"))
                     .build();
