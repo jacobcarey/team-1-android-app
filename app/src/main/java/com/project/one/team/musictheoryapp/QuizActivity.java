@@ -168,11 +168,21 @@ public class QuizActivity extends AppCompatActivity {
                 jsonArray = new JSONArray(json);
                 numberOfQuestions = jsonArray.length();
             } catch (IOException | JSONException e) {
+//                new AlertDialog.Builder(this)
+//                        .setTitle("Error:")
+//                        .setMessage(e.toString())
+//                        .setIcon(android.R.drawable.ic_dialog_alert)
+//                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                finish();
+//                            }
+//                        })
+//                        .show();
                 new AlertDialog.Builder(this)
-                        .setTitle("Error:")
-                        .setMessage(e.toString())
+                        .setTitle("Oops!")
+                        .setMessage("This quiz is coming soon!")
                         .setIcon(android.R.drawable.ic_dialog_alert)
-                        .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 finish();
                             }
