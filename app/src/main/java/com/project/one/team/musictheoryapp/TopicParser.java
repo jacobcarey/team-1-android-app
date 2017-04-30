@@ -18,33 +18,29 @@ public class TopicParser {
 
     public static String TopicIDToTopic(String topicID) {
         //Remove any file path prefixes
-        if (topicID.substring(0, 7) == "basic/q") {
-            topicID = topicID.substring(11, topicID.length());
-
+        if (topicID.contains("basic/q")) {
             topicID = topicID.replace("basic/quiz/", "");
 
             if (topicID.length() > 6) {
-                if (topicID.substring(0, 7) == "basic/c")
+                if (topicID.contains("basic/c"))
                     topicID = topicID.replace("basic/content/", "");
             }
 
-        } else if (topicID.substring(0, 14) == "intermediate/q") {
-            topicID = topicID.substring(18, topicID.length());
-
+        } else if (topicID.contains("intermediate/q")) {
             topicID = topicID.replace("intermediate/quiz/", "");
 
             if (topicID.length() > 6) {
-                if (topicID.substring(0, 15) == "intermediate/c")
+                if (topicID.contains("intermediate/c"))
                     topicID = topicID.replace("intermediate/content/", "");
             }
 
-        } else if (topicID.substring(0, 10) == "advanced/q") {
+        } else if (topicID.contains("advanced/q")) {
             topicID = topicID.substring(14, topicID.length());
 
             topicID = topicID.replace("advanced/quiz/", "");
 
             if (topicID.length() > 6) {
-                if (topicID.substring(0, 11) == "advanced/c")
+                if (topicID.contains("advanced/c"))
                     topicID = topicID.replace("advanced/content/", "");
             }
         }

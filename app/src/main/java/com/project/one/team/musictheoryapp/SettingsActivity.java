@@ -224,8 +224,8 @@ public class SettingsActivity extends AppCompatActivity {
 
                     // Update the user's progression when they log in.
                     Progression.getInstance(SettingsActivity.this).getProgression("basic");
-                    //Progression.getInstance(SettingsActivity.this).getProgression("intermediate");
-                    //Progression.getInstance(SettingsActivity.this).getProgression("advanced");
+                    Progression.getInstance(SettingsActivity.this).getProgression("intermediate");
+                    Progression.getInstance(SettingsActivity.this).getProgression("advanced");
 
                 } else {
                     // User is signed out
