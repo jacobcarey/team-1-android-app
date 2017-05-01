@@ -61,15 +61,6 @@ public class BasicSelectActivityTest {
     }
 
     @Test
-    public void canNavigateToAdvancedNotesTopicPage() {
-        onView(withId(R.id.advnotelenLayout))
-                .perform(scrollTo(), click());
-
-        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Advanced Note Lengths")));
-    }
-
-    @Test
     public void canNavigateToSheetMusicTopicPage() {
         onView(withId(R.id.sheetmusicLayout))
                 .perform(scrollTo(), click());
