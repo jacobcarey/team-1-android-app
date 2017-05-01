@@ -34,7 +34,7 @@ public class QuizActivityTest {
             Context targetContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
             Intent quizIntent = new Intent(targetContext, QuizActivity.class);
-            quizIntent.putExtra(QuizActivity.EXTRA_TOPIC, "basic/quiz/intro");
+            quizIntent.putExtra(QuizActivity.EXTRA_TOPIC, "basic/quiz/mnotes");
             return quizIntent;
         }
     };

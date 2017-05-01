@@ -165,7 +165,7 @@ public class SignUpActivity extends AppCompatActivity {
         final EditText userNameInput = (EditText) findViewById(R.id.userName);
         final EditText userEmailInput = (EditText) findViewById(userEmail);
         final EditText userPassInput = (EditText) findViewById(userPass);
-        Pattern emailPattern = Pattern.compile("[A-Z0-9._+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}");
+        Pattern emailPattern = Pattern.compile("[A-Za-z0-9._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}");
         Matcher matcher = emailPattern.matcher(userEmailInput.getText().toString());
 
 
