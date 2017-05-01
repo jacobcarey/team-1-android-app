@@ -3,7 +3,14 @@
     "title": "Harmonies",
     "image": "",
     "content": [
-      "Test for harmonies topic."
+     "Harmonies are one of the most interesting and useful topics when comes to accentuating a piece of music. Similarly to how a chord uses multiple notes to fill out and form a single unit. Harmonies use notes to fill out a melody but at the same time are independent from the melody. Harmony can be seen in all styles of playing and almost all instruments. But some common uses of harmony include vocals (choirs, layered vocals and etc), Orchestras and Dual Lead guitars."
     ]
+  },
+  {
+    "title":"",
+    "content":[
+      "Before we get into the technical detail of harmonies, here is a really quick overview of how harmonies work. We know that each note has a corresponding frequency. If we were to layer another note on top of our original note, the frequencies may match up to sound correct, forming a harmony or the frequencies may sound poor and not form a harmony. An example of two notes that harmonize would be A and A the octave up."
+      ]
   }
+
 ]
