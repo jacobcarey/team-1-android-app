@@ -4,7 +4,8 @@
     "mnotes",
     "smpnotelen",
     "sheetmusic",
-    "notepitch"
+    "notepitch",
+    "timesignatures"
   ],
   "intermediate": [
     "scaleconmaj",
