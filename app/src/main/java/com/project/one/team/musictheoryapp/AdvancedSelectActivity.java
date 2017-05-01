@@ -74,7 +74,7 @@ public class AdvancedSelectActivity extends AppCompatActivity {
                 l.setClickable(true);
                 b.setClickable(true);
                 b.setColorFilter(getResources().getColor(android.R.color.transparent));
-                t.setTextColor(getResources().getColor(android.R.color.black));
+                t.setTextColor(getResources().getColor(R.color.colorTextPrimary));
             }
             else
             {
