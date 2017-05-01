@@ -1,0 +1,29 @@
+[
+	{
+		"title": "Time Signatures",
+		"content": [
+		"The time signature is shown by 2 numbers, one on top of the other. It tells the musician how many beats to play in a bar."
+		]
+	},
+	{
+		"title": "Bars",
+		"content": [
+		"A bar is a small region of the piece of music, separated by a vertical line on the staves, and is used to break the piece into chunks. These chunks are then built into phrases (commonly phrases are composed of 4 or 8 bars), and then phrases are built into sections."
+		]
+	},
+	{
+		"title": "Bars",
+		"content": [
+		"So, how do we know how many beats are in a bar? This is where the time signature comes in. The bottom number of the time signature tells us the length of each beat. It’s best to think of this as a fraction of a semibreve - remember this is a note lasting 4 beats - so a 1 on the bottom means a whole semibreve, a 2 means a minim, a 4 means a crotchet, and an 8 means a quaver."
+		]
+	},
+	{
+		"title": "Time Signatures",
+		"content": [
+		"The number on top tells us how many of these beats we have per bar. So a time signature of 4/4 means there are 4 crotchet beats, per bar. And a time signature of 6/8 means there are 6 quavers per bar."
+		]
+	}
+
+
+
+]
