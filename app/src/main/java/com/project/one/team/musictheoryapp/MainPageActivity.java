@@ -141,8 +141,8 @@ public class MainPageActivity extends AppCompatActivity {
                 buttonMP.start();
                 Intent i = new Intent(MainPageActivity.this, IntermediateSelectActivity.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.slide_right,
-                        R.anim.slide_left_out);
+                overridePendingTransition(R.anim.slide_up,
+                        R.anim.slide_up_out);
             }
         });
 
@@ -155,8 +155,8 @@ public class MainPageActivity extends AppCompatActivity {
                 buttonMP.start();
                 Intent i = new Intent(MainPageActivity.this, AdvancedSelectActivity.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.slide_right,
-                        R.anim.slide_left_out);
+                overridePendingTransition(R.anim.slide_up,
+                        R.anim.slide_up_out);
             }
         });
     }
