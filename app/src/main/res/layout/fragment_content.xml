@@ -27,7 +27,7 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:text="Title"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="22sp" />
 
         </LinearLayout>
@@ -64,7 +64,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:text="@string/hello_blank_fragment"
-                android:textColor="@android:color/black"
+                android:textColor="@color/colorTextPrimary"
                 android:textSize="18sp" />
 
         </LinearLayout>

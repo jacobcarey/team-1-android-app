@@ -28,7 +28,7 @@
             android:id="@+id/headerText"
             android:paddingTop="5dp"
             android:shadowRadius="100"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorTextPrimary"
             android:textSize="30sp"
             android:textAlignment="center"
             android:layout_marginTop="5dp"
@@ -70,7 +70,7 @@
                     android:gravity="center_vertical"
                     android:text="Introduction to \nMusic Theory"
                     android:textAlignment="center"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorTextPrimary"
                     android:textSize="22sp" />
 
                 <ImageButton
@@ -102,7 +102,7 @@
                     android:layout_weight="0.8"
                     android:textAlignment="center"
                     android:textSize="22sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorTextPrimary"
                     android:gravity="center_vertical" />
 
                 <ImageButton
@@ -144,7 +144,7 @@
                     android:layout_weight="0.8"
                     android:textAlignment="center"
                     android:textSize="22sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorTextPrimary"
                     android:gravity="center_vertical" />
 
             </LinearLayout>
@@ -177,7 +177,7 @@
                     android:layout_weight="0.8"
                     android:textAlignment="center"
                     android:textSize="22sp"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/colorTextPrimary"
                     android:gravity="center_vertical" />
 
             </LinearLayout>
