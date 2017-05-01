@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatDelegate;
 
 /**
  * <p>{@link Application} descendant allowing the getting and setting of app-wide global variables.</p>
- *
+ * <p>
  * <p>Currently used to maintain logged in, and night mode state across the entire app. In the
  * case of night mode, the class makes use of Android's {@link SharedPreferences} framework to persist
  * the night mode state across app restarts.</p>
@@ -22,6 +22,7 @@ public class Theoryously extends Application {
 
     /**
      * Get user's current signed in status.
+     *
      * @return Returns <code>true</code> if user is signed in, <code>false</code> otherwise.
      */
     public boolean getSignedIn() {
@@ -30,6 +31,7 @@ public class Theoryously extends Application {
 
     /**
      * Set the user's signed-in status.
+     *
      * @param signedIn <code>true</code> if the user has been signed in, <code>false</code> if
      *                 user is not signed in.
      */
@@ -39,6 +41,7 @@ public class Theoryously extends Application {
 
     /**
      * Get the current night mode status of the app.
+     *
      * @return Returns <code>true</code> if night mode is enabled, <code>false</code> otherwise.
      */
     public boolean getNightMode() {
@@ -49,6 +52,7 @@ public class Theoryously extends Application {
 
     /**
      * Set the app-wide night mode toggle.
+     *
      * @param nightMode <code>true</code> if night mode is to be enabled, <code>false</code> if
      *                  disabled.
      */

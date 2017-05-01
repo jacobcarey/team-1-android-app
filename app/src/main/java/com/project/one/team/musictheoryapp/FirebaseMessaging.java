@@ -14,7 +14,7 @@ import com.google.firebase.messaging.RemoteMessage;
 
 /**
  * <p>Helper class for handling and displaying incoming notifications.</p>
- *
+ * <p>
  * <p>Using Firebase, we are able to push notifications to users of the app. This can be used
  * when new features and new content is added.</p>
  *
@@ -27,16 +27,16 @@ public class FirebaseMessaging extends FirebaseMessagingService {
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
-        Log.d(TAG, "FROM:" + remoteMessage.getFrom());
+//        Log.d(TAG, "FROM:" + remoteMessage.getFrom());
 
-        //Check if the message contains data
-        if(remoteMessage.getData().size() > 0) {
+        //Check if the message contains data (Size is larger than 0).
+        if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data: " + remoteMessage.getData());
         }
 
-        //Check if the message contains notification
+        //Check if the message contains a valid notification.
 
-        if(remoteMessage.getNotification() != null) {
+        if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Mesage body:" + remoteMessage.getNotification().getBody());
             sendNotification(remoteMessage.getNotification().getBody());
         }
@@ -44,6 +44,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
 
     /**
      * Display the notification
+     *
      * @param body
      */
     private void sendNotification(String body) {
@@ -52,10 +53,12 @@ public class FirebaseMessaging extends FirebaseMessagingService {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0/*Request code*/, intent, PendingIntent.FLAG_ONE_SHOT);
-        //Set sound of notification
+        //Set sound of notification, currently default.
         Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
-        NotificationCompat.Builder notifiBuilder = new NotificationCompat.Builder(this)
+
+        // Sets value for notifications.
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.drawable.logo)
                 .setContentTitle("Theoryously")
                 .setContentText(body)
@@ -63,8 +66,8 @@ public class FirebaseMessaging extends FirebaseMessagingService {
                 .setSound(notificationSound)
                 .setContentIntent(pendingIntent);
 
-        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(0 /*ID of notification*/, notifiBuilder.build());
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        notificationManager.notify(0 /*ID of notification*/, notificationBuilder.build());
     }
 }
 

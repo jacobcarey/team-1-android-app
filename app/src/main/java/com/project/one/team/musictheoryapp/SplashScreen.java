@@ -23,8 +23,8 @@ public class SplashScreen extends Activity {
             public void run(){
                 try
                 {
-//                    sleep(3000); //Duration of splash screen
-                    sleep(5); // Set to make boot up faster when developing.
+                    sleep(3000); //Duration of splash screen
+//                    sleep(5); // Set to make boot up faster when developing.
                 }
                 catch (InterruptedException e)
                 {

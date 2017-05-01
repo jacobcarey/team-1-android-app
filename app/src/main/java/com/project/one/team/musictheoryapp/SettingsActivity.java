@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
@@ -30,17 +29,16 @@ import com.google.firebase.messaging.FirebaseMessaging;
 
 /**
  * <p>Activity for controlling various settings in the app.</p>
- *
+ * <p>
  * <p>This activity enables the user to toggle the app-wide night mode theme, which is persisted
  * across app restarts using the {@link Theoryously} application state class.</p>
- *
+ * <p>
  * <p>The SettingsActivity also handles the <a href="https://firebase.google.com/">Firebase</a>
  * authentication integration within the app. Using Firebase, the user is able to create or log in
  * to an account which enables them to save their topic progress as well as receive push notifications
  * when new topics or quizzes are added to the app.</p>
  *
  * @author Team One
- *
  * @see SignUpActivity
  * @see com.project.one.team.musictheoryapp.FirebaseMessaging
  */
@@ -55,13 +53,16 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         AppCompatDelegate.getDefaultNightMode();
         super.onCreate(savedInstanceState);
+//        Set context view.
         setContentView(R.layout.activity_settings);
         getSupportActionBar().hide();
+//       Initialise authentication variable.
         mAuth = FirebaseAuth.getInstance();
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         final MediaPlayer buttonMP = MediaPlayer.create(this, R.raw.menu_click);
 
         ToggleButton nmButton = (ToggleButton) findViewById(R.id.nightModeToggle);
+//        This if statement will check what value is saved in the saved preference and set the checked button accordingly.
         if (((Theoryously) getApplication()).getNightMode()) {
             nmButton.setChecked(true);
         } else {
@@ -70,6 +71,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         final ToggleButton notificationsToggle = (ToggleButton) findViewById(R.id.notifications);
 
+        // This will change the nightmode to on or off when toggle is pressed.
         nmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,6 +85,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        // Listener for the email text box.
         final EditText userEmail = (EditText) findViewById(R.id.userEmail);
         userEmail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +96,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             }
         });
-
+//        Listener for the password text box.
         final EditText userPass = (EditText) findViewById(R.id.userPass);
         userPass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +111,8 @@ public class SettingsActivity extends AppCompatActivity {
         final Button loginInButton = (Button) findViewById(R.id.loginSubmit);
         final Button signUpButton = (Button) findViewById(R.id.signUp);
 
+//        This listener will check if the user is signed in. If the are the they will be able to sign out,
+// if not then they will be given the option to sign up or login.
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,6 +123,7 @@ public class SettingsActivity extends AppCompatActivity {
                     inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
                             InputMethodManager.HIDE_NOT_ALWAYS);
 
+//                    Take them to the sign up activity so they can make an account.
                     Intent i = new Intent(SettingsActivity.this, SignUpActivity.class);
                     startActivity(i);
                     overridePendingTransition(R.anim.slide_left,
@@ -130,7 +136,7 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-
+//      Listener for the login button. Will sign the user in given their credentials match the ones on record.
         loginInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,7 +150,7 @@ public class SettingsActivity extends AppCompatActivity {
                 } else {
                     if (userEmail.getText().toString().isEmpty() || userPass.getText().toString().isEmpty()) {
                         //Snackbar.make(findViewById(R.id.settingsLayout),
-                                //"Email/Password cannot be blank!", Snackbar.LENGTH_LONG).show();
+                        //"Email/Password cannot be blank!", Snackbar.LENGTH_LONG).show();
                         return;
                     }
 
@@ -162,6 +168,8 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+//        This listener will sign the user up to a Firebase topic so they can subscribe to notifications.
+//        It will also stored a value against their userId, so they can later unsubscribe from notifications.
         notificationsToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -180,6 +188,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         final Button resetButton = (Button) findViewById(R.id.reset);
 
+        // Resets sure progression.
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -187,17 +196,20 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+//        this is used to listen out to see if a user in signed in. It does various checks and is important to the applications flow and layout.
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
 
+//                If user is signed in.
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     notificationsToggle.setEnabled(true);
                     final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
+                    // Changes the notification toggle depending on their status.
                     database.getDatabase().getReference().child("users").child(userId).child("notifications").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -246,6 +258,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
+    // Method user to sign in the user with an email and password.
     private void signInWithEmail(String email, String password) {
         Log.d(TAG, "Login:" + email);
 
@@ -287,6 +300,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
+    // Sets with page should be started when the back button is pressed.
     @Override
     public void onBackPressed() {
         super.onBackPressed();

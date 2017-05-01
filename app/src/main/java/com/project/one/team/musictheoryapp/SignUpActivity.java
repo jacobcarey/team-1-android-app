@@ -79,6 +79,7 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
+        // Upon the user clicking the signup button the values will be pulled from the input boxes and used to create an account.
         Button signUpButton = (Button) findViewById(R.id.signUp);
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     ((Theoryously) getApplication()).setSignedIn(true);
+                    // Sets a username to the user
                     UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
                             .setDisplayName(userNameInput.getText().toString()).build();
                     user.updateProfile(profileUpdates);
@@ -120,13 +122,13 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    // Creates an account given an email address and password.
     private void createAccount(String email, String password) {
         Log.d(TAG, "createAccount:" + email);
         if (!validateForm()) {
             return;
         }
 
-        // [START create_user_with_email]
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -149,16 +151,14 @@ public class SignUpActivity extends AppCompatActivity {
                             database.child("users").child(userId).child("notifications").setValue("true");
                         }
 
-                        // [START_EXCLUDE]
-                        // [END_EXCLUDE]
                     }
                 });
-        // [END create_user_with_email]
     }
 
     /**
      * Ensures that the input fields for registering a user account are not empty, and that the
      * entered email address is of a valid format.
+     *
      * @return <code>true</code> if everything in form is valid, <code>false</code> otherwise.
      */
     private boolean validateForm() {
