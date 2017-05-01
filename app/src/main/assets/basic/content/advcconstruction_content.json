@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Chord Inversions",
+		"content": [
+		" A chord inversion is a rearrangement of a chord - it uses the same notes, but in a different order. "
+		]
+	},
+	{
+		"title": "",
+		"content":[
+		"Using the example of C major’s primary triad, CEG (we worked this out in the Chord Construction lesson), we would play this on a piano with C being the lowest note, then E in the middle, and G as the highest note. If we apply the 1st inversion, the chord would then become EGC - E as the lowest note, then G, then C. Notice we’re still using the same notes, but in a different order. Applying the inversion again gives us the 2nd inversion: GCE, and applying an inversion one more takes us back to the root arrangement, CEG."
+		]
+	}
+]
