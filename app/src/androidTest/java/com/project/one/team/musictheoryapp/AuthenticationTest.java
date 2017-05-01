@@ -67,8 +67,8 @@ public class AuthenticationTest {
         } catch (InterruptedException ex) {
             Assert.fail("Thread.sleep() Interrupted!\n" + ex.getMessage());
         }
-        pressBack();
-        onView(withText("Logged in as: WebTest"))
+
+        onView(withText("Already signed in."))
                 .check(matches(isDisplayed()));
     }
 

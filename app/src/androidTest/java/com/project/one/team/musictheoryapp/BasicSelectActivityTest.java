@@ -69,4 +69,13 @@ public class BasicSelectActivityTest {
                 .check(matches(withText("Sheet Music")));
     }
 
+    @Test
+    public void canNavigateToNotePitchTopicPage() {
+        onView(withId(R.id.notepitchLayout))
+                .perform(scrollTo(), click());
+
+        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
+                .check(matches(withText("Note Pitch")));
+    }
+
 }
