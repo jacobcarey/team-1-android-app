@@ -52,7 +52,6 @@ public class MainPageActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main_page);
-        final TextView userNameField = (TextView) findViewById(userName);
         // Upon the status change on whether a user is signed in their name will appear on the main page.
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -62,12 +61,10 @@ public class MainPageActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    userNameField.setText("Logged in as: " + user.getDisplayName());
                     ((Theoryously) getApplication()).setSignedIn(true);
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    userNameField.setText("");
                 }
                 // ...
             }
