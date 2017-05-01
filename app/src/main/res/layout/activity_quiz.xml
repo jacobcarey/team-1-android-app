@@ -52,7 +52,7 @@
             android:background="@drawable/quiz_button"
             android:gravity="center"
             android:text="Answer 1"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -70,7 +70,7 @@
             android:background="@drawable/quiz_button"
             android:gravity="center"
             android:text="Answer 2"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -88,7 +88,7 @@
             android:background="@drawable/quiz_button"
             android:gravity="center"
             android:text="Answer 3"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -106,7 +106,7 @@
             android:background="@drawable/quiz_button"
             android:gravity="center"
             android:text="Answer 4"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <ProgressBar
@@ -153,7 +153,7 @@
             android:background="@drawable/quiz_button"
             android:gravity="center"
             android:text="Return To Topic Select"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:visibility="invisible" />
 
@@ -172,7 +172,7 @@
             android:background="@drawable/quiz_button"
             android:gravity="center"
             android:text="Try It Again"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp"
             android:visibility="invisible" />
 

@@ -5,6 +5,9 @@
     <color name="colorPrimaryDark">#00b4d6</color>
     <color name="colorAccent">#FF0161</color>
 
+    <color name="colorQuizCorrect">#00FF00</color>
+    <color name="colorQuizIncorrect">#FF0161</color>
+
     <color name="colorTextPrimary">#000000</color>
 
     <color name="colorMainScreenGradientStart">#00D7FF</color>

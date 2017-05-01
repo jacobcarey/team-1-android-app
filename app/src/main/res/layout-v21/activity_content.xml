@@ -28,7 +28,7 @@
             android:id="@+id/contentPageIndicator"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryLight"
+            android:background="@color/colorPrimaryDark"
             android:padding="5dp"
             app:lineWidth="30dp"
             app:selectedColor="?attr/colorAccent"
