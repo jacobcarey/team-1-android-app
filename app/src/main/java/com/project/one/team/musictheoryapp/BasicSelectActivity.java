@@ -26,7 +26,7 @@ public class BasicSelectActivity extends AppCompatActivity {
     public static final String EXTRA_TOPIC = "topic";
     private static final String GREY_OUT_COLOUR = "#A0A0A0"; //Defines the greyed out colour
     String[] Topics = new String[]{"intro", "mnotes", "smpnotelen", "advnotelen"};
-    int TOPIC_REACHED = 1; //How far the user has progressed TODO: save this externally
+    int TOPIC_REACHED = 1; //How far the user has progressed
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

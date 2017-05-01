@@ -246,7 +246,6 @@ public class QuizActivity extends AppCompatActivity {
 
         try {
             // Randomise the order of the json keys
-            // TODO: just loops for now
 
             //End of quiz
             if (currentQuestionIndex == numberOfQuestions) {

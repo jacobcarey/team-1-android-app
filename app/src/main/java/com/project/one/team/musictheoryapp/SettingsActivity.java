@@ -188,7 +188,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         final Button resetButton = (Button) findViewById(R.id.reset);
 
-        // Resets sure progression.
+        // Resets user progression.
+        // TODO: Confirmation dialogue.
         resetButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
