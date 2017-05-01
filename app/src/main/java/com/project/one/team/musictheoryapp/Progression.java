@@ -2,8 +2,6 @@ package com.project.one.team.musictheoryapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -61,7 +59,7 @@ public class Progression {
             database.child("users").child(userId).child("progression").child(difficulty).setValue(newValue);
         }
 
-        Toast.makeText(context.getApplicationContext(), "progression/"+difficulty+" is: "+progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context.getApplication/Context(), "progression/"+difficulty+" is: "+progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
     }
 
     public void reset(String difficulty) {
@@ -77,7 +75,7 @@ public class Progression {
             database.child("users").child(userId).child("progression").child(difficulty).setValue(0);
         }
 
-        Toast.makeText(context.getApplicationContext(), "progression/"+difficulty+" is: "+progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context.getApplicationContext(), "progression/"+difficulty+" is: "+progression.getInt(difficulty, 0), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -103,7 +101,7 @@ public class Progression {
             database.child("users").child(userId).child("progression").child("advanced").setValue(0);
         }
 
-        Toast.makeText(context.getApplicationContext(), "Reset all progression!", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(context.getApplicationContext(), "Reset all progression!", Toast.LENGTH_SHORT).show();
     }
 
     /**
