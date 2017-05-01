@@ -1,7 +1,9 @@
 package com.project.one.team.musictheoryapp;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatDelegate;
 
@@ -19,6 +21,8 @@ public class Theoryously extends Application {
 
     private boolean nightMode = false;
     private boolean signedIn = false;
+    private boolean soundOn = true;
+
 
     /**
      * Get user's current signed in status.
@@ -71,5 +75,26 @@ public class Theoryously extends Application {
         editor.apply();
     }
 
+    public void buttonClickedSound(Context context) {
+        if (isSoundOn()) {
+            MediaPlayer buttonMP = MediaPlayer.create(context, R.raw.menu_click);
+            buttonMP.start();
+            //        buttonMP.release();
+        }
+    }
+
+    public boolean isSoundOn() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        soundOn = preferences.getBoolean("soundOn", false);
+        return soundOn;
+    }
+
+    public void setSoundOn(boolean soundOn) {
+        this.soundOn = soundOn;
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean("soundOn", soundOn);
+        editor.apply();
+    }
 }
 

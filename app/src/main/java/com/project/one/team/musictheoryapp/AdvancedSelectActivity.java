@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * <p>Activity for displaying the list of advanced topics available.</p>
@@ -91,6 +90,7 @@ public class AdvancedSelectActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 Intent i = new Intent(getApplicationContext(), ContentActivity.class);
                 i.putExtra(ContentActivity.EXTRA_TOPIC, topic);
                 startActivity(i);

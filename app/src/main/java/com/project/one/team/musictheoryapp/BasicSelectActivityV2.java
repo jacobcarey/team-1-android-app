@@ -88,6 +88,7 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 Intent i = new Intent(getApplicationContext(), ContentActivity.class);
                 i.putExtra(ContentActivity.EXTRA_TOPIC, topic);
                 startActivity(i);

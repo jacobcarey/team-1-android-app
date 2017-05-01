@@ -85,7 +85,7 @@ public class QuizActivity extends AppCompatActivity {
     public final View.OnClickListener CORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
             TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
             TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
             TextView answer3Text = (TextView)findViewById(R.id.answer3Text);
@@ -109,7 +109,7 @@ public class QuizActivity extends AppCompatActivity {
     public final View.OnClickListener INCORRECT_ANSWER_CLICK = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
             TextView answer1Text = (TextView)findViewById(R.id.answer1Text);
             TextView answer2Text = (TextView)findViewById(R.id.answer2Text);
             TextView answer3Text = (TextView)findViewById(R.id.answer3Text);

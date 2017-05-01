@@ -2,7 +2,6 @@ package com.project.one.team.musictheoryapp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -59,7 +58,6 @@ public class SettingsActivity extends AppCompatActivity {
 //       Initialise authentication variable.
         mAuth = FirebaseAuth.getInstance();
         final DatabaseReference database = FirebaseDatabase.getInstance().getReference();
-        final MediaPlayer buttonMP = MediaPlayer.create(this, R.raw.menu_click);
 
         ToggleButton nmButton = (ToggleButton) findViewById(R.id.nightModeToggle);
 //        This if statement will check what value is saved in the saved preference and set the checked button accordingly.
@@ -75,7 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
         nmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonMP.start();
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 if (((Theoryously) getApplication()).getNightMode()) {
                     ((Theoryously) getApplication()).setNightMode(false);
                 } else {
@@ -90,7 +88,7 @@ public class SettingsActivity extends AppCompatActivity {
         userEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonMP.start();
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 if (!((Theoryously) getApplication()).getSignedIn()) {
                     userEmail.setText("");
                 }
@@ -101,7 +99,7 @@ public class SettingsActivity extends AppCompatActivity {
         userPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonMP.start();
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 if (!((Theoryously) getApplication()).getSignedIn()) {
                     userPass.setText("");
                 }
@@ -116,7 +114,7 @@ public class SettingsActivity extends AppCompatActivity {
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonMP.start();
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 if (!((Theoryously) getApplication()).getSignedIn()) {
                     InputMethodManager inputManager = (InputMethodManager)
                             getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -140,7 +138,7 @@ public class SettingsActivity extends AppCompatActivity {
         loginInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonMP.start();
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
 
                 if (((Theoryously) getApplication()).getSignedIn()) {
                     mAuth.signOut();
@@ -173,7 +171,7 @@ public class SettingsActivity extends AppCompatActivity {
         notificationsToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonMP.start();
+                ((Theoryously) getApplication()).buttonClickedSound(getApplicationContext());
                 final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 if (notificationsToggle.isChecked()) {
                     FirebaseMessaging.getInstance().subscribeToTopic("all");
@@ -257,6 +255,22 @@ public class SettingsActivity extends AppCompatActivity {
             }
         };
 
+        final ToggleButton soundOnToggle = (ToggleButton) findViewById(R.id.soundOnToggle);
+        if (((Theoryously) getApplication()).isSoundOn()) {
+            soundOnToggle.setChecked(true);
+        } else {
+            soundOnToggle.setChecked(false);
+        }
+        soundOnToggle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (((Theoryously) getApplication()).isSoundOn()) {
+                    ((Theoryously) getApplication()).setSoundOn(false);
+                } else {
+                    ((Theoryously) getApplication()).setSoundOn(true);
+                }
+            }
+        });
     }
 
     // Method user to sign in the user with an email and password.
