@@ -52,12 +52,12 @@ public class BasicSelectActivityTest {
     }
 
     @Test
-    public void canNavigateToSimpleNotesTopicPage() {
+    public void canNavigateToNoteLengthsTopicPage() {
         onView(withId(R.id.notelengthsLayout))
                 .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
-                .check(matches(withText("Simple Note Lengths")));
+                .check(matches(withText("BPM")));
     }
 
     @Test
