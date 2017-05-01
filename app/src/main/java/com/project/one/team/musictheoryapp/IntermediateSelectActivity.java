@@ -1,7 +1,6 @@
 package com.project.one.team.musictheoryapp;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 /**
  * <p>Activity for displaying the list of intermediate topics available.</p>
@@ -55,7 +53,7 @@ public class IntermediateSelectActivity extends AppCompatActivity {
         super.onResume();
 
         int topicReached = Progression.getInstance(this).getProgression("intermediate");
-        Toast.makeText(getApplicationContext(), "progression/intermediate is: "+topicReached, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), "progression/intermediate is: "+topicReached, Toast.LENGTH_SHORT).show();
 
         for(int i = 0; i < topics.length; i++)
         {
