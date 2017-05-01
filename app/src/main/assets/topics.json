@@ -3,7 +3,8 @@
     "intro",
     "mnotes",
     "smpnotelen",
-    "sheetmusic"
+    "sheetmusic",
+    "notepitch"
   ],
   "intermediate": [
     "scaleconmaj",
