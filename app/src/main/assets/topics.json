@@ -5,7 +5,7 @@
     "notelengths",
     "sheetmusic",
     "notepitch",
-    "timesignatures"
+    "tsignatures"
   ],
   "intermediate": [
     "scaleconmaj",

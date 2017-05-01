@@ -60,4 +60,13 @@ public class IntermediateSelectActivityTest {
                 .check(matches(withText("Chord Construction")));
     }
 
+    @Test
+    public void canNavigateToScaleDegreesTopicPage() {
+        onView(withId(R.id.scaledegreesLayout))
+                .perform(scrollTo(), click());
+
+        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
+                .check(matches(withText("Scale Degrees")));
+    }
+
 }

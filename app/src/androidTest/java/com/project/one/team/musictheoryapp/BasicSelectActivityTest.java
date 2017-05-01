@@ -53,7 +53,7 @@ public class BasicSelectActivityTest {
 
     @Test
     public void canNavigateToSimpleNotesTopicPage() {
-        onView(withId(R.id.smpnotelenLayout))
+        onView(withId(R.id.notelengthsLayout))
                 .perform(scrollTo(), click());
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
@@ -76,6 +76,15 @@ public class BasicSelectActivityTest {
 
         onView(allOf(withId(R.id.titleTextView), isDisplayed()))
                 .check(matches(withText("Note Pitch")));
+    }
+
+    @Test
+    public void canNavigateToTimeSignaturesTopicPage() {
+        onView(withId(R.id.tsignaturesLayout))
+                .perform(scrollTo(), click());
+
+        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
+                .check(matches(withText("Time Signatures")));
     }
 
 }

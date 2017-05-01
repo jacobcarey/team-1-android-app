@@ -42,4 +42,13 @@ public class AdvancedSelectActivityTest {
                 .check(matches(withText("Harmonies")));
     }
 
+    @Test
+    public void canNavigateToAdvancedChordConstructionTopicPage() {
+        onView(withId(R.id.advcconstructionLayout))
+                .perform(scrollTo(), click());
+
+        onView(allOf(withId(R.id.titleTextView), isDisplayed()))
+                .check(matches(withText("Chord Inversions")));
+    }
+
 }

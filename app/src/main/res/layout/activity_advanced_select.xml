@@ -100,7 +100,7 @@
                     android:layout_height="128dp"
                     android:layout_weight="0.8"
                     android:gravity="center_vertical"
-                    android:text="Advamced Chord Construction"
+                    android:text="Advanced Chord Construction"
                     android:textAlignment="center"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="22sp" />
