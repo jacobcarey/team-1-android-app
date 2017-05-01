@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 /**
- * <p>Activity for displaying the list of intermediate topics available.</p>
+ * <p>Activity for displaying the list of advanced topics available.</p>
  *
  * <p>This activity makes use of the {@link Progression} class
  * to retrieve the user's progression stats in order to lock later topics until the user has completed

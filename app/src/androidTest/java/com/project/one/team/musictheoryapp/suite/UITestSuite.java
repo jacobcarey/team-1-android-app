@@ -1,5 +1,6 @@
 package com.project.one.team.musictheoryapp.suite;
 
+import com.project.one.team.musictheoryapp.AdvancedSelectActivityTest;
 import com.project.one.team.musictheoryapp.BasicSelectActivityTest;
 import com.project.one.team.musictheoryapp.ContentActivityTest;
 import com.project.one.team.musictheoryapp.IntermediateSelectActivityTest;
@@ -17,6 +18,6 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({MainActivityTest.class, SettingsActivityTest.class,
-        BasicSelectActivityTest.class, IntermediateSelectActivityTest.class,
+        BasicSelectActivityTest.class, IntermediateSelectActivityTest.class, AdvancedSelectActivityTest.class,
         ContentActivityTest.class, QuizActivityTest.class})
 public class UITestSuite {}
