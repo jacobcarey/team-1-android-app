@@ -2,7 +2,7 @@
   "basic": [
     "intro",
     "mnotes",
-    "smpnotelen",
+    "notelengths",
     "sheetmusic",
     "notepitch",
     "timesignatures"
@@ -16,6 +16,5 @@
   "advanced": [
     "harmonies",
     "advcconstruction"
-    
   ]
 }

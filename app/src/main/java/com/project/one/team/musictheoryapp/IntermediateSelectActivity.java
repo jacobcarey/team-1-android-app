@@ -26,7 +26,7 @@ public class IntermediateSelectActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
     private static final String GREY_OUT_COLOUR = "#888888"; //Defines the greyed out colour
-    String[] topics = new String[]{"scaleconmaj", "scaleconmin", "cconstruction"};
+    String[] topics = new String[]{"scaleconmaj", "scaleconmin", "cconstruction", "scaledegrees"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

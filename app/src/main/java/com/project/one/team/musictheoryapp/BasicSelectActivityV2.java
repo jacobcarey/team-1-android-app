@@ -26,7 +26,7 @@ public class BasicSelectActivityV2 extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
     private static final String GREY_OUT_COLOUR = "#888888"; //Defines the greyed out colour
-    String[] topics = new String[]{"intro", "mnotes", "smpnotelen", "sheetmusic", "notepitch"};
+    String[] topics = new String[]{"intro", "mnotes", "notelengths", "sheetmusic", "notepitch", "tsignatures"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

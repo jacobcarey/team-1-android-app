@@ -27,7 +27,7 @@ public class AdvancedSelectActivity extends AppCompatActivity {
 
     public static final String EXTRA_TOPIC = "topic";
     private static final String GREY_OUT_COLOUR = "#888888"; //Defines the greyed out colour
-    String[] topics = new String[]{"harmonies"};
+    String[] topics = new String[]{"harmonies", "advcconstruction"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -117,7 +117,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/smpnotelenLayout"
+                android:id="@+id/notelengthsLayout"
                 android:layout_width="match_parent"
                 android:layout_height="131dp"
                 android:layout_marginBottom="12dp"
@@ -127,22 +127,22 @@
                 android:weightSum="1">
 
                 <ImageButton
-                    android:id="@+id/smpnotelenBtn"
+                    android:id="@+id/notelengthsBtn"
                     android:layout_width="128dp"
                     android:layout_height="120dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/smpnotelenbtn" />
+                    app:srcCompat="@drawable/introbtn" />
 
                 <TextView
-                    android:id="@+id/smpnotelenTxt"
+                    android:id="@+id/notelengthsTxt"
                     android:layout_width="255dp"
                     android:layout_height="128dp"
                     android:layout_weight="0.8"
                     android:gravity="center_vertical"
-                    android:text="Simple Note Lengths"
+                    android:text="Note Lengths"
                     android:textAlignment="center"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="22sp" />
@@ -205,6 +205,39 @@
 
                 <ImageButton
                     android:id="@+id/notepitchBtn"
+                    android:layout_width="128dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/select_icon"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/introbtn" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tsignaturesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="131dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tsignaturesTxt"
+                    android:layout_width="255dp"
+                    android:layout_height="128dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Time Signatures"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="22sp" />
+
+                <ImageButton
+                    android:id="@+id/tsignaturesBtn"
                     android:layout_width="128dp"
                     android:layout_height="120dp"
                     android:layout_marginLeft="20dp"

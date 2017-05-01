@@ -149,6 +149,38 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/scaledegreesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:id="@+id/scaledegreesBtn"
+                    android:layout_width="128dp"
+                    android:layout_height="120dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/select_icon"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/keyboardbtn" />
+
+                <TextView
+                    android:id="@+id/scaledegreesTxt"
+                    android:layout_width="255dp"
+                    android:layout_height="128dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:text="Scale Degrees"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
