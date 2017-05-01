@@ -50,6 +50,10 @@ public class Piano extends View {
     ArrayList<PianoKey> whiteKeys = new ArrayList<>();
     ArrayList<PianoKey> blackKeys = new ArrayList<>();
 
+    /**
+     * Construct a Piano View using the Context of its parent Activity.
+     * @param context The Context of the Piano's Activity.
+     */
     public Piano (Context context)
     {
         super(context);

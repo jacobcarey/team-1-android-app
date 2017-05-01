@@ -72,8 +72,6 @@ public class MainPageActivity extends AppCompatActivity {
             }
         };
 
-        final Toast intermediateToast = Toast.makeText(MainPageActivity.this,
-                "Intermediate Topics coming soon!", Toast.LENGTH_SHORT);
         final Toast advancedToast = Toast.makeText(MainPageActivity.this,
                 "Advanced Topics coming soon!", Toast.LENGTH_SHORT);
 

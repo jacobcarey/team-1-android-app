@@ -53,6 +53,11 @@ public class Topics {
         }
     }
 
+    /**
+     * Retrieve a List of topics for a given difficulty.
+     * @param difficulty <code>basic</code>, <code>intermediate</code> or <code>advanced</code>.
+     * @return An ArrayList of topic Strings for the given difficulty.
+     */
     public List<String> getTopics(String difficulty) {
         List list = new ArrayList<String>();
         try {

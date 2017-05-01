@@ -17,11 +17,21 @@ import java.util.Arrays;
 
 public class TopicParser {
 
+    /**
+     * Convert a provided topic identifier to a topic name.
+     * @param topicID The topic identifier to convert.
+     * @return Returns the name of the topic.
+     */
     public static String topicIDToName(String topicID)
     {
         return topicName(topicIDToTopic(topicID));
     }
 
+    /**
+     * Converts a provided topic identifier to it's filename.
+     * @param topicID The topic identifier to convert.
+     * @return Returns the filename of the topic's content files.
+     */
     public static String topicIDToTopic(String topicID) {
         //Remove any file path prefixes
         if (topicID.contains("basic/q"))
@@ -61,20 +71,36 @@ public class TopicParser {
                 return "Advanced Note Lengths";
             case "scaleconmaj":
                 return "Major Scale Construction";
-            case"scaleconmin":
+            case "scaleconmin":
                 return "Minor Scale Construction";
-            case"cconstruction":
+            case "cconstruction":
                 return "Chord Construction";
+            case "sheetmusic":
+                return "Sheet Music";
+            case "scaledegrees":
+                return "Scale Degrees";
             default:
                 return "Invalid topic ID!";
         }
 
     }
 
+    /**
+     * Converts a provided topic identifier to it's topic difficulty classification.
+     * @param topicID The topic identifier to convert.
+     * @return Returns the difficulty of the topic. (<code>basic</code>, <code>intermediate</code> or
+     * <code>advanced</code>.)
+     */
     public static String topicIDToDifficulty(String topicID) {
         return topicID.split("/")[0];
     }
 
+    /**
+     * Returns whether the provider topic identifier has a quiz content file.
+     * @param context The Context of the Activity calling this method.
+     * @param topic The topic identifier to check.
+     * @return Returns <code>true</code> if the topic has a quiz, <code>false</code> otherwise.
+     */
     public static boolean topicHasQuiz(Context context, String topic) {
         String difficulty = topicIDToDifficulty(topic);
         String quizName = topicIDToTopic(topic) + "_quiz.json";

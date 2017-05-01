@@ -224,12 +224,12 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays next question, or end result screen if no more questions.
+     * <p>Displays next question, or end result screen if no more questions.</p>
      *
-     * Modified to accept True/False type questions as well as 4-answer Multiple Choice type
+     * <p>Modified to accept True/False type questions as well as 4-answer Multiple Choice type
      * questions. Checking the length of the JSON object to determine this. (If length is 3, then assume
      * True/False question as 1 question element + 2 answer elements.) Question types can be combined
-     * in JSON file.
+     * in the quiz JSON file.</p>
      */
     public void nextQuestion() {
 
