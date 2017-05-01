@@ -81,7 +81,7 @@
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/introbtn" />
+                    app:srcCompat="@drawable/smpnotelenbtn" />
             </LinearLayout>
 
             <LinearLayout
@@ -113,7 +113,7 @@
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/introbtn" />
+                    app:srcCompat="@drawable/advnotelenbtn" />
             </LinearLayout>
 
             <LinearLayout
@@ -134,7 +134,7 @@
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/introbtn" />
+                    app:srcCompat="@drawable/keyboardbtn" />
 
                 <TextView
                     android:id="@+id/cconstructionTxt"

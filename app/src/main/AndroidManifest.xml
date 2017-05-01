@@ -82,7 +82,6 @@
         </activity>
 
         <activity android:name=".SettingsActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".BasicSelectActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".ContentActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".CreditsActivity" android:screenOrientation="portrait"></activity>
         <activity android:name=".PianoRollActivity" android:screenOrientation="landscape"></activity>

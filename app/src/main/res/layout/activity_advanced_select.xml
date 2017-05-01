@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark">
 
-    <ImageView
-        android:layout_width="match_parent"
-        app:srcCompat="@drawable/fake_drop_shadow"
-        android:id="@+id/headerShadow"
-        android:layout_height="10dp" />
-
     <LinearLayout
         android:id="@+id/headerLL"
         android:layout_width="match_parent"
@@ -41,6 +35,12 @@
             android:textSize="30sp" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/headerShadow"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        app:srcCompat="@drawable/fake_drop_shadow" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                     android:layout_weight="0.20"
                     android:background="@drawable/select_icon"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/introbtn" />
+                    app:srcCompat="@drawable/advnotelenbtn" />
             </LinearLayout>
 
 
