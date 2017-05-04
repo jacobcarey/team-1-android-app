@@ -2,13 +2,13 @@
 	{
 		"title": "Note Pitch",
 		"content": [
-		"Music wouldn’t sound very good if it was all the same pitch, so we need to be able to tell the musician what note to play. We use <b>staves</b> for this (<b>staff</b> singular), which are 5 straight lines drawn horizontally across the page."
+		"Music wouldn’t sound very good if it was all the same pitch, so we need to be able to tell the musician what note to play. We use staves for this (<b>staff</b> singular), which are 5 straight lines drawn horizontally across the page."
 		]
 	},
 	{
 		"title": "Staves",
 		"content": [
-		"Each staff has its own pitch, which it gives to any note which lies on it. The staves’ notes are, in order from bottom to top, EGBDF. The mnemonic used to remember these is <b>Every Good Boy Deserves Fruit</b> - the bottom staff’s note is E, the second from bottom is G, and so on. "
+		"Each staff has its own pitch, which it gives to any note which lies on it. The staves’ notes are, in order from bottom to top, EGBDF. The mnemonic used to remember these is Every Good Boy Deserves Fruit - the bottom staff’s note is E, the second from bottom is G, and so on. "
 		]
 	},
 	{
