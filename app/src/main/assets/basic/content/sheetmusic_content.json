@@ -8,25 +8,25 @@
 	{
 		"title": "Note Lengths",
 		"content": [
-		"The note <b> length </b>, intuitively, represents how long a note is played for. The length of a note is communicated either by how filled in the <b>bulb</b> is, or the shape of the <b>tail</b>."
+		"The note length, intuitively, represents how long a note is played for. The length of a note is communicated either by how filled in the bulb is, or the shape of the tail."
 		]
 	},
 	{
 		"title": "Note Pitch",
 		"content": [
-		"The <p>pitch</p> of the note means how high or low it sounds. To indicate this we use <p>staves</p> - the 5 lines you see running across the page. Each <p>staff</p> has its own pitch, which it gives to any notes on it. Each gap between the staves also has its own pitch!"
+		"The pitch of the note means how high or low it sounds. To indicate this we use staves - the 5 lines you see running across the page. Each staff has its own pitch, which it gives to any notes on it. Each gap between the staves also has its own pitch!"
 		]
 	},
 	{
 		"title": "Time Signature",
 		"content":[
-		" A <b>time signature</b> tells the musician how many beats are in a <b>bar</b>. This is quite a complex topic, so we won’t get much into it here!"
+		" A time signature tells the musician how many beats are in a bar. This is quite a complex topic, so we won’t get much into it here!"
 		]
 	},
 	{
 		"title": "Key Signatures",
 		"content":[
-		"The <b>key signature</b> lets us know what <b>key</b> we’re playing in. We’ll go over keys in a later topic!"
+		"The key signature lets us know what key we’re playing in. We’ll go over keys in a later topic!"
 		]
 	},
 	{
