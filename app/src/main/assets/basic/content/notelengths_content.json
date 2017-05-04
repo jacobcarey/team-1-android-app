@@ -2,13 +2,13 @@
 	{
 		"title": "BPM",
 		"content": [
-		"Note lengths don’t represent the exact amount of time a note is played for - this is instead defined by the speed of the piece. Most pieces of sheet music will have a symbol indicating the <b>Beats Per Minute</b>, or <b>BPM</b> for short. For example, the symbol above means there are 100 <b>crotchet</b> beats per minute."
+		"Note lengths don’t represent the exact amount of time a note is played for - this is instead defined by the speed of the piece. Most pieces of sheet music will have a symbol indicating the Beats Per Minute, or BPM for short. For example, the symbol above means there are 100 crotchet beats per minute."
 		]
 	},
 	{
 		"title": "Crotchet",
 		"content": [
-		"A crotchet is the simplest note - it lasts exactly one <b>beat</b>. "
+		"A crotchet is the simplest note - it lasts exactly one beat. "
 		]
 	},
 	{
