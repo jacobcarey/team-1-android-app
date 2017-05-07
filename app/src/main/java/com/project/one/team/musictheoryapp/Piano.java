@@ -49,6 +49,7 @@ public class Piano extends View {
 
     ArrayList<PianoKey> whiteKeys = new ArrayList<>();
     ArrayList<PianoKey> blackKeys = new ArrayList<>();
+    private Toast lastToast;
 
     /**
      * Construct a Piano View using the Context of its parent Activity.
@@ -137,7 +138,11 @@ public class Piano extends View {
                         touchedKeyName = blackKeys.get(i).getKeyName();
                         blackKeys.get(i).setKeyPressed(true);
                         touchedKey = blackKeys.get(i);
-                        Toast.makeText(getContext(), "Key pressed: " + blackKeys.get(i).getKeyName(), Toast.LENGTH_SHORT).show();
+                        // If there was a previously displayed Toast, stop showing it.
+                        if (lastToast != null)
+                            lastToast.cancel();
+                        lastToast = Toast.makeText(getContext(), "Key pressed: " + blackKeys.get(i).getKeyName(), Toast.LENGTH_SHORT);
+                        lastToast.show();
                         break;
                     }
                 }
@@ -151,7 +156,11 @@ public class Piano extends View {
                             touchedKeyName = whiteKeys.get(i).getKeyName();
                             touchedKey = whiteKeys.get(i);
                             whiteKeys.get(i).setKeyPressed(true);
-                            Toast.makeText(getContext(), "Key pressed: " + whiteKeys.get(i).getKeyName(), Toast.LENGTH_SHORT).show();
+                            // If there was a previously displayed Toast, stop showing it.
+                            if (lastToast != null)
+                                lastToast.cancel();
+                            lastToast = Toast.makeText(getContext(), "Key pressed: " + whiteKeys.get(i).getKeyName(), Toast.LENGTH_SHORT);
+                            lastToast.show();
                             break;
                         }
                     }
